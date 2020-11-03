@@ -1,0 +1,245 @@
+09/11 00:17:07 [allvoice-Send-0] [59003] ERROR : java.io.IOException: Failed to Read a Packet.
+ PACKET : null
+ MESSAGE : Read timed out
+
+09/11 00:17:42 [allvoice-Send-0] [59003] ERROR : Failed To [allvoice-Send-0] End. 
+java.io.IOException: Failed to Read a Packet.
+ PACKET : null
+ MESSAGE : Read timed out
+
+	at com.daou.alioclient.protocol.BizProtocol.socketReadPacket(BizProtocol.java:1002)
+	at com.daou.alioclient.protocol.BizProtocol.sendEnd(BizProtocol.java:142)
+	at com.daou.alioclient.protocol.BizProtocol.close(BizProtocol.java:127)
+	at com.daou.alioclient.worker.AlioWorker.doEnd(AlioWorker.java:33)
+	at com.daou.alioclient.worker.AlioSend.run(AlioSend.java:107)
+09/11 00:17:43 [allvoice-Send-0] [59003] INFO : Connect To Socket. IP [biz.ppurio.com] PORT [26000] 
+09/11 00:18:09 [allvoice-Send-0] [59003] ERROR : com.daou.alioclient.common.AuthException: Failed To User Authentication. [Failed to Send a Packet.
+ PACKET : 00000116AUVERSION:=4.0
+USERID:=allvoice
+PASSWD:=43e6e5145e8784f672408a3616fd045765a97755bd5c49f9063957bce193f220
+CV:=JD2015
+
+ MESSAGE : Connection reset
+]
+09/11 00:19:09 [allvoice-Send-0] [59003] ERROR : Failed To [allvoice-Send-0] End. 
+java.io.IOException: Failed to Send a Packet.
+ PACKET : 00000002EN
+ MESSAGE : Connection has been shutdown: javax.net.ssl.SSLException: java.net.SocketException: Connection reset
+
+	at com.daou.alioclient.protocol.BizProtocol.socketSendPacket(BizProtocol.java:984)
+	at com.daou.alioclient.protocol.BizProtocol.sendEnd(BizProtocol.java:141)
+	at com.daou.alioclient.protocol.BizProtocol.close(BizProtocol.java:127)
+	at com.daou.alioclient.worker.AlioWorker.doEnd(AlioWorker.java:33)
+	at com.daou.alioclient.worker.AlioSend.run(AlioSend.java:107)
+Caused by: javax.net.ssl.SSLException: java.net.SocketException: Connection reset
+	at sun.security.ssl.Alerts.getSSLException(Alerts.java:208)
+	at sun.security.ssl.SSLSocketImpl.fatal(SSLSocketImpl.java:1964)
+	at sun.security.ssl.SSLSocketImpl.fatal(SSLSocketImpl.java:1921)
+	at sun.security.ssl.SSLSocketImpl.handleException(SSLSocketImpl.java:1885)
+	at sun.security.ssl.SSLSocketImpl.handleException(SSLSocketImpl.java:1830)
+	at sun.security.ssl.AppOutputStream.write(AppOutputStream.java:128)
+	at java.io.DataOutputStream.write(DataOutputStream.java:107)
+	at java.io.FilterOutputStream.write(FilterOutputStream.java:97)
+	at com.daou.alioclient.socket.AlioSocket.write(AlioSocket.java:96)
+	at com.daou.alioclient.protocol.BizProtocol.socketSendPacket(BizProtocol.java:981)
+	at com.daou.alioclient.protocol.BizProtocol.connectAndAuthToServer(BizProtocol.java:92)
+	at com.daou.alioclient.worker.AlioSend.run(AlioSend.java:51)
+Caused by: java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:210)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at sun.security.ssl.InputRecord.readFully(InputRecord.java:465)
+	at sun.security.ssl.InputRecord.read(InputRecord.java:503)
+	at sun.security.ssl.SSLSocketImpl.readRecord(SSLSocketImpl.java:983)
+	at sun.security.ssl.SSLSocketImpl.performInitialHandshake(SSLSocketImpl.java:1385)
+	at sun.security.ssl.SSLSocketImpl.writeRecord(SSLSocketImpl.java:757)
+	at sun.security.ssl.AppOutputStream.write(AppOutputStream.java:123)
+	... 6 more
+09/11 00:19:13 [allvoice-Send-0] [59003] INFO : Connect To Socket. IP [biz.ppurio.com] PORT [26000] 
+09/11 00:19:22 [allvoice-Send-0] [59003] ERROR : com.daou.alioclient.common.AuthException: Failed To User Authentication. [Failed to Send a Packet.
+ PACKET : 00000116AUVERSION:=4.0
+USERID:=allvoice
+PASSWD:=43e6e5145e8784f672408a3616fd045765a97755bd5c49f9063957bce193f220
+CV:=JD2015
+
+ MESSAGE : Connection reset
+]
+09/11 00:20:22 [allvoice-Send-0] [59003] ERROR : Failed To [allvoice-Send-0] End. 
+java.io.IOException: Failed to Send a Packet.
+ PACKET : 00000002EN
+ MESSAGE : Connection has been shutdown: javax.net.ssl.SSLException: java.net.SocketException: Connection reset
+
+	at com.daou.alioclient.protocol.BizProtocol.socketSendPacket(BizProtocol.java:984)
+	at com.daou.alioclient.protocol.BizProtocol.sendEnd(BizProtocol.java:141)
+	at com.daou.alioclient.protocol.BizProtocol.close(BizProtocol.java:127)
+	at com.daou.alioclient.worker.AlioWorker.doEnd(AlioWorker.java:33)
+	at com.daou.alioclient.worker.AlioSend.run(AlioSend.java:107)
+Caused by: javax.net.ssl.SSLException: java.net.SocketException: Connection reset
+	at sun.security.ssl.Alerts.getSSLException(Alerts.java:208)
+	at sun.security.ssl.SSLSocketImpl.fatal(SSLSocketImpl.java:1964)
+	at sun.security.ssl.SSLSocketImpl.fatal(SSLSocketImpl.java:1921)
+	at sun.security.ssl.SSLSocketImpl.handleException(SSLSocketImpl.java:1885)
+	at sun.security.ssl.SSLSocketImpl.handleException(SSLSocketImpl.java:1830)
+	at sun.security.ssl.AppOutputStream.write(AppOutputStream.java:128)
+	at java.io.DataOutputStream.write(DataOutputStream.java:107)
+	at java.io.FilterOutputStream.write(FilterOutputStream.java:97)
+	at com.daou.alioclient.socket.AlioSocket.write(AlioSocket.java:96)
+	at com.daou.alioclient.protocol.BizProtocol.socketSendPacket(BizProtocol.java:981)
+	at com.daou.alioclient.protocol.BizProtocol.connectAndAuthToServer(BizProtocol.java:92)
+	at com.daou.alioclient.worker.AlioSend.run(AlioSend.java:51)
+Caused by: java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:210)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at sun.security.ssl.InputRecord.readFully(InputRecord.java:465)
+	at sun.security.ssl.InputRecord.read(InputRecord.java:503)
+	at sun.security.ssl.SSLSocketImpl.readRecord(SSLSocketImpl.java:983)
+	at sun.security.ssl.SSLSocketImpl.performInitialHandshake(SSLSocketImpl.java:1385)
+	at sun.security.ssl.SSLSocketImpl.writeRecord(SSLSocketImpl.java:757)
+	at sun.security.ssl.AppOutputStream.write(AppOutputStream.java:123)
+	... 6 more
+09/11 00:20:23 [allvoice-Send-0] [59003] INFO : Connect To Socket. IP [biz.ppurio.com] PORT [26000] 
+09/11 00:20:30 [allvoice-Send-0] [59003] ERROR : com.daou.alioclient.common.AuthException: Failed To User Authentication. [Failed to Send a Packet.
+ PACKET : 00000116AUVERSION:=4.0
+USERID:=allvoice
+PASSWD:=43e6e5145e8784f672408a3616fd045765a97755bd5c49f9063957bce193f220
+CV:=JD2015
+
+ MESSAGE : Connection reset
+]
+09/11 00:21:30 [allvoice-Send-0] [59003] ERROR : Failed To [allvoice-Send-0] End. 
+java.io.IOException: Failed to Send a Packet.
+ PACKET : 00000002EN
+ MESSAGE : Connection has been shutdown: javax.net.ssl.SSLException: java.net.SocketException: Connection reset
+
+	at com.daou.alioclient.protocol.BizProtocol.socketSendPacket(BizProtocol.java:984)
+	at com.daou.alioclient.protocol.BizProtocol.sendEnd(BizProtocol.java:141)
+	at com.daou.alioclient.protocol.BizProtocol.close(BizProtocol.java:127)
+	at com.daou.alioclient.worker.AlioWorker.doEnd(AlioWorker.java:33)
+	at com.daou.alioclient.worker.AlioSend.run(AlioSend.java:107)
+Caused by: javax.net.ssl.SSLException: java.net.SocketException: Connection reset
+	at sun.security.ssl.Alerts.getSSLException(Alerts.java:208)
+	at sun.security.ssl.SSLSocketImpl.fatal(SSLSocketImpl.java:1964)
+	at sun.security.ssl.SSLSocketImpl.fatal(SSLSocketImpl.java:1921)
+	at sun.security.ssl.SSLSocketImpl.handleException(SSLSocketImpl.java:1885)
+	at sun.security.ssl.SSLSocketImpl.handleException(SSLSocketImpl.java:1830)
+	at sun.security.ssl.AppOutputStream.write(AppOutputStream.java:128)
+	at java.io.DataOutputStream.write(DataOutputStream.java:107)
+	at java.io.FilterOutputStream.write(FilterOutputStream.java:97)
+	at com.daou.alioclient.socket.AlioSocket.write(AlioSocket.java:96)
+	at com.daou.alioclient.protocol.BizProtocol.socketSendPacket(BizProtocol.java:981)
+	at com.daou.alioclient.protocol.BizProtocol.connectAndAuthToServer(BizProtocol.java:92)
+	at com.daou.alioclient.worker.AlioSend.run(AlioSend.java:51)
+Caused by: java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:210)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at sun.security.ssl.InputRecord.readFully(InputRecord.java:465)
+	at sun.security.ssl.InputRecord.read(InputRecord.java:503)
+	at sun.security.ssl.SSLSocketImpl.readRecord(SSLSocketImpl.java:983)
+	at sun.security.ssl.SSLSocketImpl.performInitialHandshake(SSLSocketImpl.java:1385)
+	at sun.security.ssl.SSLSocketImpl.writeRecord(SSLSocketImpl.java:757)
+	at sun.security.ssl.AppOutputStream.write(AppOutputStream.java:123)
+	... 6 more
+09/11 00:21:33 [allvoice-Send-0] [59003] INFO : Connect To Socket. IP [biz.ppurio.com] PORT [26000] 
+09/11 00:21:41 [allvoice-Send-0] [59003] ERROR : com.daou.alioclient.common.AuthException: Failed To User Authentication. [Failed to Send a Packet.
+ PACKET : 00000116AUVERSION:=4.0
+USERID:=allvoice
+PASSWD:=43e6e5145e8784f672408a3616fd045765a97755bd5c49f9063957bce193f220
+CV:=JD2015
+
+ MESSAGE : Connection reset
+]
+09/11 00:22:41 [allvoice-Send-0] [59003] ERROR : Failed To [allvoice-Send-0] End. 
+java.io.IOException: Failed to Send a Packet.
+ PACKET : 00000002EN
+ MESSAGE : Connection has been shutdown: javax.net.ssl.SSLException: java.net.SocketException: Connection reset
+
+	at com.daou.alioclient.protocol.BizProtocol.socketSendPacket(BizProtocol.java:984)
+	at com.daou.alioclient.protocol.BizProtocol.sendEnd(BizProtocol.java:141)
+	at com.daou.alioclient.protocol.BizProtocol.close(BizProtocol.java:127)
+	at com.daou.alioclient.worker.AlioWorker.doEnd(AlioWorker.java:33)
+	at com.daou.alioclient.worker.AlioSend.run(AlioSend.java:107)
+Caused by: javax.net.ssl.SSLException: java.net.SocketException: Connection reset
+	at sun.security.ssl.Alerts.getSSLException(Alerts.java:208)
+	at sun.security.ssl.SSLSocketImpl.fatal(SSLSocketImpl.java:1964)
+	at sun.security.ssl.SSLSocketImpl.fatal(SSLSocketImpl.java:1921)
+	at sun.security.ssl.SSLSocketImpl.handleException(SSLSocketImpl.java:1885)
+	at sun.security.ssl.SSLSocketImpl.handleException(SSLSocketImpl.java:1830)
+	at sun.security.ssl.AppOutputStream.write(AppOutputStream.java:128)
+	at java.io.DataOutputStream.write(DataOutputStream.java:107)
+	at java.io.FilterOutputStream.write(FilterOutputStream.java:97)
+	at com.daou.alioclient.socket.AlioSocket.write(AlioSocket.java:96)
+	at com.daou.alioclient.protocol.BizProtocol.socketSendPacket(BizProtocol.java:981)
+	at com.daou.alioclient.protocol.BizProtocol.connectAndAuthToServer(BizProtocol.java:92)
+	at com.daou.alioclient.worker.AlioSend.run(AlioSend.java:51)
+Caused by: java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:210)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at sun.security.ssl.InputRecord.readFully(InputRecord.java:465)
+	at sun.security.ssl.InputRecord.read(InputRecord.java:503)
+	at sun.security.ssl.SSLSocketImpl.readRecord(SSLSocketImpl.java:983)
+	at sun.security.ssl.SSLSocketImpl.performInitialHandshake(SSLSocketImpl.java:1385)
+	at sun.security.ssl.SSLSocketImpl.writeRecord(SSLSocketImpl.java:757)
+	at sun.security.ssl.AppOutputStream.write(AppOutputStream.java:123)
+	... 6 more
+09/11 00:22:43 [allvoice-Send-0] [59003] INFO : Connect To Socket. IP [biz.ppurio.com] PORT [26000] 
+09/11 00:22:43 [allvoice-Send-0] [59003] INFO : User Authentication. USER [allvoice]
+09/11 00:22:43 [allvoice-Send-0] [59003] INFO : Start Sending And Receiving Data With The Server.
+09/11 00:22:43 [allvoice-Send-0] [59003] INFO : Connect To Database. TYPE [MYSQL] URL [jdbc:mysql://localhost:3306/allvoice] USER [allvoice]
+09/11 08:43:44 [allvoice-Send-0] [59003] ERROR : java.io.IOException: Failed to Send a Packet.
+ PACKET : 00000002PI
+ MESSAGE : 파이프가 깨어짐 (Write failed)
+
+09/11 08:43:49 [allvoice-Send-0] [59003] ERROR : Failed To [allvoice-Send-0] End. 
+java.io.IOException: Failed to Send a Packet.
+ PACKET : 00000002EN
+ MESSAGE : Connection has been shutdown: javax.net.ssl.SSLException: java.net.SocketException: 파이프가 깨어짐 (Write failed)
+
+	at com.daou.alioclient.protocol.BizProtocol.socketSendPacket(BizProtocol.java:984)
+	at com.daou.alioclient.protocol.BizProtocol.sendEnd(BizProtocol.java:141)
+	at com.daou.alioclient.protocol.BizProtocol.close(BizProtocol.java:127)
+	at com.daou.alioclient.worker.AlioWorker.doEnd(AlioWorker.java:33)
+	at com.daou.alioclient.worker.AlioSend.run(AlioSend.java:107)
+Caused by: javax.net.ssl.SSLException: java.net.SocketException: 파이프가 깨어짐 (Write failed)
+	at sun.security.ssl.Alerts.getSSLException(Alerts.java:208)
+	at sun.security.ssl.SSLSocketImpl.fatal(SSLSocketImpl.java:1964)
+	at sun.security.ssl.SSLSocketImpl.fatal(SSLSocketImpl.java:1921)
+	at sun.security.ssl.SSLSocketImpl.handleException(SSLSocketImpl.java:1885)
+	at sun.security.ssl.SSLSocketImpl.handleException(SSLSocketImpl.java:1830)
+	at sun.security.ssl.AppOutputStream.write(AppOutputStream.java:128)
+	at java.io.DataOutputStream.write(DataOutputStream.java:107)
+	at java.io.FilterOutputStream.write(FilterOutputStream.java:97)
+	at com.daou.alioclient.socket.AlioSocket.write(AlioSocket.java:96)
+	at com.daou.alioclient.protocol.BizProtocol.socketSendPacket(BizProtocol.java:981)
+	at com.daou.alioclient.protocol.BizProtocol.sendPing(BizProtocol.java:150)
+	at com.daou.alioclient.worker.AlioSend.run(AlioSend.java:69)
+Caused by: java.net.SocketException: 파이프가 깨어짐 (Write failed)
+	at java.net.SocketOutputStream.socketWrite0(Native Method)
+	at java.net.SocketOutputStream.socketWrite(SocketOutputStream.java:111)
+	at java.net.SocketOutputStream.write(SocketOutputStream.java:155)
+	at sun.security.ssl.OutputRecord.writeBuffer(OutputRecord.java:431)
+	at sun.security.ssl.OutputRecord.write(OutputRecord.java:417)
+	at sun.security.ssl.SSLSocketImpl.writeRecordInternal(SSLSocketImpl.java:886)
+	at sun.security.ssl.SSLSocketImpl.writeRecord(SSLSocketImpl.java:857)
+	at sun.security.ssl.AppOutputStream.write(AppOutputStream.java:123)
+	... 6 more
+09/11 08:43:54 [allvoice-Send-0] [59003] INFO : Connect To Socket. IP [biz.ppurio.com] PORT [26000] 
+09/11 08:43:54 [allvoice-Send-0] [59003] INFO : User Authentication. USER [allvoice]
+09/11 08:43:54 [allvoice-Send-0] [59003] INFO : Start Sending And Receiving Data With The Server.
+09/11 08:43:54 [allvoice-Send-0] [59003] INFO : Connect To Database. TYPE [MYSQL] URL [jdbc:mysql://localhost:3306/allvoice] USER [allvoice]
+09/11 11:18:16 [allvoice-Send-0] [59003] INFO : Send a Message. DEVICE [AT] CMSGID [20200911111817] MSGID [0911al_FG5071789069500901321] REPART [S] SVCCODE [7900]
+09/11 11:18:16 [allvoice-Send-0] [59003] INFO : Send a Message. DEVICE [AT] CMSGID [20200911111816] MSGID [0911al_FG5926339069500901322] REPART [S] SVCCODE [7900]
+09/11 11:18:55 [allvoice-Send-0] [59003] INFO : Send a Message. DEVICE [AT] CMSGID [20200911111855] MSGID [0911al_FG6980209073400903026] REPART [S] SVCCODE [7900]
+09/11 11:18:55 [allvoice-Send-0] [59003] INFO : Send a Message. DEVICE [AT] CMSGID [20200911111856] MSGID [0911al_FG7820829073400903033] REPART [S] SVCCODE [7900]
+09/11 11:40:04 [allvoice-Send-0] [59003] INFO : Send a Message. DEVICE [AT] CMSGID [20200911000001] MSGID [0911al_FG2375609200300992525] REPART [S] SVCCODE [7900]
+09/11 11:50:02 [allvoice-Send-0] [59003] INFO : Send a Message. DEVICE [AT] CMSGID [20200911000002] MSGID [0911al_FG5134379260101042895] REPART [S] SVCCODE [7900]
+09/11 12:00:03 [allvoice-Send-0] [59003] INFO : Send a Message. DEVICE [AT] CMSGID [20200911000003] MSGID [0911al_FG1709479320201068434] REPART [S] SVCCODE [7900]
+09/11 12:40:03 [allvoice-Send-0] [59003] INFO : Send a Message. DEVICE [AT] CMSGID [20200911000004] MSGID [0911al_FG8948599560101185339] REPART [S] SVCCODE [7900]
+09/11 13:08:06 [allvoice-Send-0] [59003] INFO : Send a Message. DEVICE [AT] CMSGID [20200911130806] MSGID [0911al_FG8617449728501242751] REPART [S] SVCCODE [7900]
+09/11 13:08:06 [allvoice-Send-0] [59003] INFO : Send a Message. DEVICE [AT] CMSGID [20200911130807] MSGID [0911al_FG9546319728501242756] REPART [S] SVCCODE [7900]
+09/11 13:08:06 [allvoice-Send-0] [59003] INFO : Failed to Send a Message Due to Wrong Phone Number. RESULT [R214] DEVICE [AT] CMSGID [20200911000005]
+09/11 14:40:03 [allvoice-Send-0] [59003] INFO : Send a Message. DEVICE [AT] CMSGID [20200911000006] MSGID [0911al_FG1459090280201486184] REPART [S] SVCCODE [7900]
+09/11 15:00:03 [allvoice-Send-0] [59003] INFO : Send a Message. DEVICE [AT] CMSGID [20200911000007] MSGID [0911al_FG0474590400301540054] REPART [S] SVCCODE [7900]
+09/11 15:05:03 [allvoice-Send-0] [59003] INFO : Send a Message. DEVICE [AT] CMSGID [20200911000008] MSGID [0911al_FG1983020430301568318] REPART [S] SVCCODE [7900]
+09/11 16:52:19 [allvoice-Send-0] [59003] INFO : Send a Message. DEVICE [AT] CMSGID [20200911000009] MSGID [0911al_FG4885121073801694853] REPART [S] SVCCODE [7900]
+09/11 16:52:35 [allvoice-Send-0] [59003] INFO : Send a Message. DEVICE [AT] CMSGID [20200911000010] MSGID [0911al_FG5596371075401694959] REPART [S] SVCCODE [7900]
+09/11 17:02:12 [allvoice-Send-0] [59003] INFO : Send a Message. DEVICE [AT] CMSGID [20200911000011] MSGID [0911al_FG7458401133001709441] REPART [S] SVCCODE [7900]
+09/11 17:05:03 [allvoice-Send-0] [59003] INFO : Send a Message. DEVICE [AT] CMSGID [20200911000012] MSGID [0911al_FG8267751150101711367] REPART [S] SVCCODE [7900]

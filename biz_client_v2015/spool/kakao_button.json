@@ -1,0 +1,10 @@
+{
+ "button": [
+ {
+ "name": "올보이스",
+ "type": "WL",
+ "url_mobile": "http://allvoice.kr",
+ "url_pc": "http://allvoice.kr"
+ }
+ ]
+}

@@ -1,0 +1,278 @@
+<?php
+include_once('./_common.php');
+
+if ($is_guest)
+    alert('회원만 이용하실 수 있습니다.');
+
+if ( $member['mb_gubun'] == "3" )
+    alert('작업의뢰 등록은 일반회원만 이용하실 수 있습니다.');
+
+include_once(G5_MSHOP_PATH.'/_head.php');
+
+// 분류리스트
+$category_select = '';
+$script = '';
+$sql = " select * from {$g5['g5_shop_category_table']} ";
+//if ($is_admin != 'super')
+//    $sql .= " where ca_mb_id = '{$member['mb_id']}' ";
+$sql .= " order by ca_order, ca_id ";
+$result = sql_query($sql);
+$dt = NULL;
+for ($i=0; $row=sql_fetch_array($result); $i++)
+{
+	$dt[$row['ca_id']] = $row['ca_1'];
+    $len = strlen($row['ca_id']) / 2 - 1;
+
+    $nbsp = "";
+    for ($i=0; $i<$len; $i++)
+        $nbsp .= "&nbsp;&nbsp;&nbsp;";
+
+    $category_select .= "<option value=\"{$row['ca_id']}\">$nbsp{$row['ca_name']}</option>\n";
+
+}
+
+?>
+
+<!-- 성우상세 { -->
+
+<div class="contTop3">
+	<strong>작업의뢰 등록</strong>
+	<hr />
+	<span>특정성우를 선택하지 않고 예산에 맞는 성우와 <br />작업하고자 하는 경우 1:다수(고객:다수의 성우) <br />작업의뢰를 통해 여러 성우들의 지원을 받을 수 있습니다.<br />샘플멘트를 올려 보세요. <br />지원하는 성우분들의 샘플 멘트를 들어보시고 <br />고객님께 가장 적합한 성우를 선택 하실수 있습니다. </span>
+</div>
+
+<div class="voiceDetail">
+	<div class="voiceDetailInfo">
+		<form id="fitemform" name="fitemform" action="./voiceProjectApply_update.php" method="post" enctype="MULTIPART/FORM-DATA" autocomplete="off">
+		<div class="voiceSampleSection form">
+			<strong>작업의뢰 등록하기</strong>
+			<ul>
+				<li>
+					<ul>
+						<li><input type="text" id="it_name" name="it_name" value="" placeholder="제목(필수)" /></li>
+						<li><textarea rows="3" id="it_explan" name="it_explan" placeholder="설명(필수)"></textarea></li>
+						<li>
+							<textarea rows="7" id="it_explan2" name="it_explan2" placeholder="들어보기 원하시는 샘플 한 문장을 적어주세요."></textarea>
+							<div class="fakeFile">
+								<input type="text" id="it_7_name" value="" style="width:calc(100% - 92px);" />
+								<div><input type="file" id="it_7" name="it_7" /></div>
+							</div>
+						</li>
+						
+						<li>
+							<span class="slcWrap">
+                    			<select id="it_6" name="it_6">
+									<option value="1">12pt 기준 A4한장</option>
+									<option value="2">12pt 기준 A4두장</option>
+									<option value="3">12pt 기준 A4세장이상</option>
+								</select>
+                			</span>
+						</li>
+						<li>
+							<span class="slcWrap">
+                    			<select id="ca_id" name="ca_id">
+									<option value="">1차 카테고리(선택)</option>
+									<?php echo conv_selected_option($category_select, ''); ?>
+								</select>
+                			</span>
+						</li>
+						<li>
+							<span class="slcWrap">
+                    			<select id="it_1" name="it_1">
+									<option value="">성별(선택)</option>
+									<?php echo conv_selected_option($gender_select, ''); ?>
+								</select>
+                			</span>
+						</li>
+						<li>
+							<span class="slcWrap">
+                    			<select id="it_2" name="it_2">
+									<option value="">연령(선택)</option>
+									<?php echo conv_selected_option($age_select, ''); ?>
+								</select>
+                			</span>
+						</li>
+						<li>
+							<span class="slcWrap">
+                    			<select id="it_3" name="it_3">
+									<option value="">스타일(선택)</option>
+									<?php echo conv_selected_option($style_select, ''); ?>
+								</select>
+                			</span>
+						</li>
+						<li>
+							<span class="slcWrap">
+								<select id="it_4" name="it_4">
+									<option value="">톤(선택)</option>
+									<?php echo conv_selected_option($tone_select, ''); ?>
+								</select>
+							</span>
+						</li>
+						<li>
+							<span class="slcWrap">
+								<select id="it_5" name="it_5">
+									<option value="">언어(선택)</option>
+									<?php echo conv_selected_option($language_select, ''); ?>
+								</select>
+							</span>
+						</li>
+						
+						<li><input type="text" id="it_price" name="it_price" numberOnly placeholder="예산(필수)" /><i>※ 최저가격 <span id="ch_pr"></span>원 이상으로 작성해주세요</i></li>
+						<li><input type="text" placeholder="노출기간(필수)" id="it_view_time" name="it_view_time" data-language='ko' readOnly /></li>
+						<li>
+							<div class="fakeFile">
+								<input type="text" id="it_img1_name" value="" />
+								<div><input type="file" id="it_img1" name="it_img1" /></div>
+							</div>
+						</li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+		<div class="ctrler">
+			<a id="submit_btn" class="vSave" style="cursor:pointer;">확인</a>
+			<a href="javascript:;" class="vCancel">취소</a>
+		</div>
+		</form>
+	</div>
+<script type="text/javascript">
+var dt = new Array();
+<?php
+foreach ($dt as $key => $val) {
+	echo "dt[".$key."] = '".$val."';\n";
+}
+?>
+$(function(){
+	$.fn.datepicker.language['ko'] = {
+		    days: ['일', '월', '화', '수', '목', '금', '토'],
+		    daysShort: ['일', '월', '화', '수', '목', '금', '토'],
+		    daysMin: ['일', '월', '화', '수', '목', '금', '토'],
+		    months: ['1월','2월','3월','4월','5월','6월', '7월','8월','9월','10월','11월','12월'],
+		    monthsShort: ['1월','2월','3월','4월','5월','6월', '7월','8월','9월','10월','11월','12월'],
+		   dateFormat: 'yyyy-mm-dd'
+		};
+	
+	//Initialization
+	$('#it_view_time').datepicker({
+		language: 'ko',
+		timepicker: true,
+		onSelect: function (fd, d, picker) {
+			var splitTime = $('#it_view_time').val().split(' ');
+			var thisMonth = splitTime[0].split('-');
+			var thisDate = thisMonth[2];
+			thisDate = parseInt(thisDate);
+			thisMonth = thisMonth[1];
+			thisMonth = parseInt(thisMonth);
+			var crntDate = new Date();
+			var crntMonth = crntDate.getMonth();
+			var crntDate = crntDate.getDate();
+			console.log(thisMonth + " / " + crntMonth);
+			if(thisMonth > crntMonth){
+				if((thisMonth - crntMonth) > 2){
+					if((thisMonth - crntMonth) == 3 && thisDate <= crntDate){
+					} else {
+    					alert("마감시간은 최대 2개월 후 입니다.");
+    					endDatePicker.clear();
+					}
+				}
+			} else {
+				if((thisMonth - crntMonth) > -10){
+					if((thisMonth - crntMonth) == -11 && thisDate <= crntDate){
+					} else {
+    					alert("마감시간은 최대 2개월 후 입니다.");
+    					endDatePicker.clear();
+					}
+				}
+			}				
+        }
+	});
+	$("#ca_id").change(function() {
+		$("#ch_pr").text( number_format(dt[$(this).val()]) );
+	});
+
+	// Access instance of plugin
+	var endDatePicker = $('#it_view_time').data('datepicker');
+
+	$("#it_7").change(function() {
+		$("#it_7_name").val($(this).val());
+	});
+
+	$("#it_img1").change(function() {
+		$("#it_img1_name").val($(this).val());
+	});
+
+	$("#submit_btn").click(function() {
+		if ( $("#it_name").val() == "" ) {
+			alert("제목을 입력해 주세요.");
+			$("#it_name").focus();
+			return;
+		}
+		if ( $("#it_explan").val() == "" ) {
+			alert("설명을 입력해 주세요.");
+			$("#it_explan").focus();
+			return;
+		}
+		if ( $("#it_explan2").val() == "" ) {
+			alert("대본샘플을 입력해 주세요.");
+			$("#it_explan2").focus();
+			return;
+		}
+		if ( $("#it_6").val() == "" ) {
+			alert("대본분량을 입력해 주세요.");
+			$("#it_6").focus();
+			return;
+		}
+		if ( $("#ca_id").val() == "" ) {
+			alert("카테고리를 선택해 주세요.");
+			$("#ca_id").focus();
+			return;
+		}
+		if ( $("#it_price").val() == "" ) {
+			alert("예산을 입력해 주세요.");
+			$("#it_price").focus();
+			return;
+		}
+		if ( $("#it_price").val() < dt[$("#ca_id").val()] ) {
+			alert("예산을 "+number_format(dt[$("#ca_id").val()])+"원 이상으로 입력해 주세요.");
+			$("#it_price").focus();
+			return;
+		}
+		if ( $("#it_view_time").val() == "" ) {
+			alert("노출기간을 입력해 주세요.");
+			$("#it_view_time").focus();
+			return;
+		}
+
+		$("#fitemform").submit();
+	});
+
+});
+</script>	
+	<!-- 
+	<div class="voiceProfile">
+		<article>
+			<span>어떻게 진행하는지 궁금한가요?</span>
+			<strong>작업의뢰 등록 프로세스</strong>
+			<ol>
+                <li>01. 섭외 등록</li>
+                <li>02. 관리자 검토 요청 및 심사</li>
+                <li>03. 프로젝트 오픈</li>
+                <li>04. 프로젝트 종료</li>
+                <li>05. 성우 선택</li>
+                <li>06. 결제 진행 및 완료</li>
+                <li>07. 작업 진행</li>
+			</ol>
+		</article>
+		<hr />
+		<a href="javascript:;" class="sendMassage">이용안내 전체 보기</a>
+		<a href="javascript:;" class="sendMassage">FAQ 전체 보기</a>
+	</div>
+	 -->
+</div>
+
+
+<!-- } 성우상세 끝 -->
+
+<?php
+include_once(G5_MSHOP_PATH."/_tail.php");
+?>

@@ -1,0 +1,157 @@
+@charset "utf-8";
+
+#login_wrap, #join_wrap, #login_wrap *, #join_wrap *{box-sizing: border-box;}
+
+/* 로그인 */
+#login_wrap{width: 600px !important;margin-top: 50px !important;font-weight: 300;}
+
+/* 회원가입 */
+#join_wrap{width: 600px !important;margin-top: 50px !important;font-weight: 300;}
+
+.user_box{width: 460px;margin: 0 auto;}
+.user_box.wide{width: 100%;}
+
+.user_box .user_title{text-align: center;margin-top: 70px;font-size: 24px;color: rgba(44,44,44,1);font-weight: 600;}
+
+.user_box .label_st1{width: 100%;display: block;font-size: 16px;color: rgba(51,51,51,1);line-height: 30px;}
+.user_box .inp_st1{height: 50px;line-height: 50px;padding: 0 15px;background: rgb(242, 242, 242);border: 1px solid rgb(242, 242, 242);box-shadow: none;width: 100%;border-radius: 25px;margin-top: 10px;font-size: 16px;color: #444;}
+.user_box .textarea_st1{height: 500px;line-height: 26px;padding: 12px 15px;background: rgb(242, 242, 242);border: 1px solid rgb(242, 242, 242);box-shadow: none;width: 100%;border-radius: 25px;margin-top: 10px;font-size: 16px;color: #444;resize: none;}
+
+.user_box .inp_box{margin-top: 35px;position: relative;}
+
+.user_box .btn_box{overflow: hidden;margin-top: 35px;}
+.user_box .btn_box.mt{margin-top:100px;}
+.user_box .btn_box .btn_st1{display: block;width: 100%;background: rgba(17,113,187,1);height: 50px;line-height: 50px;border-radius: 25px;text-align: center;color: #fff;font-size: 15px;margin: 0 auto;}
+.user_box .btn_box .btn_st1.short{max-width: 350px;}
+.user_box .btn_box .btn_st1 + .btn_st1{margin-top: 80px;}
+
+.user_box .find_box{overflow: hidden;}
+.user_box .find_box .btn{margin-top: 10px;font-size: 14px;font-weight: 300;float: left;}
+.user_box .find_box .btn a{color: rgb(153, 153, 153);}
+.user_box .find_box .btn_check{float: right;margin-top: 17px;}
+
+.user_box .user_sns{overflow: hidden;margin-top: 30px;}
+.user_box .user_sns li{float: left;width: 25%;text-align: center;}
+.user_box .user_sns li a{display: block;font-size: 14px;color: rgba(153,153,153,1);}
+.user_box .user_sns li a img{display: block;margin: 0 auto 15px auto;}
+
+.user_box .user_text1{font-size: 14px;text-align: center;color: rgba(153,153,153,1);margin-top: 10px;}
+.user_box .small_text{color: rgba(170,170,170,1);margin-top: 10px;padding: 0 16px;font-size: 14px;width: 600px;}
+
+.user_box .select_bg{height: 50px;padding: 0 15px;background: rgb(242, 242, 242);border: 1px solid rgb(242, 242, 242);width: 100%;border-radius: 25px;margin-top: 10px;color: #444;}
+.user_box .inp_box select{height: 30px;line-height: 30px;background: rgb(242, 242, 242);border: none;box-shadow: none;width: 100%;margin-top: 10px;font-size: 16px;color: #444;}
+.user_box .inp_box .label_file{height: 50px;line-height: 50px;display: block;position: absolute;right: 0;width: 118px;text-align: center;color: #fff;background: rgba(17,113,187,1);font-size: 14px;border-radius: 0 25px 25px 0;top: 40px;}
+.user_box .inp_box .inp_btn{height: 50px;line-height: 50px;display: block;position: absolute;right: 0;width: 118px;text-align: center;color: #fff;background: rgba(17,113,187,1);font-size: 14px;border-radius: 0 25px 25px 0;top: 40px;}
+
+.user_box .inp_box.add_btn{padding-right: 118px;}
+.user_box .inp_box.add_btn .inp_st1{border-radius: 25px 0 0 25px;}
+
+.graph_box .text_box{font-size: 15px;color: rgba(17,113,187,1);}
+.graph_box .text_box .num{font-size: 13px;float: right;}
+.graph_box .graph{width: 100%;height: 5px;position: relative;background: rgba(204,204,204,1);overflow: hidden;margin-top: 10px;}
+.graph_box .graph span{position: absolute;left: 0;height: 5px;background: rgba(17,113,187,1);}
+
+.agree_box{overflow: hidden;margin-top: 40px;font-size: 16px;color: rgba(51,51,51,1);}
+.agree_box .agree_title{font-size: 16px;}
+.agree_box .all{padding: 25px 0;border-bottom: 1px solid #ddd;}
+.agree_box ul li{line-height: 20px;margin-top: 20px;overflow: hidden;}
+.agree_box ul li a{float: right;}
+.agree_box ul li .btn_check3{float: left;}
+
+.user_tab{overflow: hidden;margin-top: 40px;}
+.user_tab p{width: 100%;display: block;font-size: 16px;color: rgba(51,51,51,1);line-height: 30px;}
+.user_tab .small_text{color: rgba(170,170,170,1);margin-top: 6px;padding: ;font-size: 14px;width: 600px;}
+.user_tab label{width: 100%;display: block;font-size: 16px;color: rgba(51,51,51,1);line-height: 30px;margin-bottom: 3px;}
+.user_tab ul{background: #fff;overflow: hidden;border: 1px solid rgb(221, 221, 221);border-right: 0;}
+.user_tab ul li{float: left;width: 25%;height: 50px;line-height: 48px;border-right: 1px solid rgb(221, 221, 221);text-align: center;}
+.user_tab.w2 ul li{width: 50%;}
+.user_tab ul li a{font-size: 16px;color: rgba(170,170,170,1);display: block;}
+.user_tab ul li.on{border: 1px solid rgba(17,113,187,1);}
+.user_tab ul li.on a{color: rgba(17,113,187,1);}
+.user_tab ul li.on a span{padding-left: 25px;background: url('../img/user/bg_tab_on.png') no-repeat left center;background-size: 20px 20px;}
+
+.audio_box{overflow: hidden;margin-top: 40px;padding-bottom: 30px;border-bottom: 1px solid #ddd;}
+.audio_box .text{width: 100%;display: block;font-size: 16px;color: rgba(51,51,51,1);line-height: 30px;border-bottom: 1px solid #ddd;padding-bottom: 5px;}
+.audio_box .text span{font-size: 14px;color: rgba(170,170,170,1);float: right;}
+.audio_box .audio_file{position: relative;padding-bottom: 50px;}
+.audio_box .audio_file input{height: 50px;line-height: 50px;padding: 0 15px;background: rgb(242, 242, 242);border: 1px solid rgb(242, 242, 242);box-shadow: none;width: 100%;border-radius: 25px;margin-top: 10px;font-size: 16px;color: #444;}
+.audio_box .audio_file .label_file{position: absolute;right: 0;bottom: 0;height: 40px;line-height: 40px;background: rgb(17, 113, 187);color: #fff;display: block;padding: 0 20px;font-size: 16px;border-radius: 10px;}
+.audio_box .btn_check3{float: right;margin-top: 30px;font-size: 14px;color: rgba(51,51,51,1);}
+
+.sel_box .box{margin-top: 20px;position: relative;overflow: hidden;height: 62px;padding-left: 150px;}
+.sel_box .box label{position: absolute;left: 0;line-height: 50px;width: 150px;top: 10px;}
+.sel_box .box select{height: 30px;line-height: 30px;background: rgb(242, 242, 242);border: none;box-shadow: none;width: 100%;margin-top: 10px;font-size: 16px;color: #444;}
+.sel_box .user_tab{margin-top: 10px;}
+
+.join_finish{max-width: 460px;margin: 220px auto 0 auto;text-align: center;}
+.join_finish .text1{font-size: 26px;color: rgba(44,44,44,1);font-weight: 600;}
+.join_finish .text2{font-size: 16px;color: rgba(153,153,153,1);margin-top: 12px;}
+.join_finish .btn_box{overflow: hidden;margin-top: 50px;}
+.join_finish .btn_box .btn_st1{display: block;width: 100%;background: rgba(17,113,187,1);height: 50px;line-height: 50px;border-radius: 25px;text-align: center;color: #fff;font-size: 15px;margin: 0 auto;}
+
+.user_box .btn_check{overflow:hidden; position:relative;}
+.user_box .btn_check input{position:absolute; top:0; left:0; opacity:0; cursor:pointer; z-index:5; width:20px; height:20px;}
+.user_box .btn_check i {float:left; display:block; width:20px; height:20px; background:url('../img/user/bg_btn2.png') no-repeat left top; z-index:3;background-size: 20px 40px;}
+.user_box .btn_check label{float:left; margin-left:6px; cursor:pointer;font-size: 14px;color: rgb(153, 153, 153);}
+.user_box .btn_check input:checked+i {background-position:left bottom;}
+
+.user_box .btn_check2{overflow:hidden; position:relative;}
+.user_box .btn_check2 input{position:absolute; top:0; left:0; opacity:0; cursor:pointer; z-index:5; width:25px; height:25px;}
+.user_box .btn_check2 i {float:left; display:block; width:25px; height:25px; background:url('../img/user/bg_btn2.png') no-repeat left top; z-index:3;}
+.user_box .btn_check2 label{float:left; margin-left:10px; cursor:pointer;}
+.user_box .btn_check2 input:checked+i {background-position:left bottom;}
+
+.user_box .btn_check3{overflow:hidden; position:relative;}
+.user_box .btn_check3 input{position:absolute; top:0; left:0; opacity:0; cursor:pointer; z-index:5; width:20px; height:20px;}
+.user_box .btn_check3 i {float:left; display:block; width:20px; height:20px; background:url('../img/user/bg_btn2.png') no-repeat left top; background-size:20px 40px; z-index:3;}
+.user_box .btn_check3 label{float:left; margin-left:10px; cursor:pointer;}
+.user_box .btn_check3 input:checked+i {background-position:left bottom;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

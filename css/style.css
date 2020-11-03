@@ -1,0 +1,33 @@
+body {margin: 0; padding: 0; font-size: 12px;}
+div {position: relative; display: block;}
+.mo {display: none;}
+div > img {max-width: 100%;}
+div > h1 {position: absolute; z-index: -1; top: 0; left: 0; width: 0;}
+div > iframe {position: absolute; bottom: 25vw; left: 50%; transform: translateX(-50%); z-index: 100;}
+div > a {position: absolute; bottom: 17vw; width: 178px; height: 50px; left: 50%; transform: translateX(-50%); z-index: 100;}
+@media (min-width: 1700px){
+  div > iframe {width: 700px !important; bottom: 27vw; height: 280px !important;}
+}
+@media (max-width: 1600px){
+  div > iframe {width: 700px !important; bottom: 26.2vw; height: 260px !important;}
+}
+@media (max-width: 1500px){
+  div > iframe {width: 400px !important; height: 200px !important;}
+}
+@media (max-width: 1200px){
+  div > iframe {width: 320px !important; height: 160px !important;}
+}
+@media (max-width: 1200px){
+  div > iframe {width: 320px !important; height: 160px !important;}
+  div > a {height: 30px;}
+}
+@media (max-width: 900px){
+  div > iframe { width: 320px !important; height: 130px !important;}
+  div > a {width: 100px;}
+}
+  @media (max-width: 750px){
+    .pc {display: none;}
+    .mo {display: block;}
+    div > iframe {width: 80% !important; height: 230px !important; bottom: 70vw;}
+    div > a {width: 150px; height: 60px; bottom: 17vh;}
+  }

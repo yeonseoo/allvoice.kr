@@ -1,0 +1,106 @@
+09/10 13:37:53 [Thread-1] [27891] INFO : ShutDown Message Hook..
+09/10 13:37:53 [allvoice-Main] [27891] ERROR : Thread is Interrupted. 
+java.lang.InterruptedException: sleep interrupted
+	at java.lang.Thread.sleep(Native Method)
+	at com.daou.alioclient.worker.AlioWorker.doSleep(AlioWorker.java:23)
+	at com.daou.alioclient.worker.AlioMain.run(AlioMain.java:63)
+09/10 13:37:53 [Thread-1] [27891] INFO : Start Workers Shutdown ......
+09/10 13:38:03 [Thread-1] [27891] INFO : End Workers Shutdown ......
+09/10 13:38:37 [main] [13807] INFO : [INFO] BizClient Start   [SYSTEM TIME]:09/10 13:38:37
+09/10 13:38:37 [main] [13807] INFO : [INFO] args.length=1  [SYSTEM TIME]:09/10 13:38:37
+09/10 13:38:37 [main] [13807] INFO : [INFO] conf_File_name=config/uds  [SYSTEM TIME]:09/10 13:38:37
+09/10 13:38:37 [main] [13807] INFO : #### BizClient Start ####
+09/10 13:38:37 [allvoice-Main] [13807] INFO : CONFIGURATION [config/uds.confx_v2015]
+09/10 13:38:37 [allvoice-Main] [13807] INFO : # BIZ PPURIO ?���?�蹂�
+09/10 13:38:37 [allvoice-Main] [13807] INFO : UDS_IP [biz.ppurio.com]
+09/10 13:38:37 [allvoice-Main] [13807] INFO : UDS_SEND_PORT [26000]
+09/10 13:38:37 [allvoice-Main] [13807] INFO : UDS_RECV_PORT [26100]
+09/10 13:38:37 [allvoice-Main] [13807] INFO : UDS_ID [allvoice]
+09/10 13:38:37 [allvoice-Main] [13807] INFO : USE_SSL [Y]
+09/10 13:38:37 [allvoice-Main] [13807] INFO : # DMBS ?���?�蹂�
+09/10 13:38:37 [allvoice-Main] [13807] INFO : DBNAME [MYSQL]
+09/10 13:38:37 [allvoice-Main] [13807] INFO : DBURL [jdbc:mysql://localhost:3306/newbird_allvoice2]
+09/10 13:38:37 [allvoice-Main] [13807] INFO : DBUSER [newbird_allvoice2]
+09/10 13:38:37 [allvoice-Main] [13807] INFO : MSG_TABLE [BIZ_MSG]
+09/10 13:38:37 [allvoice-Main] [13807] INFO : BACKUP_TABLE [BIZ_LOG]
+09/10 13:38:37 [allvoice-Main] [13807] INFO : # ?���?�由� ?�蹂�
+09/10 13:38:37 [allvoice-Main] [13807] INFO : LOG_PATH [./log]
+09/10 13:38:37 [allvoice-Main] [13807] INFO : FILE_PATH [./spool]
+09/10 13:38:37 [allvoice-Main] [13807] INFO : BLK_PATH [./blk]
+09/10 13:38:37 [allvoice-Main] [13807] INFO : REP_PATH [./rep]
+09/10 13:38:37 [allvoice-Main] [13807] INFO : # WORKER ?ㅽ�� ?�蹂�
+09/10 13:38:37 [allvoice-Main] [13807] INFO : DO_FETCH_PROCESS [Y]
+09/10 13:38:37 [allvoice-Main] [13807] INFO : DO_SEND_PROCESS [Y]
+09/10 13:38:37 [allvoice-Main] [13807] INFO : DO_RECV_PROCESS [Y]
+09/10 13:38:37 [allvoice-Main] [13807] INFO : DO_BACKUP_PROCESS [Y]
+09/10 13:38:37 [allvoice-Main] [13807] INFO : DO_REORDER_PROCESS [N]
+09/10 13:38:37 [allvoice-Main] [13807] INFO : DO_BATCH_PROCESS [Y]
+09/10 13:38:37 [allvoice-Main] [13807] INFO : FETCH_SLEEP_SECONDS [1]
+09/10 13:38:37 [allvoice-Main] [13807] INFO : SEND_SLEEP_SECONDS [1]
+09/10 13:38:37 [allvoice-Main] [13807] INFO : RECV_SLEEP_SECONDS [1]
+09/10 13:38:37 [allvoice-Main] [13807] INFO : REPORT_SLEEP_SECONDS [1]
+09/10 13:38:37 [allvoice-Main] [13807] INFO : BACKUP_SLEEP_SECONDS [120]
+09/10 13:38:37 [allvoice-Main] [13807] INFO : REORDER_SLEEP_SECONDS [1]
+09/10 13:38:37 [allvoice-Main] [13807] INFO : BATCH_SLEEP_SECONDS [300]
+09/10 13:38:37 [allvoice-Main] [13807] INFO : FETCH_COUNT [100]
+09/10 13:38:37 [allvoice-Main] [13807] INFO : SEND_THREAD_COUNT [1]
+09/10 13:38:37 [allvoice-Main] [13807] INFO : REPORT_THREAD_COUNT [1]
+09/10 13:38:37 [allvoice-Main] [13807] INFO : REPORT_QUEUE_SIZE [100]
+09/10 13:38:37 [allvoice-Main] [13807] INFO : BACKUP_OPTION [Y]
+09/10 13:38:37 [allvoice-Main] [13807] INFO : BACKUP_COUNT [1000]
+09/10 13:38:37 [allvoice-Main] [13807] INFO : # 遺�媛�湲곕��
+09/10 13:38:37 [allvoice-Main] [13807] INFO : BLOCK_OPTION [N]
+09/10 13:38:37 [allvoice-Main] [13807] INFO : BLOCK_OF_SEND_TIME []
+09/10 13:38:37 [allvoice-Main] [13807] INFO : BLOCK_MONTH []
+09/10 13:38:37 [allvoice-Main] [13807] INFO : BLOCK_DATE []
+09/10 13:38:37 [allvoice-Main] [13807] INFO : BLOCK_TIME_SUNDAY []
+09/10 13:38:37 [allvoice-Main] [13807] INFO : BLOCK_TIME_MONDAY []
+09/10 13:38:37 [allvoice-Main] [13807] INFO : BLOCK_TIME_TUESDAY []
+09/10 13:38:37 [allvoice-Main] [13807] INFO : BLOCK_TIME_WEDNESDAY []
+09/10 13:38:37 [allvoice-Main] [13807] INFO : BLOCK_TIME_THURSDAY []
+09/10 13:38:37 [allvoice-Main] [13807] INFO : BLOCK_TIME_FRIDAY []
+09/10 13:38:37 [allvoice-Main] [13807] INFO : BLOCK_TIME_SATURDAY []
+09/10 13:38:37 [allvoice-Main] [13807] INFO : APPOINTMENT_ON_CLIENT [Y]
+09/10 13:38:37 [allvoice-Main] [13807] INFO : FILE_DELETE_OPTION [N]
+09/10 13:38:37 [allvoice-Main] [13807] INFO : REPORT_RECONFIRM_OPTION [N]
+09/10 13:38:37 [allvoice-Main] [13807] INFO : DIST_PROC_OPTION [N]
+09/10 13:38:37 [allvoice-Main] [13807] INFO : DIST_VALUE [0]
+09/10 13:38:37 [allvoice-Main] [13807] INFO : LOG_DELETE_OPTION [N]
+09/10 13:38:37 [allvoice-Main] [13807] INFO : LOG_DELETE_DAY [30]
+09/10 13:38:37 [allvoice-Main] [13807] INFO : USE_DUMMY_MON [N]
+09/10 13:38:37 [allvoice-Main] [13807] INFO : USE_DUMMY_MON_DEVICE [0]
+09/10 13:38:37 [allvoice-Main] [13807] INFO : DUMMY_MON_CMID_FORMAT [D_MON]
+09/10 13:38:37 [allvoice-Main] [13807] INFO : DUMMY_MON_SUBJECT [D_MON]
+09/10 13:38:37 [allvoice-Main] [13807] INFO : DUMMY_MON_MSG_APPEND []
+09/10 13:38:37 [allvoice-Main] [13807] INFO : DUMMY_MON_TARGET_NUM [0700000000]
+09/10 13:38:37 [allvoice-Main] [13807] INFO : DUMMY_MON_CALLBACK_NUM [0700000000]
+09/10 13:38:37 [allvoice-Main] [13807] INFO : DUMMY_MON_INTERVAL [240]
+09/10 13:38:37 [allvoice-Main] [13807] INFO : MONITOR_SLEEP_SECONDS [10]
+09/10 13:38:37 [allvoice-Main] [13807] INFO : BLACKLIST_USE [N]
+09/10 13:38:37 [allvoice-Main] [13807] INFO : USE_BACKUP_PERSONAL_DATA_PROCESSING [N]
+09/10 13:38:37 [allvoice-Main] [13807] INFO : USE_ORACLE_PREPARED_STATEMENT [N]
+09/10 13:38:37 [allvoice-Main] [13807] INFO : USE_DATEFORMAT_STRING [N]
+09/10 13:38:37 [allvoice-Main] [13807] INFO : DATE_FORMAT [yyyy-MM-dd HH:mm:ss]
+09/10 13:38:37 [allvoice-Main] [13807] INFO : CURRENT_TIME_FUNCTION [NOW()]
+09/10 13:38:37 [allvoice-Main] [13807] INFO : # DBMS 복호화기능 관련
+09/10 13:38:37 [allvoice-Main] [13807] INFO : DB_DATA_DECRYPTION [N]
+09/10 13:38:37 [allvoice-Main] [13807] INFO : DB_DATA_DECRYPTION_FIELDS [MSG_BODY, RE_BODY]
+09/10 13:38:37 [allvoice-Main] [13807] INFO : USE_DECRYPTION_SEPARATION_FIELD [N]
+09/10 13:38:37 [allvoice-Main] [13807] INFO : DECRYPTION_SEPARATION_FIELD [USE_DECRYPT]
+09/10 13:38:37 [allvoice-Main] [13807] INFO : DB_DATA_DECRYPTION_FUNCTION []
+09/10 13:38:37 [allvoice-Main] [13807] INFO : USE_RESULT_CODE_MAPPING [N]
+09/10 13:38:37 [allvoice-Main] [13807] INFO : RESULT_CODE_MAPPING_FILE_PATH [./config/result/result.conf]
+09/10 13:38:37 [allvoice-Main] [13807] INFO : UPDATE_SENDTIME_FIELD []
+09/10 13:38:37 [allvoice-Main] [13807] INFO : FILE_HANDLING_MODE [0]
+09/10 13:38:37 [allvoice-Main] [13807] INFO : MESSAGE_SUPPORT_TYPE [ALL]
+09/10 13:38:37 [allvoice-Main] [13807] INFO : Access To The File Path. PATH [./spool]
+09/10 13:38:37 [allvoice-Main] [13807] INFO : Access To The Using File Path. PATH [./spool/using]
+09/10 13:38:37 [allvoice-Main] [13807] INFO : Access To The Blacklist Path. PATH [./blk]
+09/10 13:38:37 [allvoice-Main] [13807] INFO : Access To The Report File Path. PATH [./rep]
+09/10 13:38:37 [allvoice-Main] [13807] INFO : Supported Message Type : ALL
+09/10 13:38:37 [allvoice-Main] [13807] INFO : BizSend[0] (allvoice-Send-0) Starting ...
+09/10 13:38:37 [allvoice-Main] [13807] INFO : BizFetch (allvoice-Fetch) Starting ...
+09/10 13:38:37 [allvoice-Main] [13807] INFO : BizRecv (allvoice-Recv) Starting ...
+09/10 13:38:37 [allvoice-Main] [13807] INFO : BizReport[0] (allvoice-Report-0) Starting ...
+09/10 13:38:37 [allvoice-Main] [13807] INFO : BizBackup (allvoice-Backup) Starting ...
+09/10 13:38:37 [allvoice-Main] [13807] INFO : BizBatch (allvoice-Batch) Starting ...

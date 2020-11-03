@@ -1,0 +1,153 @@
+@charset "utf-8";
+/* WSU 202005 */
+@import url(https://fonts.googleapis.com/earlyaccess/notosanskr.css);
+
+/*
+*, *::after, *::before {
+  box-sizing: border-box;
+}
+
+ */
+
+
+/* 요소(element) 여백 초기화  */
+
+/*
+html,body,div,h1,h2,h3,h4,h5,h6,p,span,ul,ol,dl,dt,dd,form{margin:0; padding:0;}
+body{font-family: 'Noto Sans KR', sans-serif;}
+
+ */
+
+/*
+a, a:link {color:#333; text-decoration: none;}
+a:visited {color:#333; }
+a:hover, a:active, a:focus {color:#333; text-decoration:none; }
+
+ */
+
+/*
+img {border:0; vertical-align:top;}
+ */
+.hidden{display:none;}
+
+/* 목록 */
+/*
+ol, ul {list-style:none;}
+
+/* 테두리 없애기 */
+/*
+fieldset, img, abbr, acronym { border:none; margin:0; padding:0;} 
+
+/* 테이블 - 마크업에 'cellspacing="0"' 지정 함께 필요 */
+/*
+table { border-collapse:collapse; border-spacing:0;}
+*/
+
+
+/* 메시지 */
+#message_m_wrap{position:relative; overflow:hidden; background:#fff; padding:0;}
+.message_m_box{position:relative; overflow:hidden; width:100%; margin:0 auto;}
+.message_m_box .top_area{position:relative;   overflow:hidden;padding: 20px 15px 30px 15px;}
+.message_m_box .top_area .title{font-size:28px; color:#000; overflow: hidden;}
+.message_m_box .top_area .text1{ font-size:13px; color:#000;overflow: hidden;display: block;line-height: 22px;letter-spacing: -0.5px;}
+.message_m_box .top_area .text1 a{margin-left:0;float: right;height: 22px;}
+.message_m_box .top_area .text1 a img{height:100%;}
+.message_m_box .popup_message{position:relative; top:10px; left:0; right:0; width:97%;  line-height:20px; font-size:12px; color:#444; border-radius:10px; background:rgba(255,255,255,0.9); box-shadow:1px 1px 3px rgba(0,0,0,0.2); overflow:hidden;margin: 0 auto;text-align: center;transition: all 0.5s ease;opacity: 0;visibility: hidden;padding: 10px;}
+.message_m_box .popup_message.on{opacity:1;  visibility: inherit;}
+.message_m_box .body_area{position:relative;  border-top:2px solid #4e9bbc;    overflow:hidden;}
+.message_m_box .body_area .chat_list{position:relative; overflow:hidden;width: 100%;}
+.message_m_box .body_area .chat_list ul li{overflow:hidden;}
+.message_m_box .body_area .chat_list ul li a{display:block;}
+.message_m_box .body_area .chat_list ul li a div{position:relative; width:100%; height:100px; padding:18px 20px 0 95px; border-bottom:1px solid #ddd; overflow:hidden; transition:all 0.5s ease;}
+.message_m_box .body_area .chat_list ul li a div:hover, .mesage_m_box .body_area .chat_list ul li.on a div{background:#f1f1f1;}
+.message_m_box .body_area .chat_list ul li.active a div{background:#f1f1f1;}
+.message_m_box .body_area .chat_list ul li a div .profile{position:absolute; top:20px; left:15px; width:60px; height:60px; border-radius:30px; overflow:hidden;}
+.message_m_box .body_area .chat_list ul li a div .profile img{width:100%;}
+.message_m_box .body_area .chat_list ul li a div .new{position:absolute; top:40px; left:65px;width: 22px;}
+.message_m_box .body_area .chat_list ul li a div .new img{width:100%;}
+.message_m_box .body_area .chat_list ul li a div .name{font-size:15px; font-weight:400; color:#222;}
+.message_m_box .body_area .chat_list ul li a div .name span{font-size:13px; color:#888; margin-left:7px; font-weight:300;}
+.message_m_box .body_area .chat_list ul li a div .chat{font-size:13px; color:#888; line-height:20px; font-weight:400; overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 2; /* 라인수 */ -webkit-box-orient: vertical; word-wrap:break-word; height: 40px;margin-top: 1px;}
+.message_m_box .body_area .view_box{position:relative;  overflow:hidden;}
+.message_m_box .body_area .view_box .user_info{position:relative; height:60px; line-height:58px; padding:0; border-bottom:1px solid #ccc; overflow:hidden;}
+.message_m_box .body_area .view_box img {border:0; vertical-align:top;}
+.message_m_box .body_area .view_box .user_info .btn_prev{position: absolute;left: 15px;top: 22px;height: 16px;}
+.message_m_box .body_area .view_box .user_info .btn_prev img{height: 100%;}
+.message_m_box .body_area .view_box .user_info .name{ font-size:17px; color:#333; font-weight:400;text-align: center;}
+.message_m_box .body_area .view_box .user_info .favorite{position:absolute; top:21px; right:15px;  overflow:hidden; background:url(../img/mobile/inbox/icon_star_null.png) no-repeat;height: 17px;background-size: auto 17px !important;width: 18px;}
+.message_m_box .body_area .view_box .user_info .favorite.on{background:url(../img/mobile/inbox/icon_star.png) no-repeat;}
+.message_m_box .body_area .view_box .chat_box{position:relative; overflow:hidden;}
+.message_m_box .body_area .view_box .chat_box .chat_area{position:relative; padding:20px 0; overflow:hidden;}
+.message_m_box .body_area .view_box .chat_box .chat_area .opponent_chat{position:relative; padding-left:20px; overflow:hidden;}
+.message_m_box .body_area .view_box .chat_box .chat_area .opponent_chat .profile{position:absolute; top:2px; left:29px; width:60px; height:60px; border-radius:30px; overflow:hidden;}
+.message_m_box .body_area .view_box .chat_box .chat_area .opponent_chat .profile img{width:100%;}
+.message_m_box .body_area .view_box .chat_box .chat_area .opponent_chat .chat{position:relative; }
+.message_m_box .body_area .view_box .chat_box .chat_area .opponent_chat .chat .name{font-size:12px; color:#333; margin-bottom:5px; font-weight:400;}
+.message_m_box .body_area .view_box .chat_box .chat_area .opponent_chat .chat .box{position:relative; padding:8px 10px; margin:0 87px 25px 0; background:#f8f8f8; border:1px solid #e3e3e3; border-radius:3px;max-width: 70%;}
+.message_m_box .body_area .view_box .chat_box .chat_area .opponent_chat .chat .box .arrow{position:absolute; top:5px; left:-9px; width:9px; height:10px; background:url(../img/mobile/inbox/bg_chat1.gif) no-repeat;}
+.message_m_box .body_area .view_box .chat_box .chat_area .opponent_chat .chat .box p{font-size:14px; color:#333; font-weight:300; line-height:20px;}
+.message_m_box .body_area .view_box .chat_box .chat_area .opponent_chat .chat .date{position:absolute; bottom:2px; right:-72px; font-size:10px; color:#999;}
+.message_m_box .body_area .view_box .chat_box .chat_area .opponent_chat .chat .file{position:relative; padding:8px 10px; margin:0 87px 30px 0; background:url(../img/mobile/inbox/img_file.png) no-repeat 20px 20px #f8f8f8; border:1px solid #e3e3e3; border-radius:3px;max-width: 70%;}
+.message_m_box .body_area .view_box .chat_box .chat_area .opponent_chat .chat .file a{display:block;}
+.message_m_box .body_area .view_box .chat_box .chat_area .opponent_chat .chat .file .arrow{position:absolute; top:5px; left:-9px; width:9px; height:10px; background:url(../img/mobile/inbox/bg_chat1.gif) no-repeat;}
+.message_m_box .body_area .view_box .chat_box .chat_area .opponent_chat .chat .file .text1{font-size:14px; color:#333; line-height:20px; font-weight:400; width:100%; white-space:nowrap; text-overflow:ellipsis; overflow:hidden;}
+.message_m_box .body_area .view_box .chat_box .chat_area .opponent_chat .chat .file .text2{font-size:11px; color:#999; font-weight:300;margin-top: 0px;height: 18px;overflow: hidden;line-height: 18px;}
+.message_m_box .body_area .view_box .chat_box .chat_area .opponent_chat .chat .file .text2 span{color:#999; margin:0 5px;font-size: 18px;font-weight: 100;}
+.message_m_box .body_area .view_box .chat_box .chat_area .opponent_chat .chat .file .text2 a{font-size:15px; color:#666; text-decoration:none;border-left: 1px solid #999;margin-left: 10px;padding-left: 10px;overflow: hidden;}
+.message_m_box .body_area .view_box .chat_box .chat_area .opponent_chat .chat .file .date{position:absolute; bottom:2px; right:-72px; font-size:10px; color:#999;}
+.message_m_box .body_area .view_box .chat_box .chat_area .my_chat{position:relative; padding-right:20px; overflow:hidden;}
+.message_m_box .body_area .view_box .chat_box .chat_area .my_chat .chat{position:relative; }
+.message_m_box .body_area .view_box .chat_box .chat_area .my_chat .chat .box{position:relative; float:right; padding:8px 10px; margin:0 0 25px 87px; background:#4e9bbc; border-radius:3px;max-width: 70%;}
+.message_m_box .body_area .view_box .chat_box .chat_area .my_chat .chat .box .arrow{position:absolute; top:5px; right:-9px; width:10px; height:10px; background:url(../img/mobile/inbox/bg_chat2.gif) no-repeat;}
+.message_m_box .body_area .view_box .chat_box .chat_area .my_chat .chat .box p{font-size:14px; color:#fff; font-weight:300; line-height:20px;}
+.message_m_box .body_area .view_box .chat_box .chat_area .my_chat .chat .box .date{position:absolute; bottom:2px; left:-70px; font-size:10px; color:#999;}
+.message_m_box .body_area .view_box .chat_box .chat_area .my_chat .chat .file{position:relative; padding:8px 10px; margin:0 0 30px 87px; background:url(../img/mobile/inbox/img_file.png) no-repeat 20px 20px #4e9bbc;  border-radius:3px;max-width: 70%;float: right;}
+.message_m_box .body_area .view_box .chat_box .chat_area .my_chat .chat .file a{display:block;}
+.message_m_box .body_area .view_box .chat_box .chat_area .my_chat .chat .file .arrow{position:absolute; top:5px; right:-9px; width:9px; height:10px; background:url(../img/mobile/inbox/bg_chat2.gif) no-repeat;}
+.message_m_box .body_area .view_box .chat_box .chat_area .my_chat .chat .file .text1{font-size:14px; color:#fff; line-height:20px; font-weight:400; width:100%; white-space:nowrap; text-overflow:ellipsis; overflow:hidden;}
+.message_m_box .body_area .view_box .chat_box .chat_area .my_chat .chat .file .text2{font-size:11px; color:#fff; font-weight:300;margin-top: 0px;height: 18px;overflow: hidden;line-height: 18px;}
+.message_m_box .body_area .view_box .chat_box .chat_area .my_chat .chat .file .text2 span{color:#999; margin:0 5px;font-size: 18px;font-weight: 100;}
+.message_m_box .body_area .view_box .chat_box .chat_area .my_chat .chat .file .text2 a{font-size:15px; color:#666; text-decoration:none;border-left: 1px solid #999;margin-left: 10px;padding-left: 10px;overflow: hidden;}
+.message_m_box .body_area .view_box .chat_box .chat_area .my_chat .chat .file .date{position:absolute; bottom:2px; left:-72px; font-size:10px; color:#999;}
+.message_m_box .body_area .view_box .chat_box .chat_area .payment_box{position:relative; border-top:1px solid #e3e3e3; padding:0; border-bottom:1px solid #e3e3e3; margin:25px 20px; overflow:hidden;text-align: center;}
+.message_m_box .body_area .view_box .chat_box .chat_area .payment_box .text1{ font-size:14px; color:#333; font-weight:400;margin: 20px 0 15px 0;}
+.message_m_box .body_area .view_box .chat_box .chat_area .payment_box .tb_message{margin:30px 0;}
+.message_m_box .write_wrap{position:relative; overflow:hidden;}
+.message_m_box .write_wrap .write_box{position:relative; height:54px; line-height:34px; padding:8px 77px 8px 53px; border-top:1px solid #e3e3e3; border-bottom:1px solid #e3e3e3;}
+.message_m_box .write_wrap .write_box .btn_more{position:absolute; left:15px; top:13px; width:28px; height:28px; background:url(../img/mobile/inbox/icon_+.png) no-repeat center; background-size:28px 28px;}
+.message_m_box .write_wrap .write_box .btn_more.on{background:url(../img/mobile/inbox/icon_-.png) no-repeat center; background-size:28px 28px;}
+.message_m_box .write_wrap .write_box .btn_send{position:absolute; right:15px; top:8px; height:36px;}
+.message_m_box .write_wrap .write_box .btn_send img{height:100%;}
+/*
+.message_m_box .write_wrap .write_box textarea{height:34px; padding:0 10px; border:1px solid #e3e3e3; background:#f8f8f8; border-radius:14px; resize: none;width: 100%;line-height: 32px;}
+ */
+.message_m_box .write_wrap .write_box textarea{word-break:break-all; height:34px; overflow-y:hidden; border:1px solid #e3e3e3; background:#f8f8f8; border-radius:14px; resize: none;width: 100%;line-height: 200%; font-size:14px}
+.message_m_box .write_wrap .btn_box{display:none; padding:20px 15px; overflow:hidden;}
+.message_m_box .write_wrap .btn_box.on{display:block;}
+.message_m_box .write_wrap .btn_box a{float:left; width:33.33%; overflow:hidden; font-size:12px; text-align:center;}
+.message_m_box .write_wrap .btn_box a img{display:block; width:58px; margin:0 auto 8px auto;}
+.tb_m_message{width:100%; border-collapse:collapse; border-top:1px solid #e3e3e3; border-left:1px solid #e3e3e3; border-radius:3px;/*! overflow: hidden; */}
+.tb_m_message caption span{position:absolute; top:-9999px; overflow:hidden; height:0px; width:0px; }
+.tb_m_message thead th{padding:5px 5px; font-size:12px; color:#888; text-align:center; background:#f8f8f8; border-right:1px solid #e3e3e3; border-bottom:1px solid #e3e3e3; font-weight:400;}
+.tb_m_message tbody td{position:relative; padding:5px 5px; font-size:13px; border-right:1px solid #e3e3e3; border-bottom:1px solid #e3e3e3; color:#222; text-align:left; font-weight:300;}
+.tb_m_message tbody td.total{text-align:right; color:#ff4a5d; font-weight:500;padding-right: 10px;padding: 8px 10px;}
+.tb_m_message tbody .ta_c{text-align:center;}
+.tb_m_message tbody td input{border:0; background:#fff; font-size:12px; color:#222;height: 20px;line-height: 20px;width: 100%;}
+.tb_m_message tbody td input.money{padding-left:16px;}
+.tb_m_message tbody td select{border:0; background:#fff; font-size:12px; color:#222;height: 20px;line-height: 20px;}
+.tb_m_message tbody td span{position:absolute; left:5px; top:4px; line-height:20px;}
+.payment_box .btn2{text-align:center;overflow: hidden;padding: 25px 0;}
+.payment_box .btn2 img{height: 40px;}
+.payment_box .btn_add{display:block; text-align: center;}
+.payment_box .btn_add img{margin: 0 auto;padding: 15px 0;width: 130px;}
+.message_m_popup_wrap{position:fixed; top:0; bottom:0; left:0; right:0; background:rgba(0,0,0,0.3); z-index: 9; display:none;height: 100%;width: 100%;}
+.message_m_popup_wrap.on{display:table;}
+.message_m_popup_wrap .popup_box{width:100%;   vertical-align: middle;display: table-cell;}
+.message_m_popup_wrap .popup_box .text2{margin:20px 0 25px 0; font-size:12px; font-weight:300;;color: #444;}
+.message_m_popup_wrap .popup_box .text2 img{height:12px; margin-top:3px;}
+.message_m_popup_wrap .popup_box .payment_box{position:relative; padding:25px 15px 0 15px; overflow:hidden;text-align: center;background: #fff;overflow-y: auto;max-height: 600px;max-width: 768px;margin: 0 auto;}
+.message_m_popup_wrap .popup_box .payment_box .popup_close{float:right; margin-top:1px; margin-right: 1px; font-size:21px}
+.message_m_popup_wrap .popup_box .payment_box .text1{ font-size:20px; color:#333; font-weight:400;margin-bottom: 30px;}
+.message_m_popup_wrap .popup_box .payment_box .tb_message{margin:30px 0;}
+.message_m_popup_wrap .popup_box .btn3{text-align:center;overflow: hidden;margin-bottom: 30px;}
+.message_m_popup_wrap .popup_box .btn3 img{height: 40px;}

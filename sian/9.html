@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=7" />
+    <meta name="Generator" content="EditPlus®">
+    <meta name="Keywords" content="newbird design">
+    <meta name="Description" content="newbird design">
+    <link rel="stylesheet" href="/css/pub_base.css" />
+    <link rel="stylesheet" href="/css/pub_sian.css" />
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <title>NEWBIRD</title>
+    <style>
+        .sian_container1 {
+            background: url(bg1.gif) repeat-x 0 0;
+            
+        }
+
+        .sian_container2 {
+            background: url(bg2.gif) repeat-x 0 0;
+        
+        }
+    </style>
+    <script>
+    // fade in #back-top
+$(function () {
+    var lastScrollTop = 0,
+        delta = 15;
+    
+    $(window).scroll(function () {
+        var st = $(this).scrollTop();
+        if (Math.abs(lastScrollTop - st) <= delta) return;
+        if ((st > lastScrollTop) && (lastScrollTop > 0)) {
+            $('.title').fadeOut();
+        } else {
+            $('.title').show();
+        }
+        lastScrollTop = st;
+    });
+     });
+</script>
+</head>
+
+<body oncontextmenu='return false' ondragstart='return false' onselectstart='return false'>
+
+    <div class="sian_container"><a href="../sian/9-1.html"><img src="/sian/main_v9_1.jpg"border="0" width="100%"></a></div>.
+
+    <!--화면에넘어가는 원본 크기 페이지 이미지-->
+</body>
+
+</html>

@@ -1,0 +1,20 @@
+{
+ "button": [
+ {
+ "name": "메세지 확인하기",
+ "type": "WL",
+ "url_pc": "https://allvoice.kr/inbox/inbox_room_list.php",
+ "url_mobile": "https://allvoice.kr/shop/inboxMessage.php"
+ },
+ {
+ "name": "메세지 확인하기",
+ "type": "MD"
+ },
+ {
+ "name": "메세지 확인하기",
+ "type": "AL",
+ "scheme_android": "daumapps://open",
+ "scheme_ios": "daumapps://open"
+ }
+ ]
+}

@@ -1,0 +1,16 @@
+09/05 02:01:26 [allvoice-Batch] [27891] INFO : Enable Create Backup Table. DayOfMonth [5] LastDayOfMonth [30]
+09/05 02:06:26 [allvoice-Batch] [27891] INFO : Enable Create Backup Table. DayOfMonth [5] LastDayOfMonth [30]
+09/05 02:11:26 [allvoice-Batch] [27891] INFO : Enable Create Backup Table. DayOfMonth [5] LastDayOfMonth [30]
+09/05 02:16:26 [allvoice-Batch] [27891] INFO : Enable Create Backup Table. DayOfMonth [5] LastDayOfMonth [30]
+09/05 02:21:26 [allvoice-Batch] [27891] INFO : Enable Create Backup Table. DayOfMonth [5] LastDayOfMonth [30]
+09/05 02:26:26 [allvoice-Batch] [27891] INFO : Enable Create Backup Table. DayOfMonth [5] LastDayOfMonth [30]
+09/05 02:31:26 [allvoice-Batch] [27891] INFO : Enable Create Backup Table. DayOfMonth [5] LastDayOfMonth [30]
+09/05 02:36:26 [allvoice-Batch] [27891] INFO : Enable Create Backup Table. DayOfMonth [5] LastDayOfMonth [30]
+09/05 02:41:26 [allvoice-Batch] [27891] INFO : Enable Create Backup Table. DayOfMonth [5] LastDayOfMonth [30]
+09/05 02:46:26 [allvoice-Batch] [27891] INFO : Enable Create Backup Table. DayOfMonth [5] LastDayOfMonth [30]
+09/05 02:51:26 [allvoice-Batch] [27891] INFO : Enable Create Backup Table. DayOfMonth [5] LastDayOfMonth [30]
+09/05 02:56:26 [allvoice-Batch] [27891] INFO : Enable Create Backup Table. DayOfMonth [5] LastDayOfMonth [30]
+09/05 03:01:26 [allvoice-Batch] [27891] INFO : Enable Delete Attachments.
+09/05 03:01:26 [allvoice-Batch] [27891] INFO : Delete a Attachement. FILE [kakao_button.json]
+09/05 03:01:26 [allvoice-Batch] [27891] INFO : Delete a Using-File. FILE [kakao_button.json.20190904]
+09/05 04:01:26 [allvoice-Batch] [27891] INFO : Disable Delete Attachments.

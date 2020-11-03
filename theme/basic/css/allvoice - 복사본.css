@@ -1,0 +1,1530 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
+
+/*초기화 시작*/
+html,
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%
+}
+
+.allWrap p,
+.allWrap dd,
+.allWrap h1,
+.allWrap h2,
+.allWrap h3,
+.allWrap h4 {
+    padding: 0;
+    margin: 0
+}
+
+.allWrap a {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.allWrap a:focus,
+.allWrap button:focus {
+    outline: none
+}
+
+.allWrap * {
+    box-sizing: border-box;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+.allWrap button {
+    border-width: inherit;
+    border-color: transparent;
+    line-height: 1.5px;
+    background-color: transparent;
+    cursor: pointer
+}
+
+.allWrap li,
+.allWrap ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    float: left
+}
+.imgSvg{
+  opacity: .4;
+    width: 25px
+}
+
+/*초기화 끝*/
+
+body.base{
+    padding-top: 0px;
+    background-color: #fff
+}
+
+.allWrap h2 {
+    font-size: 1.3rem
+}
+
+.blueBox {
+    position: relative;
+    width: 100%;
+    height: 250px;
+    z-index: -1
+}
+
+.blueBox span {
+    display: block;
+    background-color: #1171bb;
+    top: 0;
+    width: 100%;
+    height: 100%
+}
+
+
+.mainWrap {
+    padding: 15px;
+    float: left;
+    width: 100%;
+    padding-top: 0px
+}
+
+.mainWrap {
+    background: url(../images/blueBg.jpg) repeat-x;
+}
+
+.mainHd {
+    padding: 15px 0px;
+    background-color: #1171bb;
+    padding: 25px;
+    color: #fff
+}
+
+.mainHd .right {
+    float: right
+}
+
+.mainHd .right a {
+    margin: 0px 10px;
+    display: inline-block
+}
+
+.findVoice,
+.todayVoice,
+.goJoin {
+    background-color: #fff;
+    margin-bottom: 30px;
+
+}
+
+.findVoice {
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    -moz-box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.161);
+    -webkit-box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.161);
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.161);
+    padding: 25px
+}
+.findVoice a{
+    margin: 15px 0px
+}
+.left,
+.right {
+    display: inline-block;
+    vertical-align: middle
+}
+
+.fvBox {
+    height: 75px;
+    position: relative
+}
+
+.fvBox::after {
+    content: "〉";
+    position: absolute;
+    right: 10px;
+    top: 33%;
+    font-weight: 900;
+    transition: 1s
+}
+
+
+.fvBox .left {
+    margin: 10px
+}
+
+.fvBox .right .tit {
+    font-weight: 700;
+    font-size: 1.1rem
+}
+
+p.txt {
+    font-size: 0.8rem;
+    color: #9a9a9a
+}
+
+.findVoice h4 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin: 0px 0px 15px 0px
+}
+
+.gojoin,
+.step2 {
+    text-align: center;
+    padding: 15px;
+    padding-bottom: 0px;
+    padding-top: 10px
+}
+
+.easyjoin,
+.easylogin {
+    text-align: center;
+    padding: 0px;
+    padding-bottom: 0px;
+    padding-top: 10px
+}
+
+.easyjoin {
+    border-top: 1px solid #999;
+    padding-top: 50px;
+    clear: both;
+    margin: 50px 0px;
+}
+
+.easylogin,
+.step2 {
+    padding-top: 30px;
+    clear: both;
+    margin: 50px 0px;
+}
+
+
+
+.allWrap button.bigBtn {
+    background-color: #1171bb;
+    color: #fff;
+    width: 90%;
+    height: 50px;
+    text-align: center;
+    -moz-border-radius: 30px;
+    -webkit-border-radius: 30px;
+    border-radius: 30px;
+    max-width: 300px;
+    font-size: 1rem
+}
+
+.allWrap button.normal {
+    background-color: #1171bb;
+    color: #fff;
+    width: 70%;
+    height: 30px;
+    text-align: center;
+    -moz-border-radius: 30px;
+    -webkit-border-radius: 30px;
+    border-radius: 30px;
+    max-width: 300px;
+}
+
+.mt_10 {
+    margin-top: 10px !important
+}
+
+.mt_20 {
+    margin-top: 20px !important
+}
+
+.mt_50 {
+    margin-top: 50px !important
+}
+
+.mt_100 {
+    margin-top: 100px !important
+}
+
+.mb_20 {
+    margin-bottom: 20px !important;
+}
+
+.mb_50 {
+    margin-bottom: 50px !important;
+}
+
+.mb_40 {
+    margin-bottom: 40px !important;
+}
+
+.mb_100 {
+    margin-bottom: 100px !important;
+}
+
+.pt_20 {
+    padding-top: 20px !important;
+}
+
+.social {
+    margin-top: 30px;
+    transition: 1s;
+    position: relative
+}
+
+button.circle {
+    /* width: 50px;
+    height: 50px;*/
+    text-align: center;
+    display: inline-block;
+    /*  -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    line-height: 58px;*/
+    margin: 0 5px
+}
+
+/*.social .circle.twit {
+    background: rgba(88, 174, 231, 1)
+}
+
+.social .circle.youtu {
+    background: rgba(255, 0, 0, 1)
+}
+
+.social .circle.insta {
+    background: #feca52;
+    background: -moz-linear-gradient(45deg, #feca52 15%, #d6296f 50%, #7b3dc2 100%);
+    background: -webkit-linear-gradient(45deg, #feca52 15%, #d6296f 50%, #7b3dc2 100%);
+    background: linear-gradient(45deg, #feca52 15%, #d6296f 50%, #7b3dc2 100%);
+
+}*/
+
+/*오늘올라온오디션*/
+/*슬라이드*/
+.slider {
+    width: 100%;
+    margin: 20px auto;
+}
+
+.slick-slide {
+    margin: 0px 10px;
+}
+
+.slick-slide img {
+    width: 100%;
+}
+
+.slick-prev:before,
+.slick-next:before {
+    color: black;
+}
+
+
+.slick-slide {
+    transition: all ease-in-out .3s;
+    opacity: 1;
+}
+
+.slick-active {
+    opacity: 1;
+}
+
+.slick-current {
+    opacity: 1;
+}
+
+.todayOdi {
+    clear: both
+}
+
+.odiTit {
+    padding: 0px 10px
+}
+
+.todayOdi .odiTit h4 {
+    font-size: 1.3rem
+}
+
+.todayOdi .odiTit h4 .goOdi {
+    float: right;
+    font-size: 0.8rem;
+    color: #999;
+        margin-top: 6px;
+}
+
+
+.todayBox {
+    width: 250px;
+    height: 190px;
+    background-color: gray;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    padding: 20px;
+    color: #fff;
+    position: relative;
+    -moz-box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.161);
+    -webkit-box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.161);
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.161);
+    font-size: .9rem
+}
+
+.todayBox.blue {
+    background-color: #1270b8
+}
+
+.todayBox.orenge {
+    background-color: #ff825c
+}
+
+.todayBox .keyword {
+    padding: 5px 15px;
+    background: rgba(255, 255, 255, 0.3);
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 20px;
+    min-width: 50px;
+    font-size: .8rem
+}
+
+.todayBox .priceBar {
+    background-color: #fff;
+    color: #000;
+    -moz-border-radius: 0px 0px 10px 10px;
+    -webkit-border-radius: 0px 0px 10px 10px;
+    border-radius: 0px 0px 10px 10px;
+    width: 100%;
+    height: 40px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 7px 15px;
+}
+
+.todayBox .priceBar .dateymd {
+    font-size: .7rem;
+    color: #999
+}
+
+.todayBox .priceBar .price {
+    float: right;
+    font-size: 1.1rem
+}
+
+.foot {
+    padding-bottom: 70px;
+    background-color: #f5f5f5;
+    margin-top: 30px;
+    float: left;
+    width: 100%;
+}
+
+.footLink {
+    width: 100%;
+    border-bottom: 1px solid #999;
+}
+
+.footLink li {
+    width: 25%;
+    text-align: center;
+    font-size: 0.8rem;
+    color: #999;
+    padding: 10px 0px
+}
+
+.comName {
+    position: relative;
+    cursor: pointer
+}
+
+.comName small {
+    font-size: 0.7rem;
+    display: inline-block
+}
+
+.rotate {
+    -webkit-transform: translateY(2px) rotate(-269deg);
+    -moz-transform: translateY(2px) rotate(-269deg);
+    -o-transform: translateY(2px) rotate(-269deg);
+    -ms-transform: translateY(2px) rotate(-269deg);
+    transform: translateY(2px) rotate(-269deg)
+}
+
+.reverse {
+    -webkit-transform: translateY(-4px) rotate(-90deg) !important;
+    -moz-transform: translateY(-4px) rotate(-90deg) !important;
+    -o-transform: translateY(-4px) rotate(-90deg) !important;
+    -ms-transform: translateY(-4px) rotate(-90deg) !important;
+    transform: translateY(-4px) rotate(-90deg) !important;
+}
+
+.info {
+    width: 100%;
+    margin-top: 20px;
+    text-align: center;
+    float: left;
+}
+
+.infoBlind,
+.copy {
+    font-size: 0.8rem;
+    color: #999
+}
+
+.infoBlind,
+.copy a {
+    display: inline-block;
+    margin: 0px 5px
+}
+
+.infoBlind,
+.copy small {
+    vertical-align: text-top
+}
+
+.infoBlind {
+    margin: 15px;
+    display: none
+}
+
+infoBlind p {
+    margin: 5px 0px
+}
+
+button.top {
+    position: absolute;
+    right: 10px;
+    bottom: 70px;
+    overflow: visible;
+}
+
+button.back {
+    position: absolute;
+    left: 10px;
+    bottom: 70px;
+    overflow: visible;
+}
+
+button.gokakao {
+    position: absolute;
+    right: 10px;
+    bottom: 130px;
+    overflow: visible;
+}
+
+.quicMenu {
+    position: fixed;
+    bottom: 0;
+    background-color: #f3f3f3;
+    height: 52px;
+    width: 100%;
+    left: 0;
+    transition: 1s;
+    padding-top: 5px;
+    z-index: 10
+}
+
+.quicMenu ul {
+    width: 100%
+}
+
+.quicMenu li {
+    width: 25%;
+    text-align: center;
+    color: #999;
+    font-size: 0.8rem;
+    line-height: 10px
+}
+.quicMenu li a p:nth-child(2){
+    margin-top: 3px
+}
+
+/*로그인*/
+.subHd {
+    padding: 15px;
+    background-color: #fff;
+    color: #000;
+    border-bottom: 1px solid #888
+}
+
+
+.subHd .right {
+    float: right;
+    margin-top: 5px;
+    width: 25px;
+    height: 29px;
+    background-image: url(../images/close.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    cursor: pointer
+}
+.subHd .right.schIcon{
+    width: 25px;
+    height: 29px;
+    background-image: url(../images/search.svg);
+}
+
+.subHd .right img{
+    display: none
+}
+
+.subWrap {
+    padding: 15px;
+    float: left;
+    width: 100%;
+    padding-top: 0px;
+    margin-bottom: 50px
+}
+
+.schStep {
+    color: #999
+}
+
+.blackTxt {
+    color: #000
+}
+
+.blueTxt {
+    color: #1171bb
+}
+
+.grayTxt {
+    color: #999 
+}
+
+
+.joinStep {
+    padding: 0px 4%;
+    margin: 20px 0px;
+}
+
+.schStep p,
+.joinStep p {
+    margin-bottom: 10px
+}
+
+.schStep small:first-child,
+.joinStep small:first-child {
+    float: left
+}
+
+.schStep small:last-child,
+.joinStep small:last-child {
+    float: right
+}
+
+.stepBar {
+    height: 3px;
+    width: 100%;
+    background-color: #ccc;
+    float: left;
+    margin-top: 10px
+}
+
+.stepBar span {
+    float: left;
+    height: 100%;
+}
+
+.stepBar span.on1 {
+    background-color: #1270b8;
+    width: 33.33%;
+}
+
+.stepBar span.on2 {
+    background-color: #1270b8;
+    width: 66.66%;
+}
+
+.stepBar span.on3 {
+    background-color: #1270b8;
+    width: 100%;
+}
+
+/*.social .circle.naver {
+    background: rgba(30, 200, 0, 1)
+}
+
+.social .circle.kakao {
+    background: rgba(254, 229, 0, 1)
+}
+
+.social .circle.facebook {
+    background: rgba(66, 103, 178, 1)
+}
+
+.social .circle.google {
+    background: rgba(255, 73, 52, 1)
+}*/
+
+.socialBox {
+    display: inline-block;
+}
+
+.miniTxt {
+    font-size: 0.6rem !important
+}
+
+.loginIdPw {
+    width: 100%;
+    margin: 45px auto;
+    max-width: 350px;
+    padding: 0px 30px;
+}
+
+.step2,
+.step3 {
+    width: 95%;
+    margin: 45px auto;
+    max-width: 350px
+}
+
+.txt_c {
+    text-align: center !important;
+}
+
+.txt_l {
+    text-align: left !important;
+    display: inherit
+}
+
+.step2 input,
+.inputTxt input,
+.inputPw input {
+    width: 100%;
+    border-radius: 10px;
+    background-color: #f1f1f1;
+    outline: none;
+    border: none;
+    height: 40px;
+    padding-left: 10px
+}
+
+.inputId,
+.inputPw {
+    text-align: center;
+    clear: both
+}
+
+p.itemTxt {
+    text-align: left;
+    margin: 10px 0px 5px 0px;
+    color: #777;
+    font-size: .9rem;
+    font-weight: bold
+}
+
+button.loginBtn {
+    background-color: #1171bb;
+    color: #fff;
+    width: 100%;
+    height: 40px;
+    text-align: center;
+    -moz-border-radius: 30px;
+    -webkit-border-radius: 30px;
+    border-radius: 30px;
+}
+
+.allWrap input[type="checkbox"] {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+.allWrap input[type="radio"] {
+    margin: 0px 5px;
+    width: 17px;
+    height: 22px;
+    background-color: #fff
+}
+
+.allWrap input[type="checkbox"] + label:before {
+    content: '';
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    line-height: 18px;
+    margin: 0px 8px 0 0;
+    text-align: center;
+    vertical-align: middle;
+    background: #fff;
+    border: 1px solid #73757a;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+    cursor: pointer;
+    margin-left: -27px;
+}
+
+.allWrap input[type="checkbox"]:checked + label:before {
+    content: '';
+    background: url(../images/chck-on.png) no-repeat 50% 50%;
+    background-color: #1171bb;
+    background-size: cover
+}
+
+.chkType1 {
+    text-align: left;
+    padding: 0 0 0 27px;
+    font-size: .9rem;
+}
+
+.chkType2 {
+    text-align: left;
+    border-top: 1px solid #999;
+    padding: 20px 0 0 35px;
+    margin-top: 19px;
+    font-size: .9rem;
+}
+
+
+.chkType1 input[type="checkbox"] + label:before {
+    width: 18px;
+    height: 18px;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+}
+
+.chkType2 input[type="checkbox"] + label:before {
+    width: 15px;
+    height: 15px;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+}
+
+.chkType2 a {
+    display: inline-block;
+    float: right
+}
+
+.chkType2 p {
+    margin: 10px 0px
+}
+
+.agree {
+    margin-top: 50px
+}
+
+.agree .itemTxt {
+    margin-bottom: 20px
+}
+
+.findkeep {
+    font-size: .8rem;
+    margin-top: 20px
+}
+
+.findkeep div {
+    display: inline-block;
+    width: 49%
+}
+
+.findkeep div:last-child {
+    float: right;
+    text-align: right
+}
+
+.inputType1 {
+    margin: 0px 0px 40px 0px;
+    float: left;
+    width: 100%
+}
+
+.inputType1 input {
+    width: 70%;
+    border-radius: 10px 0px 0px 10px;
+    background-color: #f1f1f1;
+    outline: none;
+    border: none;
+    height: 40px;
+    padding-left: 10px;
+    float: left
+}
+
+.inputType1 button.btnType1 {
+    width: 30%;
+    border-radius: 0px 10px 10px 0px;
+    background-color: #1171bb;
+    outline: none;
+    border: none;
+    height: 40px;
+    color: #fff;
+    float: left
+}
+
+.tabwrap {
+    display: inline-block;
+    width: 100%;
+    margin-top: 40px
+}
+
+.tabwrap h4 {
+    font-size: .9rem;
+    color: #777;
+    margin-bottom: 10px
+}
+
+.tabs {
+    float: left;
+    width: 100%
+}
+
+.tabs a {
+    padding: 10px 3px
+}
+
+.tabs li {
+
+    text-align: center;
+    font-size: .9rem;
+    width: 25%;
+    float: left;
+    color: #999
+}
+
+.tabs li a {
+    border: 1px solid #999;
+}
+
+.tabs li a.active {
+    border: 1px solid #1171bb;
+    color: #1171bb
+}
+
+.tabconts {
+    position: absolute;
+    width: 100%;
+    left: 0
+}
+
+
+.tabbox {
+    margin: 0 auto;
+    width: 85%;
+    max-width: 350px
+}
+.schbox{
+    margin: 0 auto;
+    width: 100%;
+    max-width: 350px
+}
+.chkBoxImg {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    line-height: 18px;
+    background: url(../images/chck-on.png) no-repeat 50% 50%;
+    background-color: #1171bb;
+    background-size: cover;
+    border-radius: 50%;
+    vertical-align: sub;
+    margin-right: 3px;
+}
+
+/*파일첨부*/
+.filebox input[type="file"] {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+.filebox label {
+    display: inline-block;
+    padding: .5em .75em;
+    color: #fff;
+    font-size: inherit;
+    line-height: normal;
+    vertical-align: middle;
+    cursor: pointer;
+    border: 1px solid #ebebeb;
+    border-bottom-color: #e2e2e2;
+    border-radius: 0px 10px 10px 0px;
+    background-color: #1171bb;
+    width: 30%;
+    height: 40px
+}
+
+.filebox label.labelB {
+    border-radius: 10px
+}
+
+.fl_r {
+    float: right
+}
+.fl_l {
+    float: left
+}
+
+/* named upload */
+.filebox .upload-name {
+    display: inline-block;
+    padding: .5em .75em;
+    /* label의 패딩값과 일치 */
+    font-size: inherit;
+    font-family: inherit;
+    line-height: normal;
+    vertical-align: middle;
+    background-color: #f5f5f5;
+    border-bottom-color: #e2e2e2;
+    border-radius: 10px 0px 0px 10px;
+    -webkit-appearance: none;
+    /* 네이티브 외형 감추기 */
+    -moz-appearance: none;
+    appearance: none;
+}
+
+.filebox .upload-name._B {
+    background-color: #fff
+}
+
+.textar {
+    width: 100%;
+    border-radius: 10px;
+    background-color: #f1f1f1;
+    border: none;
+    height: 300px;
+    text-align: left;
+    padding: 5px 10px;
+}
+
+.hr {
+    border-top: 1px solid #999
+}
+
+.sampleaudio {
+    border-bottom: 1px solid #999;
+    border-top: 1px solid #999;
+    float: left;
+    width: 100%;
+    margin-bottom: 20px
+}
+
+.choiceWrap {
+    margin-top: 40px
+}
+
+.choice input[type="radio"] + label {
+    border: 1px solid #999;
+    width: 50%;
+    height: 40px;
+    float: left;
+    line-height: 38px;
+    text-align: center;
+
+}
+.choice.sch input[type="radio"] + label{
+    width: 33.33%;
+    color: #999
+}
+
+.choice input[type="radio"] {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+
+.choice input[type="radio"] + label:before {
+    content: '';
+    display: inline-block;
+    line-height: 18px;
+    margin: -2px 8px 0 0;
+    text-align: center;
+    vertical-align: middle;
+    background: #fff;
+    border: 1px solid #73757a;
+    cursor: pointer;
+    /*margin-left: -27px;*/
+    width: 15px;
+    height: 15px;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    display: none
+}
+
+.choice input[type="radio"]:checked + label {
+    border: 1px solid #1171bb;
+    color: #1171bb;
+    font-weight: 500
+
+}
+
+.choice input[type="radio"]:checked + label:before {
+    content: '';
+    background: url(../images/chck-on.png) no-repeat 50% 50%;
+    background-color: #1171bb;
+    background-size: cover;
+    display: inline-block
+}
+
+.inputTxt {
+    position: relative
+}
+
+.inputTxt select {
+    width: 100%;
+    height: 35px;
+    border-radius: 10px;
+    background-color: #f1f1f1;
+    border: none;
+    color: #777;
+    padding: 7px;
+}
+
+.allWrap label {
+    font-size: .9rem
+}
+
+.disabled,
+.allWrap textarea::placeholder,
+.allWrap input::placeholder {
+    color: #aaa;
+    font-size: .9rem
+}
+
+.selectbox {
+    position: relative;
+    /*width: 200px;*/
+    /* border: 1px solid #999;*/
+    background-color: #f1f1f1;
+    border-radius: 10px;
+    z-index: 1;
+    font-size: .9rem
+}
+
+.selectbox:before {
+    /* 화살표 대체 */
+    content: "";
+    position: absolute;
+    top: 38%;
+    right: 15px;
+    width: 14px;
+    height: 14px;
+    margin-top: -1px;
+    /*border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid #333;*/
+    background-image: url(../images/chevron-down.svg);
+    background-size: cover
+}
+
+.selectbox label {
+    position: absolute;
+    top: 1px;
+    left: 5px;
+    padding: 8px;
+    color: #999;
+    z-index: -1;
+    /* IE8에서 label이 위치한 곳이 클릭되지 않는 것 해결 */
+    font-size: .9rem;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 80%;
+    text-align: left;
+    text-overflow: ellipsis;
+}
+
+.selectbox select {
+    width: 100%;
+    height: 40px;
+    line-height: normal;
+    font-family: inherit;
+    padding: .8em .5em;
+    border: 0;
+    opacity: 0;
+    filter: alpha(opacity=0);
+    -webkit-appearance: none;
+    /* 네이티브 외형 감추기 */
+    -moz-appearance: none;
+    appearance: none;
+}
+
+.dl_layer dt,
+.dl_layer dd {
+    display: inline-block;
+}
+
+.dl_layer dt {
+   width: 30%;
+    text-align: left;
+    vertical-align: top;
+    padding-top: 9px;
+    float: left;
+    height: 40px;
+    margin: 13px 0px;
+}
+
+.dl_layer dd {
+    width: 70%;
+    float: right;
+    margin: 13px 0px;
+}
+
+.closeBtn img{
+    width: 20px
+}
+
+.schStep,
+.schWrap {
+    width: 95%;
+    margin: 20px auto;
+    max-width: 350px;
+    clear: both;
+    opacity: 1
+}
+.schWrap{
+    min-height: 500px
+}
+.schFilter{
+    display: flex;    flex-direction: row;    justify-content: space-between;
+    color: #999
+}
+
+.schFilter .openClose img{
+    width: 15px;vertical-align: middle; opacity: .3
+}
+
+.openClose{
+    position: relative
+}
+a.openA{
+    display: none;
+    position: absolute;
+    right: 0;
+    width: 50px;
+}
+a.closeA{
+    display: inli;
+    position: absolute;
+    right: 0;
+    width: 50px;
+}
+
+
+/*협회성우*/
+.noLine{
+    border-top: none !important;
+    border-bottom: none !important;
+    border-right: none !important;
+    border-left: none !important;
+}
+
+.subHd.voiceList{
+   /* display: flex; flex-direction: column;*/ border-bottom: none !important
+}
+
+.topLine{
+    border-top: 1px solid #ddd; 
+    margin-top: -16px
+}
+
+.listTit{
+    display: flex; flex-direction: row;align-items: center;justify-content: space-between;
+}
+.listTit .midd{
+    font-size: 1.2rem !important;
+    font-weight: 600;
+}
+
+.listTit .midd img{
+    width: 20px;
+    vertical-align: middle
+}
+.blind{
+    height: 0px;
+    width: 0px;
+    text-indent: -99999999999px
+}
+
+.listBox{
+    padding: 5px 5px
+}
+
+.detailBox table,
+.listBox table{
+    table-layout: fixed;
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0;
+    padding: 0
+}
+
+.listBox td{
+    text-align: center;
+        padding: 8px 0px;
+}
+
+
+.listBox td.infoTxt{
+    text-align: left;
+    font-size: .8rem;
+    color: #aaa
+}
+
+.list{
+    border-bottom: 1px solid #aaa
+}
+.thum{
+    width: 49px;
+    height: 49px;
+    border: 5px;
+    overflow: hidden;
+    border-radius: 11px;
+}
+.thum img{
+    width: 100%
+}
+.ellip {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.svgImg img{
+    width: 20px;
+    opacity: .4;
+    margin-top: 5px
+}
+.bottomPop .svgImg img{
+    width: 25px;
+    opacity: 1;
+    cursor: pointer
+}
+.listBox td:nth-child(3),
+.listBox td:nth-child(4){
+    text-align: right !important;
+}
+
+.listBox .infoTxt span,
+.listBox .infoTxt b{
+    margin-right: 5px
+}
+.arr1{
+    color: #1171bb;
+    cursor: pointer
+}
+.contShow{
+    cursor: pointer
+}
+.btnWrap{
+    width: 100%;clear: both;text-align: center;
+}
+.allWrap button.moreBtn{
+    width: 100px;
+    text-align: center;
+    border: 1px solid #bbb;
+    padding: 15px;
+    color: #999;
+    margin-top: 20px
+}
+.list{
+    display: none;
+}
+.listName{
+    color: #777
+}
+.bottomPop,
+.topPop{
+    position: fixed; background: rgba(0,0,0, .1);width: 100%; height: 100%;  left: 0; z-index: 11; font-size: 1rem; display: none;overflow: hidden
+}
+.bottomPop{bottom: 0;}
+.topPop{top: 0;}
+
+.btmPopBg,
+.topPopBg{
+    background: rgba(0,0,0, .2);width: 100%; height: 100%; 
+}
+
+.topPopBox{
+    background-color: #fff; height: 130px; text-align: center; padding: 20px 10px;
+    display: none;
+    border: 1px solid #ddd
+}
+
+.btmPopBox{
+    background-color: #fff; 
+    border-radius: 20px 20px 0px 0px ;;
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+    display: none;
+    position: absolute;
+    bottom: 0;
+    border: 1px solid #ddd
+}
+
+.detailBox{
+    background-color: #f1f1f1
+}
+
+.midd .topPopBox img{
+    width: 25px
+}
+.voiceItem {margin-top: 20px}
+.voiceItem ul {width: 100%}
+.voiceItem li{
+    width: 25%;
+    color: #888
+}
+.popTit{
+    color: #555;
+    margin-left: -25px;
+}
+.closeBtn{
+    float: left
+}
+
+.listBox.detail{
+    padding: 14px;
+    background-color: #f1f1f1
+}
+
+.btmPopBox .link {
+     margin-bottom: 30px
+}
+.btmPopBox .link a{
+    color: #555;
+    margin: 10px 15px;
+    display: block
+   
+}
+
+.closeTxt{
+    margin-top: 15px;
+    line-height: inherit !important
+}
+
+
+
+
+
+
+/*미디어쿼리*/
+@media only screen and (min-width: 768px) {
+
+    .findVoice,
+    .fvBox {
+        float: left;
+        width: 100%
+    }
+
+    .fvBox {
+        float: left;
+        width: 50%
+    }
+
+    .gojoin {
+        float: left;
+        width: 100%
+    }
+
+    .findVoice.engi {
+        float: left;
+        width: 50%
+    }
+
+    .findVoice.engi .fvBox {
+        width: 100%
+    }
+
+    .social {
+        margin-top: 15px;
+    }
+
+    .findVoice.engi {
+        width: 46%;
+        margin: 75px 0px 0px 4%;
+    }
+
+    .todayOdi {
+        float: left;
+        width: 50%
+    }
+
+    .social {
+        margin-top: 20px;
+    }
+
+
+}
+
+@media only screen and (min-width: 968px) {
+    .allWrap {
+        max-width: 1280px;
+        margin: 0 auto;
+    }
+
+    .gojoin {
+        width: 100%
+    }
+
+    .fvBox {
+        float: left;
+        width: 33.33%
+    }
+
+    .findVoice {
+        float: left;
+        width: 100%
+    }
+
+    .fvBox::after {
+        right: inherit;
+        left: 280px;
+        top: 27%
+    }
+
+
+}
+
+@media only screen and (min-width: 1280px) {
+    .quicMenu {
+        max-width: 1280px;
+        left: 50%;
+        margin-left: -640px
+    }
+    .bottomPop, .topPop{
+        width: 1280px;
+        left: 50%;
+        margin-left: -640px
+    }
+
+}
+
+@media only screen and (max-width: 320px) {
+
+    .allWrap input::placeholder,
+    .allWrap textarea::placeholder,
+    .allWrap label,
+    p.txt{
+        font-size: .7rem
+    }
+
+    .allWrap h3,
+    .allWrap h4,
+    .todayOdi .odiTit h4,
+    .fvBox .right .tit {
+        font-size: .9rem
+    }
+    
+    .topPopBox{
+        height: 120px
+    }
+
+}

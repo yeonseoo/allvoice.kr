@@ -1,0 +1,87 @@
+11/23 03:23:10 [allvoice-Send-0] [59003] ERROR : java.io.IOException: Failed to Send a Packet.
+ PACKET : 00000002PI
+ MESSAGE : 파이프가 깨어짐 (Write failed)
+
+11/23 03:23:15 [allvoice-Send-0] [59003] ERROR : Failed To [allvoice-Send-0] End. 
+java.io.IOException: Failed to Send a Packet.
+ PACKET : 00000002EN
+ MESSAGE : Connection has been shutdown: javax.net.ssl.SSLException: java.net.SocketException: 파이프가 깨어짐 (Write failed)
+
+	at com.daou.alioclient.protocol.BizProtocol.socketSendPacket(BizProtocol.java:984)
+	at com.daou.alioclient.protocol.BizProtocol.sendEnd(BizProtocol.java:141)
+	at com.daou.alioclient.protocol.BizProtocol.close(BizProtocol.java:127)
+	at com.daou.alioclient.worker.AlioWorker.doEnd(AlioWorker.java:33)
+	at com.daou.alioclient.worker.AlioSend.run(AlioSend.java:107)
+Caused by: javax.net.ssl.SSLException: java.net.SocketException: 파이프가 깨어짐 (Write failed)
+	at sun.security.ssl.Alerts.getSSLException(Alerts.java:208)
+	at sun.security.ssl.SSLSocketImpl.fatal(SSLSocketImpl.java:1964)
+	at sun.security.ssl.SSLSocketImpl.fatal(SSLSocketImpl.java:1921)
+	at sun.security.ssl.SSLSocketImpl.handleException(SSLSocketImpl.java:1885)
+	at sun.security.ssl.SSLSocketImpl.handleException(SSLSocketImpl.java:1830)
+	at sun.security.ssl.AppOutputStream.write(AppOutputStream.java:128)
+	at java.io.DataOutputStream.write(DataOutputStream.java:107)
+	at java.io.FilterOutputStream.write(FilterOutputStream.java:97)
+	at com.daou.alioclient.socket.AlioSocket.write(AlioSocket.java:96)
+	at com.daou.alioclient.protocol.BizProtocol.socketSendPacket(BizProtocol.java:981)
+	at com.daou.alioclient.protocol.BizProtocol.sendPing(BizProtocol.java:150)
+	at com.daou.alioclient.worker.AlioSend.run(AlioSend.java:69)
+Caused by: java.net.SocketException: 파이프가 깨어짐 (Write failed)
+	at java.net.SocketOutputStream.socketWrite0(Native Method)
+	at java.net.SocketOutputStream.socketWrite(SocketOutputStream.java:111)
+	at java.net.SocketOutputStream.write(SocketOutputStream.java:155)
+	at sun.security.ssl.OutputRecord.writeBuffer(OutputRecord.java:431)
+	at sun.security.ssl.OutputRecord.write(OutputRecord.java:417)
+	at sun.security.ssl.SSLSocketImpl.writeRecordInternal(SSLSocketImpl.java:886)
+	at sun.security.ssl.SSLSocketImpl.writeRecord(SSLSocketImpl.java:857)
+	at sun.security.ssl.AppOutputStream.write(AppOutputStream.java:123)
+	... 6 more
+11/23 03:23:20 [allvoice-Send-0] [59003] INFO : Connect To Socket. IP [biz.ppurio.com] PORT [26000] 
+11/23 03:23:50 [allvoice-Send-0] [59003] ERROR : com.daou.alioclient.common.AuthException: Failed To User Authentication. [Failed to Send a Packet.
+ PACKET : 00000116AUVERSION:=4.0
+USERID:=allvoice
+PASSWD:=43e6e5145e8784f672408a3616fd045765a97755bd5c49f9063957bce193f220
+CV:=JD2015
+
+ MESSAGE : Read timed out
+]
+11/23 03:24:50 [allvoice-Send-0] [59003] INFO : End Sending And Receiving Data With The Server.
+11/23 03:24:50 [allvoice-Send-0] [59003] INFO : Disconnect To Socket. IP [biz.ppurio.com] PORT [26000]
+11/23 03:24:50 [allvoice-Send-0] [59003] INFO : Worker [allvoice-Send-0] End.
+11/23 03:25:00 [allvoice-Send-0] [59003] INFO : Connect To Socket. IP [biz.ppurio.com] PORT [26000] 
+11/23 03:25:00 [allvoice-Send-0] [59003] INFO : User Authentication. USER [allvoice]
+11/23 03:25:00 [allvoice-Send-0] [59003] INFO : Start Sending And Receiving Data With The Server.
+11/23 03:25:00 [allvoice-Send-0] [59003] INFO : Connect To Database. TYPE [MYSQL] URL [jdbc:mysql://localhost:3306/allvoice] USER [allvoice]
+11/23 04:04:30 [allvoice-Send-0] [59003] ERROR : com.daou.alioclient.common.BizException: Failed To Ping. RESULT [null]
+11/23 04:04:35 [allvoice-Send-0] [59003] ERROR : Failed To [allvoice-Send-0] End. 
+java.io.IOException: Failed to Send a Packet.
+ PACKET : 00000002EN
+ MESSAGE : Connection closed by remote host
+
+	at com.daou.alioclient.protocol.BizProtocol.socketSendPacket(BizProtocol.java:984)
+	at com.daou.alioclient.protocol.BizProtocol.sendEnd(BizProtocol.java:141)
+	at com.daou.alioclient.protocol.BizProtocol.close(BizProtocol.java:127)
+	at com.daou.alioclient.worker.AlioWorker.doEnd(AlioWorker.java:33)
+	at com.daou.alioclient.worker.AlioSend.run(AlioSend.java:107)
+11/23 04:04:40 [allvoice-Send-0] [59003] INFO : Connect To Socket. IP [biz.ppurio.com] PORT [26000] 
+11/23 04:05:10 [allvoice-Send-0] [59003] ERROR : com.daou.alioclient.common.AuthException: Failed To User Authentication. [Failed to Read a Packet.
+ PACKET : null
+ MESSAGE : Read timed out
+]
+11/23 04:06:10 [allvoice-Send-0] [59003] ERROR : Failed To [allvoice-Send-0] End. 
+com.daou.alioclient.common.BizException: Failed To End. RESULT [null]
+	at com.daou.alioclient.protocol.BizProtocol.sendEnd(BizProtocol.java:144)
+	at com.daou.alioclient.protocol.BizProtocol.close(BizProtocol.java:127)
+	at com.daou.alioclient.worker.AlioWorker.doEnd(AlioWorker.java:33)
+	at com.daou.alioclient.worker.AlioSend.run(AlioSend.java:107)
+11/23 04:06:20 [allvoice-Send-0] [59003] INFO : Connect To Socket. IP [biz.ppurio.com] PORT [26000] 
+11/23 04:06:20 [allvoice-Send-0] [59003] INFO : User Authentication. USER [allvoice]
+11/23 04:06:20 [allvoice-Send-0] [59003] INFO : Start Sending And Receiving Data With The Server.
+11/23 04:06:20 [allvoice-Send-0] [59003] INFO : Connect To Database. TYPE [MYSQL] URL [jdbc:mysql://localhost:3306/allvoice] USER [allvoice]
+11/23 10:39:10 [allvoice-Send-0] [59003] INFO : Send a Message. DEVICE [AT] CMSGID [20191123103908] MSGID [1123al_H98070227315000349154] REPART [S] SVCCODE [7900]
+11/23 10:43:18 [allvoice-Send-0] [59003] INFO : Send a Message. DEVICE [AT] CMSGID [20191123104316] MSGID [1123al_H99017767339800358414] REPART [S] SVCCODE [7900]
+11/23 11:31:06 [allvoice-Send-0] [59003] INFO : Send a Message. DEVICE [AT] CMSGID [20191123113107] MSGID [1123al_H98812467626500410978] REPART [S] SVCCODE [7900]
+11/23 11:31:06 [allvoice-Send-0] [59003] INFO : Send a Message. DEVICE [AT] CMSGID [20191123113105] MSGID [1123al_H99305717626500410980] REPART [S] SVCCODE [7900]
+11/23 11:31:06 [allvoice-Send-0] [59003] INFO : Send a Message. DEVICE [AT] CMSGID [20191123113106] MSGID [1123al_H90308827626600410983] REPART [S] SVCCODE [7900]
+11/23 12:12:05 [allvoice-Send-0] [59003] INFO : Send a Message. DEVICE [AT] CMSGID [20191123121203] MSGID [1123al_H91888097872500455748] REPART [S] SVCCODE [7900]
+11/23 17:17:55 [allvoice-Send-0] [59003] INFO : Send a Message. DEVICE [AT] CMSGID [20191123171753] MSGID [1123al_H99608519707400718244] REPART [S] SVCCODE [7900]
+11/23 21:08:19 [allvoice-Send-0] [59003] INFO : Failed to Send a Message Due to Wrong Phone Number. RESULT [R214] DEVICE [AT] CMSGID [20191123210818]

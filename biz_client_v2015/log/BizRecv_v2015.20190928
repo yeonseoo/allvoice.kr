@@ -1,0 +1,67 @@
+09/28 00:59:55 [allvoice-Recv] [13807] INFO : Receive And Add a Report To Queue. CMSGID [20190928005951]
+09/28 01:10:56 [allvoice-Recv] [13807] ERROR : com.daou.alioclient.common.BizException: Recv Report But No Defined Packet. COMMAND [null]
+09/28 01:11:01 [allvoice-Recv] [13807] ERROR : Failed To [allvoice-Recv] End. 
+java.io.IOException: Failed to Send a Packet.
+ PACKET : 00000002EN
+ MESSAGE : Connection closed by remote host
+
+	at com.daou.alioclient.protocol.BizProtocol.socketSendPacket(BizProtocol.java:984)
+	at com.daou.alioclient.protocol.BizProtocol.sendEnd(BizProtocol.java:141)
+	at com.daou.alioclient.protocol.BizProtocol.close(BizProtocol.java:127)
+	at com.daou.alioclient.worker.AlioWorker.doEnd(AlioWorker.java:33)
+	at com.daou.alioclient.worker.AlioRecv.run(AlioRecv.java:51)
+09/28 01:11:06 [allvoice-Recv] [13807] INFO : Connect To Socket. IP [biz.ppurio.com] PORT [26100] 
+09/28 01:11:06 [allvoice-Recv] [13807] INFO : User Authentication. USER [allvoice]
+09/28 01:11:06 [allvoice-Recv] [13807] INFO : Start Sending And Receiving Data With The Server.
+09/28 01:16:47 [allvoice-Recv] [13807] INFO : Receive And Add a Report To Queue. CMSGID [20190928011641]
+09/28 02:48:38 [allvoice-Recv] [13807] INFO : Receive And Add a Report To Queue. CMSGID [20190928024832]
+09/28 04:03:20 [allvoice-Recv] [13807] INFO : Receive And Add a Report To Queue. CMSGID [20190928040317]
+09/28 05:15:25 [allvoice-Recv] [13807] ERROR : com.daou.alioclient.common.BizException: Recv Report But No Defined Packet. COMMAND [null]
+09/28 05:15:30 [allvoice-Recv] [13807] ERROR : Failed To [allvoice-Recv] End. 
+java.io.IOException: Failed to Send a Packet.
+ PACKET : 00000002EN
+ MESSAGE : Connection closed by remote host
+
+	at com.daou.alioclient.protocol.BizProtocol.socketSendPacket(BizProtocol.java:984)
+	at com.daou.alioclient.protocol.BizProtocol.sendEnd(BizProtocol.java:141)
+	at com.daou.alioclient.protocol.BizProtocol.close(BizProtocol.java:127)
+	at com.daou.alioclient.worker.AlioWorker.doEnd(AlioWorker.java:33)
+	at com.daou.alioclient.worker.AlioRecv.run(AlioRecv.java:51)
+09/28 05:15:40 [allvoice-Recv] [13807] INFO : Connect To Socket. IP [biz.ppurio.com] PORT [26100] 
+09/28 05:15:40 [allvoice-Recv] [13807] INFO : User Authentication. USER [allvoice]
+09/28 05:15:40 [allvoice-Recv] [13807] INFO : Start Sending And Receiving Data With The Server.
+09/28 11:31:47 [allvoice-Recv] [13807] INFO : Receive And Add a Report To Queue. CMSGID [20190928113138]
+09/28 11:40:23 [allvoice-Recv] [13807] INFO : Receive And Add a Report To Queue. CMSGID [20190928114018]
+09/28 11:55:20 [allvoice-Recv] [13807] INFO : Receive And Add a Report To Queue. CMSGID [20190928115513]
+09/28 12:09:21 [allvoice-Recv] [13807] INFO : Receive And Add a Report To Queue. CMSGID [20190928120916]
+09/28 12:09:56 [allvoice-Recv] [13807] INFO : Receive And Add a Report To Queue. CMSGID [20190928120950]
+09/28 12:10:06 [allvoice-Recv] [13807] INFO : Receive And Add a Report To Queue. CMSGID [20190928120959]
+09/28 12:10:16 [allvoice-Recv] [13807] INFO : Receive And Add a Report To Queue. CMSGID [20190928121008]
+09/28 12:10:26 [allvoice-Recv] [13807] INFO : Receive And Add a Report To Queue. CMSGID [20190928121022]
+09/28 12:10:36 [allvoice-Recv] [13807] INFO : Receive And Add a Report To Queue. CMSGID [20190928121031]
+09/28 12:10:56 [allvoice-Recv] [13807] INFO : Receive And Add a Report To Queue. CMSGID [20190928121049]
+09/28 12:11:01 [allvoice-Recv] [13807] INFO : Receive And Add a Report To Queue. CMSGID [20190928121056]
+09/28 12:11:11 [allvoice-Recv] [13807] INFO : Receive And Add a Report To Queue. CMSGID [20190928121106]
+09/28 12:16:52 [allvoice-Recv] [13807] INFO : Receive And Add a Report To Queue. CMSGID [20190928121650]
+09/28 12:20:47 [allvoice-Recv] [13807] INFO : Receive And Add a Report To Queue. CMSGID [20190928122043]
+09/28 12:31:43 [allvoice-Recv] [13807] INFO : Receive And Add a Report To Queue. CMSGID [20190928123139]
+09/28 12:51:31 [allvoice-Recv] [13807] INFO : Receive And Add a Report To Queue. CMSGID [20190928125125]
+09/28 14:18:15 [allvoice-Recv] [13807] INFO : Receive And Add a Report To Queue. CMSGID [20190928141810]
+09/28 14:27:21 [allvoice-Recv] [13807] INFO : Receive And Add a Report To Queue. CMSGID [20190928142716]
+09/28 14:27:31 [allvoice-Recv] [13807] INFO : Receive And Add a Report To Queue. CMSGID [20190928142724]
+09/28 14:27:41 [allvoice-Recv] [13807] INFO : Receive And Add a Report To Queue. CMSGID [20190928142733]
+09/28 14:27:46 [allvoice-Recv] [13807] INFO : Receive And Add a Report To Queue. CMSGID [20190928142742]
+09/28 15:10:41 [allvoice-Recv] [13807] INFO : Receive And Add a Report To Queue. CMSGID [20190928151034]
+09/28 15:20:47 [allvoice-Recv] [13807] INFO : Receive And Add a Report To Queue. CMSGID [20190928152043]
+09/28 18:21:15 [allvoice-Recv] [13807] INFO : Receive And Add a Report To Queue. CMSGID [20190928182111]
+09/28 18:42:22 [allvoice-Recv] [13807] INFO : Receive And Add a Report To Queue. CMSGID [20190928184215]
+09/28 18:55:26 [allvoice-Recv] [13807] INFO : Receive And Add a Report To Queue. CMSGID [20190928185519]
+09/28 19:36:53 [allvoice-Recv] [13807] INFO : Receive And Add a Report To Queue. CMSGID [20190928193647]
+09/28 19:51:17 [allvoice-Recv] [13807] INFO : Receive And Add a Report To Queue. CMSGID [20190928195111]
+09/28 20:12:25 [allvoice-Recv] [13807] INFO : Receive And Add a Report To Queue. CMSGID [20190928201218]
+09/28 20:12:30 [allvoice-Recv] [13807] INFO : Receive And Add a Report To Queue. CMSGID [20190928201226]
+09/28 20:12:40 [allvoice-Recv] [13807] INFO : Receive And Add a Report To Queue. CMSGID [20190928201235]
+09/28 20:13:05 [allvoice-Recv] [13807] INFO : Receive And Add a Report To Queue. CMSGID [20190928201302]
+09/28 20:13:30 [allvoice-Recv] [13807] INFO : Receive And Add a Report To Queue. CMSGID [20190928201323]
+09/28 22:11:13 [allvoice-Recv] [13807] INFO : Receive And Add a Report To Queue. CMSGID [20190928221110]
+09/28 23:02:33 [allvoice-Recv] [13807] INFO : Receive And Add a Report To Queue. CMSGID [20190928230229]

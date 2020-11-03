@@ -1,0 +1,108 @@
+<?php
+if (!defined("_GNUBOARD_")) exit; // 개별 페이지 접근 불가
+
+include_once(G5_THEME_PATH.'/head.sub.php');
+include_once(G5_LIB_PATH.'/outlogin.lib.php');
+include_once(G5_LIB_PATH.'/visit.lib.php');
+include_once(G5_LIB_PATH.'/connect.lib.php');
+include_once(G5_LIB_PATH.'/popular.lib.php');
+include_once(G5_LIB_PATH.'/latest.lib.php');
+?>
+
+<div id="ttrxHeader">
+	<div>
+		<a href="/shop/"><img src="../theme/basic/img/mobile/img_logo.png" /></a>
+		<div>
+    		<a href="javascript:;" id="searchToggle"><img src="../theme/basic/img/mobile/btn_searchOpen.png" /><img src="../theme/basic/img/mobile/btn_searchClose.png" /></a>
+    		<a href="javascript:;" id="gnbToggle"><img src="../theme/basic/img/mobile/btn_gnbOpen.png" /><img src="../theme/basic/img/mobile/btn_gnbClose.png" /></a>
+		</div>
+	</div>
+</div>
+
+<div id="searchPop">
+	<strong>Search</strong>
+	<form name="frmsearch1" action="<?php echo G5_SHOP_URL; ?>/search.php" onsubmit="return search_submit(this);">
+        <input type="text" name="q" value="<?php echo stripslashes(get_text(get_search_string($q))); ?>" id="sch_str" required placeholder="찾으실 단어를 입력하세요">
+        <input type="image" src="../theme/basic/img/mobile/btn_searchSubmit.png" />
+    </form>
+    <script>
+    function search_submit(f) {
+        if (f.q.value.length < 2) {
+            alert("검색어는 두글자 이상 입력하십시오.");
+            f.q.select();
+            f.q.focus();
+            return false;
+        }
+        return true;
+    }
+    </script>
+</div>
+
+<div id="gnbPop">
+	<div>
+		<a href="<?php echo G5_URL; ?>/bbs/login.php">LOGIN</a>
+        <a href="<?php echo G5_SHOP_URL; ?>/voiceSignup.php">SIGN UP</a>
+        <a href="javascript:;">후반작업</a>
+        <a href="javascript:;">이용방법</a>
+	</div>
+	<ul>
+		<li>
+			<a href="javascript:;" class="drop">광고</a>
+			<ul>
+				<li><a href="<?php echo G5_SHOP_URL; ?>/voiceList.php">카테고리명 01</a></li>
+				<li><a href="<?php echo G5_SHOP_URL; ?>/voiceList.php">카테고리명 01</a></li>
+				<li><a href="<?php echo G5_SHOP_URL; ?>/voiceList.php">카테고리명 01</a></li>
+				<li><a href="<?php echo G5_SHOP_URL; ?>/voiceList.php">카테고리명 01</a></li>
+				<li><a href="<?php echo G5_SHOP_URL; ?>/voiceList.php">카테고리명 01</a></li>
+			</ul>
+		</li>
+		<li>
+			<a href="javascript:;" class="drop">광고</a>
+			<ul>
+				<li><a href="<?php echo G5_SHOP_URL; ?>/voiceList.php">카테고리명 01</a></li>
+				<li><a href="<?php echo G5_SHOP_URL; ?>/voiceList.php">카테고리명 01</a></li>
+				<li><a href="<?php echo G5_SHOP_URL; ?>/voiceList.php">카테고리명 01</a></li>
+				<li><a href="<?php echo G5_SHOP_URL; ?>/voiceList.php">카테고리명 01</a></li>
+				<li><a href="<?php echo G5_SHOP_URL; ?>/voiceList.php">카테고리명 01</a></li>
+			</ul>
+		</li>
+		<li>
+			<a href="<?php echo G5_SHOP_URL; ?>/voiceProject.php">작업의뢰 프로젝트</a>
+		</li>
+		<li>
+			<a href="javascript:;">고객센터</a>
+		</li>
+	</ul>
+</div>
+
+<script type="text/javascript">
+$(function(){
+	$("#gnbPop > ul > li > ul").slideUp(0);
+	$("#searchToggle").click(function(){
+		$("#searchPop").toggle();
+		$(this).toggleClass("on");
+		
+		$("#gnbToggle").removeClass("on");
+		$("#gnbPop").hide();
+	});
+	$("#gnbToggle").click(function(){
+		$("#gnbPop").toggle();
+		$(this).toggleClass("on");
+		
+		$("#searchToggle").removeClass("on");
+		$("#searchPop").hide();
+	});
+
+	$("#gnbPop > ul > li > a.drop").click(function(){
+		if($(this).hasClass("on")){
+			$(this).removeClass("on");
+			$(this).next().slideUp(500);
+		} else {
+			$("#gnbPop > ul > li > a.drop").removeClass("on");
+			$(this).addClass("on");
+			$("#gnbPop > ul > li > ul").slideUp(500);
+			$(this).next().slideDown(500);
+		}
+	});
+});
+</script>

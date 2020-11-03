@@ -1,0 +1,34 @@
+12/26 08:23:38 [allvoice-Send-0] [59003] ERROR : com.daou.alioclient.common.BizException: Failed To Ping. RESULT [null]
+12/26 08:23:43 [allvoice-Send-0] [59003] ERROR : Failed To [allvoice-Send-0] End. 
+java.io.IOException: Failed to Send a Packet.
+ PACKET : 00000002EN
+ MESSAGE : Connection closed by remote host
+
+	at com.daou.alioclient.protocol.BizProtocol.socketSendPacket(BizProtocol.java:984)
+	at com.daou.alioclient.protocol.BizProtocol.sendEnd(BizProtocol.java:141)
+	at com.daou.alioclient.protocol.BizProtocol.close(BizProtocol.java:127)
+	at com.daou.alioclient.worker.AlioWorker.doEnd(AlioWorker.java:33)
+	at com.daou.alioclient.worker.AlioSend.run(AlioSend.java:107)
+12/26 08:23:53 [allvoice-Send-0] [59003] INFO : Connect To Socket. IP [biz.ppurio.com] PORT [26000] 
+12/26 08:23:53 [allvoice-Send-0] [59003] INFO : User Authentication. USER [allvoice]
+12/26 08:23:53 [allvoice-Send-0] [59003] INFO : Start Sending And Receiving Data With The Server.
+12/26 08:23:53 [allvoice-Send-0] [59003] INFO : Connect To Database. TYPE [MYSQL] URL [jdbc:mysql://localhost:3306/allvoice] USER [allvoice]
+12/26 09:44:28 [allvoice-Send-0] [59003] INFO : Send a Message. DEVICE [AT] CMSGID [20191226094427] MSGID [1226al_H92059632106800191627] REPART [S] SVCCODE [7900]
+12/26 09:44:28 [allvoice-Send-0] [59003] INFO : Send a Message. DEVICE [AT] CMSGID [20191226094426] MSGID [1226al_H92495972106800191631] REPART [S] SVCCODE [7900]
+12/26 11:38:58 [allvoice-Send-0] [59003] INFO : Send a Message. DEVICE [AT] CMSGID [20191226113857] MSGID [1226al_H99026792793800506864] REPART [S] SVCCODE [7900]
+12/26 11:43:18 [allvoice-Send-0] [59003] INFO : Send a Message. DEVICE [AT] CMSGID [20191226114316] MSGID [1226al_H90030732819800513170] REPART [S] SVCCODE [7900]
+12/26 13:31:11 [allvoice-Send-0] [59003] INFO : Send a Message. DEVICE [AT] CMSGID [20191226133110] MSGID [1226al_H91340263467200649486] REPART [S] SVCCODE [7900]
+12/26 14:28:52 [allvoice-Send-0] [59003] INFO : Send a Message. DEVICE [AT] CMSGID [20191226142851] MSGID [1226al_H94780633813200835118] REPART [S] SVCCODE [7900]
+12/26 15:30:23 [allvoice-Send-0] [59003] INFO : Send a Message. DEVICE [AT] CMSGID [20191226153022] MSGID [1226al_H94548364182301032309] REPART [S] SVCCODE [7900]
+12/26 15:32:03 [allvoice-Send-0] [59003] INFO : Send a Message. DEVICE [AT] CMSGID [20191226153201] MSGID [1226al_H95376064192201038678] REPART [S] SVCCODE [7900]
+12/26 15:36:10 [allvoice-Send-0] [59003] INFO : Send a Message. DEVICE [AT] CMSGID [20191226153608] MSGID [1226al_H96189194216901044176] REPART [S] SVCCODE [7900]
+12/26 15:40:05 [allvoice-Send-0] [59003] INFO : Send a Message. DEVICE [AT] CMSGID [20191226154004] MSGID [1226al_H97617354240401048293] REPART [S] SVCCODE [7900]
+12/26 15:42:32 [allvoice-Send-0] [59003] INFO : Send a Message. DEVICE [AT] CMSGID [20191226154232] MSGID [1226al_H98505404255101052497] REPART [S] SVCCODE [7900]
+12/26 15:42:32 [allvoice-Send-0] [59003] INFO : Send a Message. DEVICE [AT] CMSGID [20191226154230] MSGID [1226al_H99062284255101052498] REPART [S] SVCCODE [7900]
+12/26 15:42:32 [allvoice-Send-0] [59003] INFO : Send a Message. DEVICE [AT] CMSGID [20191226154231] MSGID [1226al_H90069274255201052499] REPART [S] SVCCODE [7900]
+12/26 16:02:00 [allvoice-Send-0] [59003] INFO : Send a Message. DEVICE [AT] CMSGID [20191226160159] MSGID [1226al_H94166134372001078317] REPART [S] SVCCODE [7900]
+12/26 18:21:51 [allvoice-Send-0] [59003] INFO : Failed to Send a Message Due to Wrong Phone Number. RESULT [R214] DEVICE [AT] CMSGID [20191226182150]
+12/26 18:21:51 [allvoice-Send-0] [59003] INFO : Send a Message. DEVICE [AT] CMSGID [20191226182149] MSGID [1226al_H91745775211101276553] REPART [S] SVCCODE [7900]
+12/26 19:38:07 [allvoice-Send-0] [59003] INFO : Send a Message. DEVICE [AT] CMSGID [20191226193805] MSGID [1226al_H91735105668701347849] REPART [S] SVCCODE [7900]
+12/26 19:40:13 [allvoice-Send-0] [59003] INFO : Send a Message. DEVICE [AT] CMSGID [20191226194011] MSGID [1226al_H92556915681301348542] REPART [S] SVCCODE [7900]
+12/26 19:41:40 [allvoice-Send-0] [59003] INFO : Send a Message. DEVICE [AT] CMSGID [20191226194139] MSGID [1226al_H93899445690001348968] REPART [S] SVCCODE [7900]

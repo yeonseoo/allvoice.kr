@@ -1,0 +1,10 @@
+{
+ "button": [
+ {
+ "name": "메세지 확인하기",
+ "type": "WL",
+ "url_mobile": "https://allvoice.kr/inbox/inbox_room_list.php",
+ "url_pc": "https://allvoice.kr/shop/inboxMessage.php"
+ }
+ ]
+}

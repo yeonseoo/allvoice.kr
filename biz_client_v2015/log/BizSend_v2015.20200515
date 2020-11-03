@@ -1,0 +1,202 @@
+05/15 00:00:54 [allvoice-Send-0] [59003] ERROR : java.io.IOException: Failed to Send a Packet.
+ PACKET : 00000002PI
+ MESSAGE : 파이프가 깨어짐 (Write failed)
+
+05/15 00:00:59 [allvoice-Send-0] [59003] ERROR : Failed To [allvoice-Send-0] End. 
+java.io.IOException: Failed to Send a Packet.
+ PACKET : 00000002EN
+ MESSAGE : Connection has been shutdown: javax.net.ssl.SSLException: java.net.SocketException: 파이프가 깨어짐 (Write failed)
+
+	at com.daou.alioclient.protocol.BizProtocol.socketSendPacket(BizProtocol.java:984)
+	at com.daou.alioclient.protocol.BizProtocol.sendEnd(BizProtocol.java:141)
+	at com.daou.alioclient.protocol.BizProtocol.close(BizProtocol.java:127)
+	at com.daou.alioclient.worker.AlioWorker.doEnd(AlioWorker.java:33)
+	at com.daou.alioclient.worker.AlioSend.run(AlioSend.java:107)
+Caused by: javax.net.ssl.SSLException: java.net.SocketException: 파이프가 깨어짐 (Write failed)
+	at sun.security.ssl.Alerts.getSSLException(Alerts.java:208)
+	at sun.security.ssl.SSLSocketImpl.fatal(SSLSocketImpl.java:1964)
+	at sun.security.ssl.SSLSocketImpl.fatal(SSLSocketImpl.java:1921)
+	at sun.security.ssl.SSLSocketImpl.handleException(SSLSocketImpl.java:1885)
+	at sun.security.ssl.SSLSocketImpl.handleException(SSLSocketImpl.java:1830)
+	at sun.security.ssl.AppOutputStream.write(AppOutputStream.java:128)
+	at java.io.DataOutputStream.write(DataOutputStream.java:107)
+	at java.io.FilterOutputStream.write(FilterOutputStream.java:97)
+	at com.daou.alioclient.socket.AlioSocket.write(AlioSocket.java:96)
+	at com.daou.alioclient.protocol.BizProtocol.socketSendPacket(BizProtocol.java:981)
+	at com.daou.alioclient.protocol.BizProtocol.sendPing(BizProtocol.java:150)
+	at com.daou.alioclient.worker.AlioSend.run(AlioSend.java:69)
+Caused by: java.net.SocketException: 파이프가 깨어짐 (Write failed)
+	at java.net.SocketOutputStream.socketWrite0(Native Method)
+	at java.net.SocketOutputStream.socketWrite(SocketOutputStream.java:111)
+	at java.net.SocketOutputStream.write(SocketOutputStream.java:155)
+	at sun.security.ssl.OutputRecord.writeBuffer(OutputRecord.java:431)
+	at sun.security.ssl.OutputRecord.write(OutputRecord.java:417)
+	at sun.security.ssl.SSLSocketImpl.writeRecordInternal(SSLSocketImpl.java:886)
+	at sun.security.ssl.SSLSocketImpl.writeRecord(SSLSocketImpl.java:857)
+	at sun.security.ssl.AppOutputStream.write(AppOutputStream.java:123)
+	... 6 more
+05/15 00:01:04 [allvoice-Send-0] [59003] INFO : Connect To Socket. IP [biz.ppurio.com] PORT [26000] 
+05/15 00:01:04 [allvoice-Send-0] [59003] INFO : User Authentication. USER [allvoice]
+05/15 00:01:04 [allvoice-Send-0] [59003] INFO : Start Sending And Receiving Data With The Server.
+05/15 00:01:04 [allvoice-Send-0] [59003] INFO : Connect To Database. TYPE [MYSQL] URL [jdbc:mysql://localhost:3306/allvoice] USER [allvoice]
+05/15 01:35:53 [allvoice-Send-0] [59003] INFO : Send a Message. DEVICE [AT] CMSGID [20200515013552] MSGID [0515al_A94107797415232944799] REPART [S] SVCCODE [7900]
+05/15 01:35:53 [allvoice-Send-0] [59003] INFO : Send a Message. DEVICE [AT] CMSGID [20200515013553] MSGID [0515al_A94228847415232944800] REPART [S] SVCCODE [7900]
+05/15 01:35:53 [allvoice-Send-0] [59003] INFO : Failed to Send a Message Due to Wrong Phone Number. RESULT [R214] DEVICE [AT] CMSGID [20200515000001]
+05/15 01:48:34 [allvoice-Send-0] [59003] ERROR : com.daou.alioclient.common.BizException: Failed To Ping. RESULT [null]
+05/15 01:48:39 [allvoice-Send-0] [59003] ERROR : Failed To [allvoice-Send-0] End. 
+java.io.IOException: Failed to Send a Packet.
+ PACKET : 00000002EN
+ MESSAGE : Connection closed by remote host
+
+	at com.daou.alioclient.protocol.BizProtocol.socketSendPacket(BizProtocol.java:984)
+	at com.daou.alioclient.protocol.BizProtocol.sendEnd(BizProtocol.java:141)
+	at com.daou.alioclient.protocol.BizProtocol.close(BizProtocol.java:127)
+	at com.daou.alioclient.worker.AlioWorker.doEnd(AlioWorker.java:33)
+	at com.daou.alioclient.worker.AlioSend.run(AlioSend.java:107)
+05/15 01:48:44 [allvoice-Send-0] [59003] INFO : Connect To Socket. IP [biz.ppurio.com] PORT [26000] 
+05/15 01:48:44 [allvoice-Send-0] [59003] ERROR : com.daou.alioclient.common.AuthException: Failed To User Authentication. [Failed to Send a Packet.
+ PACKET : 00000116AUVERSION:=4.0
+USERID:=allvoice
+PASSWD:=43e6e5145e8784f672408a3616fd045765a97755bd5c49f9063957bce193f220
+CV:=JD2015
+
+ MESSAGE : Connection reset
+]
+05/15 01:49:44 [allvoice-Send-0] [59003] ERROR : Failed To [allvoice-Send-0] End. 
+java.io.IOException: Failed to Send a Packet.
+ PACKET : 00000002EN
+ MESSAGE : Connection has been shutdown: javax.net.ssl.SSLException: java.net.SocketException: Connection reset
+
+	at com.daou.alioclient.protocol.BizProtocol.socketSendPacket(BizProtocol.java:984)
+	at com.daou.alioclient.protocol.BizProtocol.sendEnd(BizProtocol.java:141)
+	at com.daou.alioclient.protocol.BizProtocol.close(BizProtocol.java:127)
+	at com.daou.alioclient.worker.AlioWorker.doEnd(AlioWorker.java:33)
+	at com.daou.alioclient.worker.AlioSend.run(AlioSend.java:107)
+Caused by: javax.net.ssl.SSLException: java.net.SocketException: Connection reset
+	at sun.security.ssl.Alerts.getSSLException(Alerts.java:208)
+	at sun.security.ssl.SSLSocketImpl.fatal(SSLSocketImpl.java:1964)
+	at sun.security.ssl.SSLSocketImpl.fatal(SSLSocketImpl.java:1921)
+	at sun.security.ssl.SSLSocketImpl.handleException(SSLSocketImpl.java:1885)
+	at sun.security.ssl.SSLSocketImpl.handleException(SSLSocketImpl.java:1830)
+	at sun.security.ssl.AppOutputStream.write(AppOutputStream.java:128)
+	at java.io.DataOutputStream.write(DataOutputStream.java:107)
+	at java.io.FilterOutputStream.write(FilterOutputStream.java:97)
+	at com.daou.alioclient.socket.AlioSocket.write(AlioSocket.java:96)
+	at com.daou.alioclient.protocol.BizProtocol.socketSendPacket(BizProtocol.java:981)
+	at com.daou.alioclient.protocol.BizProtocol.connectAndAuthToServer(BizProtocol.java:92)
+	at com.daou.alioclient.worker.AlioSend.run(AlioSend.java:51)
+Caused by: java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:210)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at sun.security.ssl.InputRecord.readFully(InputRecord.java:465)
+	at sun.security.ssl.InputRecord.read(InputRecord.java:503)
+	at sun.security.ssl.SSLSocketImpl.readRecord(SSLSocketImpl.java:983)
+	at sun.security.ssl.SSLSocketImpl.performInitialHandshake(SSLSocketImpl.java:1385)
+	at sun.security.ssl.SSLSocketImpl.writeRecord(SSLSocketImpl.java:757)
+	at sun.security.ssl.AppOutputStream.write(AppOutputStream.java:123)
+	... 6 more
+05/15 01:49:54 [allvoice-Send-0] [59003] INFO : Connect To Socket. IP [biz.ppurio.com] PORT [26000] 
+05/15 01:49:54 [allvoice-Send-0] [59003] INFO : User Authentication. USER [allvoice]
+05/15 01:49:54 [allvoice-Send-0] [59003] INFO : Start Sending And Receiving Data With The Server.
+05/15 01:49:54 [allvoice-Send-0] [59003] INFO : Connect To Database. TYPE [MYSQL] URL [jdbc:mysql://localhost:3306/allvoice] USER [allvoice]
+05/15 09:55:08 [allvoice-Send-0] [59003] INFO : Failed to Send a Message Due to Wrong Phone Number. RESULT [R214] DEVICE [AT] CMSGID [20200515000002]
+05/15 09:55:08 [allvoice-Send-0] [59003] INFO : Send a Message. DEVICE [AT] CMSGID [20200515095507] MSGID [0515al_B91878230410800474172] REPART [S] SVCCODE [7900]
+05/15 09:55:08 [allvoice-Send-0] [59003] INFO : Send a Message. DEVICE [AT] CMSGID [20200515095508] MSGID [0515al_B92294250410800474180] REPART [S] SVCCODE [7900]
+05/15 10:03:15 [allvoice-Send-0] [59003] INFO : Send a Message. DEVICE [AT] CMSGID [20200515100315] MSGID [0515al_B98347840459500519598] REPART [S] SVCCODE [7900]
+05/15 10:03:15 [allvoice-Send-0] [59003] INFO : Send a Message. DEVICE [AT] CMSGID [20200515100316] MSGID [0515al_B98898770459500519602] REPART [S] SVCCODE [7900]
+05/15 10:03:15 [allvoice-Send-0] [59003] INFO : Failed to Send a Message Due to Wrong Phone Number. RESULT [R214] DEVICE [AT] CMSGID [20200515000003]
+05/15 10:10:20 [allvoice-Send-0] [59003] INFO : Send a Message. DEVICE [AT] CMSGID [20200515101020] MSGID [0515al_B91446600502100552552] REPART [S] SVCCODE [7900]
+05/15 10:10:21 [allvoice-Send-0] [59003] INFO : Send a Message. DEVICE [AT] CMSGID [20200515101021] MSGID [0515al_B91903270502100552557] REPART [S] SVCCODE [7900]
+05/15 10:10:21 [allvoice-Send-0] [59003] INFO : Failed to Send a Message Due to Wrong Phone Number. RESULT [R214] DEVICE [AT] CMSGID [20200515000004]
+05/15 10:58:11 [allvoice-Send-0] [59003] INFO : Send a Message. DEVICE [AT] CMSGID [20200515000005] MSGID [0515al_B90083750789200757114] REPART [S] SVCCODE [7900]
+05/15 10:58:29 [allvoice-Send-0] [59003] INFO : Send a Message. DEVICE [AT] CMSGID [20200515000006] MSGID [0515al_B90688890791000758385] REPART [S] SVCCODE [7900]
+05/15 10:58:40 [allvoice-Send-0] [59003] INFO : Send a Message. DEVICE [AT] CMSGID [20200515000007] MSGID [0515al_B91079430792000758921] REPART [S] SVCCODE [7900]
+05/15 10:58:49 [allvoice-Send-0] [59003] INFO : Send a Message. DEVICE [AT] CMSGID [20200515000008] MSGID [0515al_B91538150792900759342] REPART [S] SVCCODE [7900]
+05/15 10:58:59 [allvoice-Send-0] [59003] INFO : Send a Message. DEVICE [AT] CMSGID [20200515000009] MSGID [0515al_B91800520793900760016] REPART [S] SVCCODE [7900]
+05/15 10:59:09 [allvoice-Send-0] [59003] INFO : Send a Message. DEVICE [AT] CMSGID [20200515000010] MSGID [0515al_B92029900794900760632] REPART [S] SVCCODE [7900]
+05/15 10:59:26 [allvoice-Send-0] [59003] INFO : Send a Message. DEVICE [AT] CMSGID [20200515000011] MSGID [0515al_B92485180796600761623] REPART [S] SVCCODE [7900]
+05/15 10:59:35 [allvoice-Send-0] [59003] INFO : Send a Message. DEVICE [AT] CMSGID [20200515000012] MSGID [0515al_B93206840797500762257] REPART [S] SVCCODE [7900]
+05/15 10:59:45 [allvoice-Send-0] [59003] INFO : Send a Message. DEVICE [AT] CMSGID [20200515000013] MSGID [0515al_B94310550798500762651] REPART [S] SVCCODE [7900]
+05/15 10:59:54 [allvoice-Send-0] [59003] INFO : Send a Message. DEVICE [AT] CMSGID [20200515000014] MSGID [0515al_B95171230799400762992] REPART [S] SVCCODE [7900]
+05/15 11:00:14 [allvoice-Send-0] [59003] INFO : Send a Message. DEVICE [AT] CMSGID [20200515000015] MSGID [0515al_B96229150801400765816] REPART [S] SVCCODE [7900]
+05/15 11:00:22 [allvoice-Send-0] [59003] INFO : Send a Message. DEVICE [AT] CMSGID [20200515000016] MSGID [0515al_B97225450802200766647] REPART [S] SVCCODE [7900]
+05/15 11:00:30 [allvoice-Send-0] [59003] INFO : Send a Message. DEVICE [AT] CMSGID [20200515000017] MSGID [0515al_B97662250803000767322] REPART [S] SVCCODE [7900]
+05/15 11:00:38 [allvoice-Send-0] [59003] INFO : Send a Message. DEVICE [AT] CMSGID [20200515000018] MSGID [0515al_B98194180803800768006] REPART [S] SVCCODE [7900]
+05/15 11:00:48 [allvoice-Send-0] [59003] INFO : Send a Message. DEVICE [AT] CMSGID [20200515000019] MSGID [0515al_B99113390804800769150] REPART [S] SVCCODE [7900]
+05/15 11:00:56 [allvoice-Send-0] [59003] INFO : Send a Message. DEVICE [AT] CMSGID [20200515000020] MSGID [0515al_B90060120805700769984] REPART [S] SVCCODE [7900]
+05/15 11:04:12 [allvoice-Send-0] [59003] INFO : Send a Message. DEVICE [AT] CMSGID [20200515000021] MSGID [0515al_B90946790825200780786] REPART [S] SVCCODE [7900]
+05/15 11:04:21 [allvoice-Send-0] [59003] INFO : Send a Message. DEVICE [AT] CMSGID [20200515000022] MSGID [0515al_B91897060826100781489] REPART [S] SVCCODE [7900]
+05/15 11:04:29 [allvoice-Send-0] [59003] INFO : Send a Message. DEVICE [AT] CMSGID [20200515000023] MSGID [0515al_B92644590826900781926] REPART [S] SVCCODE [7900]
+05/15 11:04:37 [allvoice-Send-0] [59003] INFO : Send a Message. DEVICE [AT] CMSGID [20200515000024] MSGID [0515al_B92969930827700782227] REPART [S] SVCCODE [7900]
+05/15 11:04:50 [allvoice-Send-0] [59003] INFO : Send a Message. DEVICE [AT] CMSGID [20200515000025] MSGID [0515al_B93414310829000782703] REPART [S] SVCCODE [7900]
+05/15 11:04:58 [allvoice-Send-0] [59003] INFO : Send a Message. DEVICE [AT] CMSGID [20200515000026] MSGID [0515al_B93928930829800782836] REPART [S] SVCCODE [7900]
+05/15 11:05:03 [allvoice-Send-0] [59003] INFO : Failed to Send a Message Due to Wrong Phone Number. RESULT [R214] DEVICE [AT] CMSGID [20200515000027]
+05/15 11:05:03 [allvoice-Send-0] [59003] INFO : Failed to Send a Message Due to Wrong Phone Number. RESULT [R214] DEVICE [AT] CMSGID [20200515000028]
+05/15 11:05:22 [allvoice-Send-0] [59003] INFO : Send a Message. DEVICE [AT] CMSGID [20200515000029] MSGID [0515al_B95136840832200783385] REPART [S] SVCCODE [7900]
+05/15 11:05:30 [allvoice-Send-0] [59003] INFO : Send a Message. DEVICE [AT] CMSGID [20200515000030] MSGID [0515al_B95476360833000783722] REPART [S] SVCCODE [7900]
+05/15 11:05:39 [allvoice-Send-0] [59003] INFO : Send a Message. DEVICE [AT] CMSGID [20200515000031] MSGID [0515al_B95733850833900784189] REPART [S] SVCCODE [7900]
+05/15 11:05:48 [allvoice-Send-0] [59003] INFO : Send a Message. DEVICE [AT] CMSGID [20200515000032] MSGID [0515al_B98484770834800784535] REPART [S] SVCCODE [7900]
+05/15 11:05:57 [allvoice-Send-0] [59003] INFO : Send a Message. DEVICE [AT] CMSGID [20200515000033] MSGID [0515al_B98946260835700784816] REPART [S] SVCCODE [7900]
+05/15 11:05:58 [allvoice-Send-0] [59003] INFO : Failed to Send a Message Due to Wrong Phone Number. RESULT [R214] DEVICE [AT] CMSGID [20200515000034]
+05/15 11:05:58 [allvoice-Send-0] [59003] INFO : Failed to Send a Message Due to Wrong Phone Number. RESULT [R214] DEVICE [AT] CMSGID [20200515000035]
+05/15 11:06:12 [allvoice-Send-0] [59003] INFO : Send a Message. DEVICE [AT] CMSGID [20200515000036] MSGID [0515al_B90691870837200785434] REPART [S] SVCCODE [7900]
+05/15 11:06:24 [allvoice-Send-0] [59003] INFO : Send a Message. DEVICE [AT] CMSGID [20200515000037] MSGID [0515al_B91409060838400786009] REPART [S] SVCCODE [7900]
+05/15 11:06:34 [allvoice-Send-0] [59003] INFO : Send a Message. DEVICE [AT] CMSGID [20200515000038] MSGID [0515al_B91690520839400786602] REPART [S] SVCCODE [7900]
+05/15 11:06:38 [allvoice-Send-0] [59003] INFO : Failed to Send a Message Due to Wrong Phone Number. RESULT [R214] DEVICE [AT] CMSGID [20200515000040]
+05/15 11:06:38 [allvoice-Send-0] [59003] INFO : Failed to Send a Message Due to Wrong Phone Number. RESULT [R214] DEVICE [AT] CMSGID [20200515000039]
+05/15 11:06:41 [allvoice-Send-0] [59003] INFO : Send a Message. DEVICE [AT] CMSGID [20200515000041] MSGID [0515al_B92152970840100787042] REPART [S] SVCCODE [7900]
+05/15 11:06:48 [allvoice-Send-0] [59003] INFO : Send a Message. DEVICE [AT] CMSGID [20200515000042] MSGID [0515al_B92900130840800787435] REPART [S] SVCCODE [7900]
+05/15 11:07:36 [allvoice-Send-0] [59003] INFO : Failed to Send a Message Due to Wrong Phone Number. RESULT [R214] DEVICE [AT] CMSGID [20200515000043]
+05/15 11:07:36 [allvoice-Send-0] [59003] INFO : Failed to Send a Message Due to Wrong Phone Number. RESULT [R214] DEVICE [AT] CMSGID [20200515000044]
+05/15 11:08:04 [allvoice-Send-0] [59003] INFO : Failed to Send a Message Due to Wrong Phone Number. RESULT [R214] DEVICE [AT] CMSGID [20200515000046]
+05/15 11:08:04 [allvoice-Send-0] [59003] INFO : Failed to Send a Message Due to Wrong Phone Number. RESULT [R214] DEVICE [AT] CMSGID [20200515000045]
+05/15 11:08:18 [allvoice-Send-0] [59003] INFO : Failed to Send a Message Due to Wrong Phone Number. RESULT [R214] DEVICE [AT] CMSGID [20200515000047]
+05/15 11:08:18 [allvoice-Send-0] [59003] INFO : Failed to Send a Message Due to Wrong Phone Number. RESULT [R214] DEVICE [AT] CMSGID [20200515000048]
+05/15 11:08:34 [allvoice-Send-0] [59003] INFO : Failed to Send a Message Due to Wrong Phone Number. RESULT [R214] DEVICE [AT] CMSGID [20200515000049]
+05/15 11:08:34 [allvoice-Send-0] [59003] INFO : Failed to Send a Message Due to Wrong Phone Number. RESULT [R214] DEVICE [AT] CMSGID [20200515000050]
+05/15 11:08:46 [allvoice-Send-0] [59003] INFO : Failed to Send a Message Due to Wrong Phone Number. RESULT [R214] DEVICE [AT] CMSGID [20200515000051]
+05/15 11:08:46 [allvoice-Send-0] [59003] INFO : Failed to Send a Message Due to Wrong Phone Number. RESULT [R214] DEVICE [AT] CMSGID [20200515000052]
+05/15 11:10:12 [allvoice-Send-0] [59003] INFO : Failed to Send a Message Due to Wrong Phone Number. RESULT [R214] DEVICE [AT] CMSGID [20200515000054]
+05/15 11:10:12 [allvoice-Send-0] [59003] INFO : Failed to Send a Message Due to Wrong Phone Number. RESULT [R214] DEVICE [AT] CMSGID [20200515000053]
+05/15 11:12:11 [allvoice-Send-0] [59003] INFO : Failed to Send a Message Due to Wrong Phone Number. RESULT [R214] DEVICE [AT] CMSGID [20200515000056]
+05/15 11:12:11 [allvoice-Send-0] [59003] INFO : Failed to Send a Message Due to Wrong Phone Number. RESULT [R214] DEVICE [AT] CMSGID [20200515000055]
+05/15 11:12:37 [allvoice-Send-0] [59003] INFO : Failed to Send a Message Due to Wrong Phone Number. RESULT [R214] DEVICE [AT] CMSGID [20200515000057]
+05/15 11:12:37 [allvoice-Send-0] [59003] INFO : Failed to Send a Message Due to Wrong Phone Number. RESULT [R214] DEVICE [AT] CMSGID [20200515000058]
+05/15 11:15:24 [allvoice-Send-0] [59003] INFO : Failed to Send a Message Due to Wrong Phone Number. RESULT [R214] DEVICE [AT] CMSGID [20200515000060]
+05/15 11:15:24 [allvoice-Send-0] [59003] INFO : Failed to Send a Message Due to Wrong Phone Number. RESULT [R214] DEVICE [AT] CMSGID [20200515000059]
+05/15 11:16:33 [allvoice-Send-0] [59003] INFO : Failed to Send a Message Due to Wrong Phone Number. RESULT [R214] DEVICE [AT] CMSGID [20200515000061]
+05/15 11:16:33 [allvoice-Send-0] [59003] INFO : Failed to Send a Message Due to Wrong Phone Number. RESULT [R214] DEVICE [AT] CMSGID [20200515000062]
+05/15 11:17:36 [allvoice-Send-0] [59003] INFO : Failed to Send a Message Due to Wrong Phone Number. RESULT [R214] DEVICE [AT] CMSGID [20200515000064]
+05/15 11:17:36 [allvoice-Send-0] [59003] INFO : Failed to Send a Message Due to Wrong Phone Number. RESULT [R214] DEVICE [AT] CMSGID [20200515000063]
+05/15 11:26:01 [allvoice-Send-0] [59003] INFO : Failed to Send a Message Due to Wrong Phone Number. RESULT [R214] DEVICE [AT] CMSGID [20200515000066]
+05/15 11:26:01 [allvoice-Send-0] [59003] INFO : Failed to Send a Message Due to Wrong Phone Number. RESULT [R214] DEVICE [AT] CMSGID [20200515000065]
+05/15 11:30:41 [allvoice-Send-0] [59003] INFO : Failed to Send a Message Due to Wrong Phone Number. RESULT [R214] DEVICE [AT] CMSGID [20200515000068]
+05/15 11:30:41 [allvoice-Send-0] [59003] INFO : Failed to Send a Message Due to Wrong Phone Number. RESULT [R214] DEVICE [AT] CMSGID [20200515000067]
+05/15 11:30:57 [allvoice-Send-0] [59003] INFO : Failed to Send a Message Due to Wrong Phone Number. RESULT [R214] DEVICE [AT] CMSGID [20200515000069]
+05/15 11:40:59 [allvoice-Send-0] [59003] INFO : Failed to Send a Message Due to Wrong Phone Number. RESULT [R214] DEVICE [AT] CMSGID [20200515000071]
+05/15 11:40:59 [allvoice-Send-0] [59003] INFO : Failed to Send a Message Due to Wrong Phone Number. RESULT [R214] DEVICE [AT] CMSGID [20200515000070]
+05/15 11:46:53 [allvoice-Send-0] [59003] INFO : Failed to Send a Message Due to Wrong Phone Number. RESULT [R214] DEVICE [AT] CMSGID [20200515000073]
+05/15 11:46:53 [allvoice-Send-0] [59003] INFO : Failed to Send a Message Due to Wrong Phone Number. RESULT [R214] DEVICE [AT] CMSGID [20200515000072]
+05/15 12:20:39 [allvoice-Send-0] [59003] INFO : Send a Message. DEVICE [AT] CMSGID [20200515000075] MSGID [0515al_B90930341283901014157] REPART [S] SVCCODE [7900]
+05/15 12:20:39 [allvoice-Send-0] [59003] INFO : Failed to Send a Message Due to Wrong Phone Number. RESULT [R214] DEVICE [AT] CMSGID [20200515000074]
+05/15 13:06:36 [allvoice-Send-0] [59003] INFO : Send a Message. DEVICE [AT] CMSGID [20200515000076] MSGID [0515al_B91294591559601230198] REPART [S] SVCCODE [7900]
+05/15 13:24:53 [allvoice-Send-0] [59003] INFO : Send a Message. DEVICE [AT] CMSGID [20200515000077] MSGID [0515al_B94541771669301307945] REPART [S] SVCCODE [7900]
+05/15 14:58:20 [allvoice-Send-0] [59003] INFO : Send a Message. DEVICE [AT] CMSGID [20200515000078] MSGID [0515al_B97155192229901588547] REPART [S] SVCCODE [7900]
+05/15 14:58:56 [allvoice-Send-0] [59003] INFO : Send a Message. DEVICE [AT] CMSGID [20200515000079] MSGID [0515al_B98053352233501591292] REPART [S] SVCCODE [7900]
+05/15 14:59:16 [allvoice-Send-0] [59003] INFO : Send a Message. DEVICE [AT] CMSGID [20200515000080] MSGID [0515al_B98862632235501593169] REPART [S] SVCCODE [7900]
+05/15 15:00:11 [allvoice-Send-0] [59003] INFO : Send a Message. DEVICE [AT] CMSGID [20200515000081] MSGID [0515al_B93515732241101598119] REPART [S] SVCCODE [7900]
+05/15 15:00:35 [allvoice-Send-0] [59003] INFO : Send a Message. DEVICE [AT] CMSGID [20200515000082] MSGID [0515al_B94308242243501601646] REPART [S] SVCCODE [7900]
+05/15 15:00:56 [allvoice-Send-0] [59003] INFO : Send a Message. DEVICE [AT] CMSGID [20200515000083] MSGID [0515al_B94790192245601604803] REPART [S] SVCCODE [7900]
+05/15 15:01:55 [allvoice-Send-0] [59003] INFO : Send a Message. DEVICE [AT] CMSGID [20200515000084] MSGID [0515al_B95240122251401610289] REPART [S] SVCCODE [7900]
+05/15 15:02:51 [allvoice-Send-0] [59003] INFO : Send a Message. DEVICE [AT] CMSGID [20200515000085] MSGID [0515al_B96000282257001614712] REPART [S] SVCCODE [7900]
+05/15 15:03:46 [allvoice-Send-0] [59003] INFO : Failed to Send a Message Due to Wrong Phone Number. RESULT [R214] DEVICE [AT] CMSGID [20200515000086]
+05/15 15:03:54 [allvoice-Send-0] [59003] INFO : Send a Message. DEVICE [AT] CMSGID [20200515000087] MSGID [0515al_B97216422263301620279] REPART [S] SVCCODE [7900]
+05/15 15:03:59 [allvoice-Send-0] [59003] INFO : Failed to Send a Message Due to Wrong Phone Number. RESULT [R214] DEVICE [AT] CMSGID [20200515000088]
+05/15 15:04:33 [allvoice-Send-0] [59003] INFO : Send a Message. DEVICE [AT] CMSGID [20200515000089] MSGID [0515al_B97576962267201623585] REPART [S] SVCCODE [7900]
+05/15 15:04:52 [allvoice-Send-0] [59003] INFO : Send a Message. DEVICE [AT] CMSGID [20200515000090] MSGID [0515al_B98278222269101625447] REPART [S] SVCCODE [7900]
+05/15 15:05:09 [allvoice-Send-0] [59003] INFO : Send a Message. DEVICE [AT] CMSGID [20200515000091] MSGID [0515al_B99119892270801627086] REPART [S] SVCCODE [7900]
+05/15 15:15:39 [allvoice-Send-0] [59003] INFO : Failed to Send a Message Due to Wrong Phone Number. RESULT [R214] DEVICE [AT] CMSGID [20200515000092]
+05/15 15:21:02 [allvoice-Send-0] [59003] INFO : Failed to Send a Message Due to Wrong Phone Number. RESULT [R214] DEVICE [AT] CMSGID [20200515000093]
+05/15 15:32:49 [allvoice-Send-0] [59003] INFO : Failed to Send a Message Due to Wrong Phone Number. RESULT [R214] DEVICE [AT] CMSGID [20200515000094]
+05/15 19:08:12 [allvoice-Send-0] [59003] INFO : Failed to Send a Message Due to Wrong Phone Number. RESULT [R214] DEVICE [AT] CMSGID [20200515000095]
+05/15 19:08:12 [allvoice-Send-0] [59003] INFO : Failed to Send a Message Due to Wrong Phone Number. RESULT [R214] DEVICE [AT] CMSGID [20200515000096]

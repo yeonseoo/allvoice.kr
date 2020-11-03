@@ -1,0 +1,121 @@
+@charset "utf-8";
+/* WSU 201911 */
+@import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
+
+/*
+*, *::after, *::before {
+  box-sizing: border-box;
+}
+*/
+
+/* 요소(element) 여백 초기화  */
+/*
+html,body,div,h1,h2,h3,h4,h5,h6,p,span,ul,ol,dl,dt,dd,form{margin:0; padding:0;}
+body{font-family: 'Noto Sans KR', sans-serif;}
+ */
+
+/*
+a, a:link {color:#333; text-decoration: none;}
+a:visited {color:#333; }
+a:hover, a:active, a:focus {color:#333; text-decoration:none; }
+ */
+
+img {border:0; vertical-align:top;}
+.hidden{display:none;}
+
+/* 목록 */
+ol, ul {list-style:none;}
+
+/* 테두리 없애기 */
+fieldset, img, abbr, acronym { border:none; margin:0; padding:0;} 
+
+/* 테이블 - 마크업에 'cellspacing="0"' 지정 함께 필요 */
+table { border-collapse:collapse; border-spacing:0;}
+
+/* 메시지 */
+#message_wrap{position:relative; overflow:hidden; background:#fff; padding:60px 0 150px 0;}
+.message_box{position:relative; overflow:hidden; width:1200px; margin:0 auto;}
+/*
+.message_box .top_area{position:relative; height:42px; line-height:40px; overflow:hidden;}
+.message_box .top_area .title{font-size:36px; color:#000; float:left;}
+.message_box .top_area .text1{float:right; font-size:18px; color:#000;}
+.message_box .top_area .text1 a{margin-left:20px;float: right;}
+*/
+.message_box .body_area{position:relative; margin-top:2px; border-top:2px solid #4e9bbc; border-bottom:2px solid #4e9bbc; border-left:1px solid #ddd; border-right:1px solid #ddd; overflow:hidden;}
+/*
+.message_box .body_area .left_box{position:relative; overflow:hidden;float: left;width: 350px;}
+ */
+.message_box .body_area .left_box{position:relative; overflow:hidden;height: 1069px; overflow-y: auto;float: left;width: 350px;}
+.message_box .body_area .left_box ul li{overflow:hidden;}
+.message_box .body_area .left_box ul li a{display:block;}
+.message_box .body_area .left_box ul li a div{position:relative; width:350px; height:100px; padding:18px 20px 0 107px; border-bottom:1px solid #ddd; overflow:hidden;}
+.message_box .body_area .left_box ul li.active a div{background:#f1f1f1;}
+.message_box .body_area .left_box ul li a div .profile{position:absolute; top:20px; left:29px; width:60px; height:60px; border-radius:30px; overflow:hidden;}
+.message_box .body_area .left_box ul li a div .profile img{width:100%;}
+.message_box .body_area .left_box ul li a div .new{position:absolute; top:40px; left:80px;}
+.message_box .body_area .left_box ul li a div .name{font-size:15px; font-weight:400; color:#222;}
+.message_box .body_area .left_box ul li a div .name span{font-size:13px; color:#888; margin-left:7px; font-weight:300;}
+.message_box .body_area .left_box ul li a div .chat{font-size:13px; color:#888; line-height:20px; font-weight:400; overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 2; /* 라인수 */ -webkit-box-orient: vertical; word-wrap:break-word; height: 40px;margin-top: 1px;}
+.message_box .body_area .right_box{position:relative; border-left:1px solid #e3e3e3; overflow:hidden;}
+.message_box .body_area .right_box .user_info{position:relative; height:100px; line-height:100px; padding:0 40px 0 129px; border-bottom:1px solid #ccc; overflow:hidden;}
+.message_box .body_area .right_box .user_info .profile{position:absolute; top:20px; left:29px; width:60px; height:60px; border-radius:30px; overflow:hidden;}
+.message_box .body_area .right_box .user_info .profile img{width:100%;vertical-align: top;}
+.message_box .body_area .right_box .user_info .name{float:left; font-size:18px; color:#333; font-weight:400;}
+.message_box .body_area .right_box .user_info .favorite{float:right; width:26px; height:23px; margin-top:37px; overflow:hidden; background:url(../img/inbox/icon_star_null.gif) no-repeat;}
+.message_box .body_area .right_box .user_info .favorite.on{background:url(../img/inbox/icon_star.gif) no-repeat;}
+.message_box .body_area .right_box .chat_box{position:relative; overflow:hidden;height: 649px;overflow-y: auto;}
+.message_box .body_area .right_box .chat_box .chat_area{position:relative; padding:45px 0 30px 0; overflow:hidden;}
+.message_box .body_area .right_box .chat_box .chat_area .opponent_chat{position:relative; padding-left:120px; overflow:hidden;}
+.message_box .body_area .right_box .chat_box .chat_area .opponent_chat .profile{position:absolute; top:2px; left:29px; width:60px; height:60px; border-radius:30px; overflow:hidden;}
+.message_box .body_area .right_box .chat_box .chat_area .opponent_chat .profile img{width:100%;}
+.message_box .body_area .right_box .chat_box .chat_area .opponent_chat .chat{position:relative; }
+.message_box .body_area .right_box .chat_box .chat_area .opponent_chat .chat .name{font-size:14px; color:#333; margin-bottom:5px; font-weight:400;}
+.message_box .body_area .right_box .chat_box .chat_area .opponent_chat .chat .box{position:relative; padding:17px 23px; margin:0 100px 30px 0 ; background:#f8f8f8; border:1px solid #e3e3e3; border-radius:3px;max-width: 490px;}
+.message_box .body_area .right_box .chat_box .chat_area .opponent_chat .chat .box .arrow{position:absolute; top:5px; left:-9px; width:9px; height:10px; background:url(../img/bg_chat1.gif) no-repeat;}
+.message_box .body_area .right_box .chat_box .chat_area .opponent_chat .chat .box p{font-size:15px; color:#333; font-weight:300; line-height:26px;}
+.message_box .body_area .right_box .chat_box .chat_area .opponent_chat .chat .date{position:absolute; bottom:2px; right:-100px; font-size:14px; color:#999;}
+.message_box .body_area .right_box .chat_box .chat_area .opponent_chat .chat .file{position:relative; padding:16px 23px 18px 52px; margin:0 100px 30px 0 ; background:url(../../images/img_file.gif) no-repeat 20px 20px #f8f8f8; border:1px solid #e3e3e3; border-radius:3px;max-width: 490px;}
+.message_box .body_area .right_box .chat_box .chat_area .opponent_chat .chat .file .arrow{position:absolute; top:5px; left:-9px; width:9px; height:10px; background:url(../img/bg_chat1.gif) no-repeat;}
+.message_box .body_area .right_box .chat_box .chat_area .opponent_chat .chat .file .text1{font-size:17px; color:#333; line-height:26px; conr-weight:400; width:100%; white-space:nowrap; text-overflow:ellipsis; overflow:hidden;}
+.message_box .body_area .right_box .chat_box .chat_area .opponent_chat .chat .file .text2{font-size:15px; color:#666; font-weight:400;margin-top: 7px;height: 18px;overflow: hidden;line-height: 18px;}
+.message_box .body_area .right_box .chat_box .chat_area .opponent_chat .chat .file .text2 span{color:#999; margin:0 5px;font-size: 18px;font-weight: 100;}
+.message_box .body_area .right_box .chat_box .chat_area .opponent_chat .chat .file .text2 a{font-size:15px; color:#666; text-decoration:none;border-left: 1px solid #999;margin-left: 10px;padding-left: 10px;overflow: hidden;}
+.message_box .body_area .right_box .chat_box .chat_area .opponent_chat .chat .file .date{position:absolute; bottom:5px; right:-100px; font-size:14px; color:#999;}
+.message_box .body_area .right_box .chat_box .chat_area .my_chat{position:relative; padding-right:70px; overflow:hidden;}
+.message_box .body_area .right_box .chat_box .chat_area .my_chat .chat{position:relative; }
+.message_box .body_area .right_box .chat_box .chat_area .my_chat .chat .box{position:relative; float:right; padding:17px 23px; margin:0 0 30px 100px; background:#4e9bbc; border-radius:3px;max-width: 490px;}
+.message_box .body_area .right_box .chat_box .chat_area .my_chat .chat .box .arrow{position:absolute; top:5px; right:-9px; width:10px; height:10px; background:url(../img/bg_chat2.gif) no-repeat;}
+.message_box .body_area .right_box .chat_box .chat_area .my_chat .chat .box p{font-size:15px; color:#fff; font-weight:300; line-height:26px;}
+.message_box .body_area .right_box .chat_box .chat_area .my_chat .chat .box .date{position:absolute; bottom:2px; left:-100px; font-size:14px; color:#999;}
+.message_box .body_area .right_box .chat_box .chat_area .my_chat .chat .file .arrow{position:absolute; top:5px; left:-9px; width:9px; height:10px; background:url(../img/bg_chat1.gif) no-repeat;}
+.message_box .body_area .right_box .chat_box .chat_area .my_chat .chat .file .text1{font-size:17px; color:#fff; line-height:26px; conr-weight:400; width:100%; white-space:nowrap; text-overflow:ellipsis; overflow:hidden;}
+.message_box .body_area .right_box .chat_box .chat_area .my_chat .chat .file .text2{font-size:15px; color:#fff; font-weight:400;margin-top: 7px;height: 18px;overflow: hidden;line-height: 18px;}
+.message_box .body_area .right_box .chat_box .chat_area .my_chat .chat .file .text2 span{color:#999; margin:0 5px;font-size: 18px;font-weight: 100;}
+.message_box .body_area .right_box .chat_box .chat_area .my_chat .chat .file .text2 a{font-size:15px; color:#fff; text-decoration:none;border-left: 1px solid #999;margin-left: 10px;padding-left: 10px;overflow: hidden;}
+.message_box .body_area .right_box .chat_box .chat_area .my_chat .chat .file .date{position:absolute; bottom:5px; right:-100px; font-size:14px; color:#999;}
+.message_box .body_area .right_box .chat_box .chat_area .payment_box{position:relative; border-top:1px solid #e3e3e3; padding:48px 35px 58px 35px; border-bottom:1px solid #e3e3e3; margin:25px 20px 60px 20px; overflow:hidden;text-align: center;}
+.message_box .body_area .right_box .chat_box .chat_area .payment_box .text1{ font-size:20px; color:#333; font-weight:400;}
+.message_box .body_area .right_box .chat_box .chat_area .payment_box .tb_message{margin:30px 0;}
+.message_box .body_area .right_box .write_box{position:relative; border-top:1px solid #ddd; padding:36px 26px 40px 26px; overflow:hidden;}
+.message_box .body_area .right_box .write_box textarea{width:100%; height:150px; overflow:hidden; padding:22px; font-size:15px; color:#222; font-weight:300; line-height:27px; background:#f8f8f8; border:1px solid #e3e3e3; resize:none; border-radius:3px;overflow-y: auto;}
+.message_box .body_area .right_box .write_box .btn_box{position:relative; overflow:hidden; margin:22px 0 0 0; padding:0 0 0 10px;}
+.message_box .body_area .right_box .write_box .btn_box a{float:left; margin-right:10px;}
+.message_box .body_area .right_box .write_box .btn_box input{float:left; margin-right:10px;}
+.message_box .body_area .right_box .write_box .btn_box a.fr{float:right; margin-right:0; margin-top:9px;}
+.tb_message{width:100%; border-collapse:collapse; border-top:1px solid #e3e3e3; border-left:1px solid #e3e3e3; border-radius:3px;}
+.tb_message caption span{position:absolute; top:-9999px; overflow:hidden; height:0px; width:0px; }
+.tb_message thead th{padding:12px 14px; font-size:13px; color:#888; text-align:center; background:#f8f8f8; border-right:1px solid #e3e3e3; border-bottom:1px solid #e3e3e3; font-weight:400;}
+.tb_message tbody td{padding:12px 14px; font-size:15px; border-right:1px solid #e3e3e3; border-bottom:1px solid #e3e3e3; color:#222; text-align:left; font-weight:400;}
+.tb_message tbody td.total{text-align:right; color:#ff4a5d; font-weight:500;padding-right: 30px;}
+.tb_message tbody .ta_c{text-align:center;}
+.tb_message tbody td input{border:0; background:#fff; font-size:15px; color:#222;height: 23px;line-height: 23px;}
+.tb_message tbody td select{border:0; background:#fff; font-size:15px; color:#222;height: 23px;line-height: 23px;}
+.tb_message tbody td span{float:left; margin-top:2px;}
+.message_popup_wrap{position:fixed; top:0; bottom:0; left:0; right:0; background:rgba(0,0,0,0.3); z-index: 9; display:none;}
+.message_popup_wrap.on{display:block;}
+.message_popup_wrap .popup_box{width:900px;  background:#fff; margin:175px auto 0 auto;}
+.message_popup_wrap .popup_box .popup_close{float:right; margin-top:1px; margin-right: 1px; font-size:21px}
+.message_popup_wrap .popup_box .text2{margin:45px 0 25px 0; font-size:17px; font-weight:200;;color: #444;}
+.message_popup_wrap .popup_box .payment_box{position:relative; padding:40px 80px 58px 80px; overflow:hidden;text-align: center;}
+.message_popup_wrap .popup_box .payment_box .text1{ font-size:20px; color:#333; font-weight:400;}
+.message_popup_wrap .popup_box .payment_box .tb_message{margin:30px 0;}

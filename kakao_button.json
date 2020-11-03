@@ -1,0 +1,20 @@
+{
+ "button": [
+ {
+ "name": "올보이스",
+ "type": "WL",
+ "url_pc": "http://allvoice.kr",
+ "url_mobile": "http://allvoice.kr"
+ },
+ {
+ "name": "올보이스",
+ "type": "MD"
+ },
+ {
+ "name": "올보이스",
+ "type": "AL",
+ "scheme_android": "daumapps://open",
+ "scheme_ios": "daumapps://open"
+ }
+ ]
+}

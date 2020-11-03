@@ -1,0 +1,203 @@
+<?php
+include_once('./_common.php');
+
+define("_INDEX_", TRUE);
+
+include_once(G5_THEME_MSHOP_PATH.'/shop.head.php');
+?>
+
+<script src="<?php echo G5_JS_URL; ?>/swipe.js"></script>
+<script src="<?php echo G5_JS_URL; ?>/shop.mobile.main.js"></script>
+
+<style type="text/css">
+#ttrxFooter{margin-top:0;}
+</style>
+
+<div id="mainBx">
+	<div>
+		<ul>
+			<li>
+				<img src="../theme/basic/img/mobile/img_mainBx01.png" />
+				<div>
+					<a href="/shop/voiceList.php">성우찾기</a>
+					<a href="/shop/voiceProjectApply.php">작업의뢰</a>
+				</div>
+			</li>
+			<li>
+				<img src="../theme/basic/img/mobile/img_mainBx01.png" />
+				<div>
+					<a href="/shop/voiceList.php">성우찾기</a>
+					<a href="/shop/voiceProjectApply.php">작업의뢰</a>
+				</div>
+			</li>
+			<li>
+				<img src="../theme/basic/img/mobile/img_mainBx01.png" />
+				<div>
+					<a href="/shop/voiceList.php">성우찾기</a>
+					<a href="/shop/voiceProjectApply.php">작업의뢰</a>
+				</div>
+			</li>
+			<li>
+				<img src="../theme/basic/img/mobile/img_mainBx01.png" />
+				<div>
+					<a href="/shop/voiceList.php">성우찾기</a>
+					<a href="/shop/voiceProjectApply.php">작업의뢰</a>
+				</div>
+			</li>
+			<li>
+				<img src="../theme/basic/img/mobile/img_mainBx01.png" />
+				<div>
+					<a href="/shop/voiceList.php">성우찾기</a>
+					<a href="/shop/voiceProjectApply.php">작업의뢰</a>
+				</div>
+			</li>
+		</ul>
+	</div>
+</div>
+
+<script type="text/javascript">
+$(function(){
+	$("#mainBx > div > ul").bxSlider({
+        infiniteLoop: true,
+        touchEnabled: true,
+        pager : true,
+        controls : false,
+        autoControls : false,
+        auto : false,
+        speed : 500,
+        pause : 5000,
+        onSliderLoad : function(){
+        }
+    });
+});
+</script>
+
+<div id="mainCate">
+	<ul>
+		<li><a href="/shop/voiceList.php?cat=10"><img src="../theme/basic/img/img_mainCate01.png" /><span>광고</span></a></li>
+		<li><a href="/shop/voiceList.php?cat=11"><img src="../theme/basic/img/img_mainCate02.png" /><span>홍보</span></a></li>
+		<li><a href="/shop/voiceList.php?cat=12"><img src="../theme/basic/img/img_mainCate03.png" /><span>방송</span></a></li>
+		<li><a href="/shop/voiceList.php?cat=13"><img src="../theme/basic/img/img_mainCate04.png" /><span>만화</span></a></li>
+		<li><a href="/shop/voiceList.php?cat=14"><img src="../theme/basic/img/img_mainCate05.png" /><span>게임</span></a></li>
+		<li><a href="/shop/voiceList.php?cat=15"><img src="../theme/basic/img/img_mainCate06.png" /><span>영화예고</span></a></li>
+		<li><a href="/shop/voiceList.php?cat=16"><img src="../theme/basic/img/img_mainCate07.png" /><span>이벤트</span></a></li>
+		<li><a href="/shop/voiceList.php?cat=17"><img src="../theme/basic/img/img_mainCate08.png" /><span>오디오북, 교재</span></a></li>
+		<li><a href="/shop/voiceList.php?cat=18"><img src="../theme/basic/img/img_mainCate09.png" /><span>기기음성</span></a></li>
+		<li><a href="/shop/voiceList.php?cat=19"><img src="../theme/basic/img/img_mainCate10.png" /><span>ARS, 안내멘트</span></a></li>
+		<li><a href="/shop/voiceList.php?cat=20"><img src="../theme/basic/img/img_mainCate11.png" /><span>홈쇼핑</span></a></li>
+		<li><a href="/shop/voiceList.php?cat=21"><img src="../theme/basic/img/img_mainCate12.png" /><span>성대모사</span></a></li>
+	</ul>
+</div>
+
+<script type="text/javascript">
+$(function(){
+	//var h = '<audio controls src="../theme/basic/img/audio-test-01.mp3"></audio>'
+	//$('.audioPlayer').html(h);
+	maudio({
+	    obj:'audio',
+	    fastStep:10
+	});
+
+	
+});
+</script>
+
+<div id="topTen">
+	<strong>BEST REVIEW VOICE</strong>
+	<ul class="listDataM">
+<?php
+$qry = "SELECT a.*, c.mb_name FROM ".$g5['member_voice']." AS a JOIN ".$g5['member_table']." AS c ON a.mb_id=c.mb_id WHERE c.mb_type1='1' AND a.mv_dae='y' ORDER BY mv_no DESC LIMIT 10";
+//echo $qry;
+$res = sql_query($qry);
+$row_cnt = sql_num_rows($res);
+for ($i=0; $row=sql_fetch_array($res); $i++) {
+	$mb_dir = substr($row['mb_id'],0,2);
+	$icon_url = G5_DATA_URL.'/member_image/'.$mb_dir.'/'.$row['mb_id'].'.gif';
+	$icon_url = is_file(G5_DATA_PATH.'/member_image/'.$mb_dir.'/'.$row['mb_id'].'.gif') ? $icon_url : "../theme/basic/img/profileSample.jpg";
+	$audio_url = G5_DATA_URL.'/member_voice/'.$mb_dir.'/'.$row['mv_voice'];
+?>
+		<li>
+			<a href="/shop/voiceDetail.php?mb_id=<?php echo $row['mb_id']; ?>">
+				<img src="<?php echo $icon_url ?>" />
+			</a>
+			<strong><?php echo $row['mb_name']; ?> (<?php echo $row['mb_id']; ?>)</strong>
+			<div>
+				<div class="audioPlayer">
+					<audio class="listen" preload="none" src="<?php echo $audio_url ?>"></audio>
+				</div>
+			</div>
+		</li>
+<?php
+}
+?>
+
+	</ul>
+</div>
+
+
+<div id="workList">
+	<strong>작업 의뢰</strong>
+	<span>성우님의 목소리를 기다리고 있는 프로젝트입니다.</span>
+	<ul class="projectList">
+<?php
+$qry = "SELECT a.*, IFNULL(d.cnt,0) cnt, b.ca_name FROM ".$g5['g5_shop_item_table']." AS a JOIN ".$g5['g5_shop_category_table']." AS b ON a.ca_id=b.ca_id JOIN ".$g5['member_table']." AS c ON a.it_maker=c.mb_id LEFT JOIN (SELECT it_id, COUNT(*) AS cnt FROM ".$g5['g5_shop_cart_table']." WHERE ct_select='1' AND ct_status<>'취소' GROUP BY it_id) d ON a.it_id=d.it_id WHERE a.it_gubun='1' AND a.it_view_time >= '".date("Y-m-d H:i:s")."' ORDER BY it_id DESC LIMIT 0, 8 ";
+//echo $qry;
+$res = sql_query($qry);
+$row_cnt = sql_num_rows($res);
+
+for ($i=0; $row=sql_fetch_array($res); $i++) {
+	$icon_url = G5_DATA_URL.'/item/'.$row['it_id'].'/'.$row['it_img1'];
+	$icon_url = is_file(G5_DATA_PATH.'/item/'.$row['it_id'].'/'.$row['it_img1']) ? $icon_url : "/theme/basic/img/profileSample.jpg";
+?>
+		<li>
+			<a href="/shop/voiceProjectDetail.php?it_id=<?php echo $row['it_id']; ?>&ca_id=<?php echo $_REQUEST['ca_id']; ?>">
+    			<img src="<?php echo $icon_url; ?>" />
+    			<strong><?php echo $row['ca_name']; ?></strong>
+    			<i><?php echo $row['it_name']; ?></i>
+    			<em><?php echo number_format($row['it_price']); ?><span>won</span></em>
+    			<span><?php echo mb_substr($row['it_explan'], 0, 22, 'utf-8'); ?></span>
+    			<b>마감일 : <?php echo $row['it_view_time']; ?></b>
+    			<b>지원자수 : <?php echo $row['cnt']; ?>명</b>
+			</a>
+		</li>
+<?php
+}
+?>
+
+	</ul>
+	<a href="/shop/voiceProject.php" class="more02">MORE +</a>
+</div>
+
+
+<div id="mainAbout">
+	<img src="../theme/basic/img/mobile/img_about.png" />
+	<p>
+		올보이스는 최고의 프로성우와 그 목소리를 <br />
+		원하는 고객을 다이렉트로 연결하는 <br />
+		국내 최초의 목소리 직거래 플랫폼 입니다.<br />
+		광고, 오디오, 게임, 애니메이션, 출판, 교육 등 <br />
+		모든 분야에 목소리 콘텐츠 제작이 가능하며,<br />
+		기존의 오프라인 작업보다 시간과 비용이 <br />
+		획기적으로 절약되는 신개념 플랫폼입니다. <br />
+		또한, 셀수없이 많은 프로성우의 목소리 샘플을 <br />
+		무료로 들어볼수 있으며, 검색을 통해 <br />
+		원하는 목소리를 빠르고 쉽게 찾을 수 있습니다.<br />
+		이제 올보이스에서 여러분이 원하는 바로 <br />
+		그 목소리와 원하는 콘텐츠 작업을 보세요.  
+ 
+		<!-- 
+            올보이스는 전문적인 음성 재능과 사업을 연결하는 <br />
+            업계 최고의 웹사이트 입니다.<br /> 
+            라디오와 텔레비전 방송국, 광고 대행사, <br />
+            포춘지 500대 기업에서 일하는 <br /> 
+            전 세계 사람들은 우리의 웹사이트와 모바일 <br /> 
+            사이트의 도움으로 우리의 시장에 의지하여 <br /> 
+            음성 인재를 찾고, 오디션하고, 고용합니다.
+		 -->
+	</p>
+	<a href="<?php echo G5_SHOP_URL; ?>/introduce.php" class="more01">MORE<img src="../theme/basic/img/img_more.png" /></a>
+</div>
+
+<?php
+include_once(G5_THEME_MSHOP_PATH.'/shop.tail.php');
+?>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg width="16px" height="9px" viewBox="0 0 16 9" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+  <desc>Created with Lunacy</desc>
+  <defs>
+    <image width="32" height="18" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAASCAYAAAA6yNxSAAAABGdBTUEAALGOfPtRkwAAARFJREFUSA29lj0OgjAYhqmbB1BXCQwmJk56AFfuwF24C3dwlAPoZkwcIO66u+L7EjD+QGk/wCalBfr1edrhax0HJYqiEdt/loqp2Inj+AT4QykVpGl6H1LE9/1Jnuc7MMZhGK4UYZ7nHfBxDYEz6nYoiRKegLUE55hl2abYeq6ccP5ATTiw7134gnOhARnFDrBTM6C3ndDN/RIYSkIHJ/NDoG+JNnitQF8SJvBGga4SpnCtgFTCBt4qYCthCzcSMJWQwI0F2iSkcCuBJgl+Z/ZkFmU2RbVKYD95gBPqyvtqMe5Sjl1I4Iy1FmAQDq8pmj1XzXcpvIjlQ1Jc150BfGUs2jlOtptknk4xvEtUFwvpRE+ju0C/DDKx7AAAAABJRU5ErkJggg==" id="img_1" />
+  </defs>
+  <use xlink:href="#img_1" fill="#FFFFFF" stroke="none" transform="scale(0.5 0.5)" />
+</svg>

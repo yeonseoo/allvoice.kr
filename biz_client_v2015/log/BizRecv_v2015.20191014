@@ -1,0 +1,75 @@
+10/14 14:11:14 [allvoice-Recv] [63011] INFO : Connect To Socket. IP [biz.ppurio.com] PORT [26100] 
+10/14 14:11:14 [allvoice-Recv] [63011] INFO : User Authentication. USER [allvoice]
+10/14 14:11:14 [allvoice-Recv] [63011] INFO : Start Sending And Receiving Data With The Server.
+10/14 14:11:44 [allvoice-Recv] [63011] ERROR : Thread is Interrupted. 
+java.lang.InterruptedException: sleep interrupted
+	at java.lang.Thread.sleep(Native Method)
+	at com.daou.alioclient.worker.AlioWorker.doSleep(AlioWorker.java:23)
+	at com.daou.alioclient.worker.AlioRecv.run(AlioRecv.java:42)
+10/14 14:11:49 [allvoice-Recv] [63011] ERROR : Failed To [allvoice-Recv] End. 
+com.daou.alioclient.common.BizException: Failed To End. RESULT [PI]
+	at com.daou.alioclient.protocol.BizProtocol.sendEnd(BizProtocol.java:144)
+	at com.daou.alioclient.protocol.BizProtocol.close(BizProtocol.java:127)
+	at com.daou.alioclient.worker.AlioWorker.doEnd(AlioWorker.java:33)
+	at com.daou.alioclient.worker.AlioRecv.run(AlioRecv.java:51)
+10/14 14:11:54 [Thread-1] [63011] ERROR : Failed To [allvoice-Recv] End. 
+java.io.IOException: Failed to Read a Packet.
+ PACKET : null
+ MESSAGE : Connection reset
+
+	at com.daou.alioclient.protocol.BizProtocol.socketReadPacket(BizProtocol.java:1002)
+	at com.daou.alioclient.protocol.BizProtocol.sendEnd(BizProtocol.java:142)
+	at com.daou.alioclient.protocol.BizProtocol.close(BizProtocol.java:127)
+	at com.daou.alioclient.worker.AlioWorker.doEnd(AlioWorker.java:33)
+	at com.daou.alioclient.worker.AlioRecv.doShutDown(AlioRecv.java:65)
+	at com.daou.alioclient.worker.AlioMain.commandShutdown(AlioMain.java:256)
+	at com.daou.alioclient.worker.AlioMain.workerShutdown(AlioMain.java:225)
+	at com.daou.alioclient.worker.AlioMain.doShutDown(AlioMain.java:83)
+	at com.daou.alioclient.common.AlioShutdownHook.run(AlioShutdownHook.java:21)
+10/14 14:11:54 [Thread-1] [63011] INFO : Worker [allvoice-Recv] ShutDown.
+10/14 14:49:32 [allvoice-Recv] [59003] INFO : Connect To Socket. IP [biz.ppurio.com] PORT [26100] 
+10/14 14:49:32 [allvoice-Recv] [59003] INFO : User Authentication. USER [allvoice]
+10/14 14:49:32 [allvoice-Recv] [59003] INFO : Start Sending And Receiving Data With The Server.
+10/14 14:51:17 [allvoice-Recv] [59003] INFO : Receive And Add a Report To Queue. CMSGID [20191013220717]
+10/14 14:51:17 [allvoice-Recv] [59003] INFO : Receive And Add a Report To Queue. CMSGID [20191013212401]
+10/14 14:51:17 [allvoice-Recv] [59003] INFO : Receive And Add a Report To Queue. CMSGID [20191013212400]
+10/14 14:51:17 [allvoice-Recv] [59003] INFO : Receive And Add a Report To Queue. CMSGID [20191013212722]
+10/14 14:51:17 [allvoice-Recv] [59003] INFO : Receive And Add a Report To Queue. CMSGID [20191014115337]
+10/14 14:51:17 [allvoice-Recv] [59003] INFO : Receive And Add a Report To Queue. CMSGID [20191014114915]
+10/14 14:51:17 [allvoice-Recv] [59003] INFO : Receive And Add a Report To Queue. CMSGID [20191014104702]
+10/14 14:51:17 [allvoice-Recv] [59003] INFO : Receive And Add a Report To Queue. CMSGID [20191013193749]
+10/14 14:51:17 [allvoice-Recv] [59003] INFO : Receive And Add a Report To Queue. CMSGID [20191013212706]
+10/14 14:51:17 [allvoice-Recv] [59003] INFO : Receive And Add a Report To Queue. CMSGID [20191014102828]
+10/14 14:51:17 [allvoice-Recv] [59003] INFO : Receive And Add a Report To Queue. CMSGID [20191014114003]
+10/14 14:51:17 [allvoice-Recv] [59003] INFO : Receive And Add a Report To Queue. CMSGID [20191013212705]
+10/14 14:51:17 [allvoice-Recv] [59003] INFO : Receive And Add a Report To Queue. CMSGID [20191014115306]
+10/14 14:51:17 [allvoice-Recv] [59003] INFO : Receive And Add a Report To Queue. CMSGID [20191014115801]
+10/14 14:51:17 [allvoice-Recv] [59003] INFO : Receive And Add a Report To Queue. CMSGID [20191014065508]
+10/14 14:51:17 [allvoice-Recv] [59003] INFO : Receive And Add a Report To Queue. CMSGID [20191014095145]
+10/14 14:51:17 [allvoice-Recv] [59003] INFO : Receive And Add a Report To Queue. CMSGID [20191014115507]
+10/14 14:51:17 [allvoice-Recv] [59003] INFO : Receive And Add a Report To Queue. CMSGID [20191014115425]
+10/14 14:51:17 [allvoice-Recv] [59003] INFO : Receive And Add a Report To Queue. CMSGID [20191014133552]
+10/14 14:51:17 [allvoice-Recv] [59003] INFO : Receive And Add a Report To Queue. CMSGID [20191014142537]
+10/14 14:51:17 [allvoice-Recv] [59003] INFO : Receive And Add a Report To Queue. CMSGID [20191014140806]
+10/14 14:51:17 [allvoice-Recv] [59003] INFO : Receive And Add a Report To Queue. CMSGID [20191014121553]
+10/14 14:51:17 [allvoice-Recv] [59003] INFO : Receive And Add a Report To Queue. CMSGID [20191014141647]
+10/14 14:51:17 [allvoice-Recv] [59003] INFO : Receive And Add a Report To Queue. CMSGID [20191014115736]
+10/14 14:51:17 [allvoice-Recv] [59003] INFO : Receive And Add a Report To Queue. CMSGID [20191014115708]
+10/14 14:51:17 [allvoice-Recv] [59003] INFO : Receive And Add a Report To Queue. CMSGID [20191014115637]
+10/14 14:51:17 [allvoice-Recv] [59003] INFO : Receive And Add a Report To Queue. CMSGID [20191014115824]
+10/14 14:51:17 [allvoice-Recv] [59003] INFO : Receive And Add a Report To Queue. CMSGID [20191014141114]
+10/14 14:51:17 [allvoice-Recv] [59003] INFO : Receive And Add a Report To Queue. CMSGID [20191014142241]
+10/14 14:51:17 [allvoice-Recv] [59003] INFO : Receive And Add a Report To Queue. CMSGID [20191014140900]
+10/14 14:57:22 [allvoice-Recv] [59003] INFO : Receive And Add a Report To Queue. CMSGID [20191014145720]
+10/14 14:59:33 [allvoice-Recv] [59003] INFO : Receive And Add a Report To Queue. CMSGID [20191014145929]
+10/14 15:00:53 [allvoice-Recv] [59003] INFO : Receive And Add a Report To Queue. CMSGID [20191014150046]
+10/14 15:01:53 [allvoice-Recv] [59003] INFO : Receive And Add a Report To Queue. CMSGID [20191014150146]
+10/14 15:02:28 [allvoice-Recv] [59003] INFO : Receive And Add a Report To Queue. CMSGID [20191014150221]
+10/14 15:03:03 [allvoice-Recv] [59003] INFO : Receive And Add a Report To Queue. CMSGID [20191014150258]
+10/14 15:03:38 [allvoice-Recv] [59003] INFO : Receive And Add a Report To Queue. CMSGID [20191014150330]
+10/14 15:04:08 [allvoice-Recv] [59003] INFO : Receive And Add a Report To Queue. CMSGID [20191014150404]
+10/14 15:04:58 [allvoice-Recv] [59003] INFO : Receive And Add a Report To Queue. CMSGID [20191014150452]
+10/14 15:05:23 [allvoice-Recv] [59003] INFO : Receive And Add a Report To Queue. CMSGID [20191014150519]
+10/14 15:09:44 [allvoice-Recv] [59003] INFO : Receive And Add a Report To Queue. CMSGID [20191014150938]
+10/14 18:26:46 [allvoice-Recv] [59003] INFO : Receive And Add a Report To Queue. CMSGID [20191014182643]
+10/14 19:55:11 [allvoice-Recv] [59003] INFO : Receive And Add a Report To Queue. CMSGID [20191014195509]

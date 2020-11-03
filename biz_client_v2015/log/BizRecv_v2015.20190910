@@ -1,0 +1,47 @@
+09/10 13:37:53 [allvoice-Recv] [27891] ERROR : Thread is Interrupted. 
+java.lang.InterruptedException: sleep interrupted
+	at java.lang.Thread.sleep(Native Method)
+	at com.daou.alioclient.worker.AlioWorker.doSleep(AlioWorker.java:23)
+	at com.daou.alioclient.worker.AlioRecv.run(AlioRecv.java:42)
+09/10 13:37:57 [allvoice-Recv] [27891] ERROR : Failed To [allvoice-Recv] End. 
+com.daou.alioclient.common.BizException: Failed To End. RESULT [PI]
+	at com.daou.alioclient.protocol.BizProtocol.sendEnd(BizProtocol.java:144)
+	at com.daou.alioclient.protocol.BizProtocol.close(BizProtocol.java:127)
+	at com.daou.alioclient.worker.AlioWorker.doEnd(AlioWorker.java:33)
+	at com.daou.alioclient.worker.AlioRecv.run(AlioRecv.java:51)
+09/10 13:38:02 [Thread-1] [27891] ERROR : Failed To [allvoice-Recv] End. 
+java.io.IOException: Failed to Read a Packet.
+ PACKET : null
+ MESSAGE : Connection reset
+
+	at com.daou.alioclient.protocol.BizProtocol.socketReadPacket(BizProtocol.java:1002)
+	at com.daou.alioclient.protocol.BizProtocol.sendEnd(BizProtocol.java:142)
+	at com.daou.alioclient.protocol.BizProtocol.close(BizProtocol.java:127)
+	at com.daou.alioclient.worker.AlioWorker.doEnd(AlioWorker.java:33)
+	at com.daou.alioclient.worker.AlioRecv.doShutDown(AlioRecv.java:65)
+	at com.daou.alioclient.worker.AlioMain.commandShutdown(AlioMain.java:256)
+	at com.daou.alioclient.worker.AlioMain.workerShutdown(AlioMain.java:225)
+	at com.daou.alioclient.worker.AlioMain.doShutDown(AlioMain.java:83)
+	at com.daou.alioclient.common.AlioShutdownHook.run(AlioShutdownHook.java:21)
+09/10 13:38:02 [Thread-1] [27891] INFO : Worker [allvoice-Recv] ShutDown.
+09/10 13:38:38 [allvoice-Recv] [13807] INFO : Connect To Socket. IP [biz.ppurio.com] PORT [26100] 
+09/10 13:38:38 [allvoice-Recv] [13807] INFO : User Authentication. USER [allvoice]
+09/10 13:38:38 [allvoice-Recv] [13807] INFO : Start Sending And Receiving Data With The Server.
+09/10 13:39:38 [allvoice-Recv] [13807] INFO : Receive And Add a Report To Queue. CMSGID [201909090002]
+09/10 14:16:20 [allvoice-Recv] [13807] INFO : Receive And Add a Report To Queue. CMSGID [20190910141158]
+09/10 14:21:21 [allvoice-Recv] [13807] INFO : Receive And Add a Report To Queue. CMSGID [20190910141538]
+09/10 15:15:34 [allvoice-Recv] [13807] INFO : Receive And Add a Report To Queue. CMSGID [20190910151527]
+09/10 15:15:54 [allvoice-Recv] [13807] INFO : Receive And Add a Report To Queue. CMSGID [20190910151551]
+09/10 15:24:26 [allvoice-Recv] [13807] INFO : Receive And Add a Report To Queue. CMSGID [20190910152422]
+09/10 15:24:41 [allvoice-Recv] [13807] INFO : Receive And Add a Report To Queue. CMSGID [20190910152436]
+09/10 15:25:02 [allvoice-Recv] [13807] INFO : Receive And Add a Report To Queue. CMSGID [20190910152454]
+09/10 15:25:17 [allvoice-Recv] [13807] INFO : Receive And Add a Report To Queue. CMSGID [20190910152510]
+09/10 15:25:42 [allvoice-Recv] [13807] INFO : Receive And Add a Report To Queue. CMSGID [20190910152535]
+09/10 15:26:07 [allvoice-Recv] [13807] INFO : Receive And Add a Report To Queue. CMSGID [20190910152559]
+09/10 15:26:22 [allvoice-Recv] [13807] INFO : Receive And Add a Report To Queue. CMSGID [20190910152614]
+09/10 15:26:32 [allvoice-Recv] [13807] INFO : Receive And Add a Report To Queue. CMSGID [20190910152628]
+09/10 15:26:47 [allvoice-Recv] [13807] INFO : Receive And Add a Report To Queue. CMSGID [20190910152640]
+09/10 15:58:01 [allvoice-Recv] [13807] INFO : Receive And Add a Report To Queue. CMSGID [20190910155758]
+09/10 16:11:53 [allvoice-Recv] [13807] INFO : Receive And Add a Report To Queue. CMSGID [20190910161148]
+09/10 18:00:00 [allvoice-Recv] [13807] INFO : Receive And Add a Report To Queue. CMSGID [20190910175954]
+09/10 18:07:53 [allvoice-Recv] [13807] INFO : Receive And Add a Report To Queue. CMSGID [20190910180358]

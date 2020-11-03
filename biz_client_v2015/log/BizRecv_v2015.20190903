@@ -1,0 +1,7 @@
+09/03 10:21:25 [allvoice-Recv] [27891] INFO : Connect To Socket. IP [biz.ppurio.com] PORT [26100] 
+09/03 10:21:25 [allvoice-Recv] [27891] INFO : User Authentication. USER [allvoice]
+09/03 10:21:25 [allvoice-Recv] [27891] INFO : Start Sending And Receiving Data With The Server.
+09/03 13:43:16 [allvoice-Recv] [27891] INFO : Receive And Add a Report To Queue. CMSGID [201909030001]
+09/03 14:08:24 [allvoice-Recv] [27891] INFO : Receive And Add a Report To Queue. CMSGID [201909030001]
+09/03 14:09:19 [allvoice-Recv] [27891] INFO : Receive And Add a Report To Queue. CMSGID [201909030002]
+09/03 18:21:00 [allvoice-Recv] [27891] INFO : Receive And Add a Report To Queue. CMSGID [201909030003]

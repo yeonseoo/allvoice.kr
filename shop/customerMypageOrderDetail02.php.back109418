@@ -1,0 +1,379 @@
+<?php
+include_once('./_common.php');
+
+
+if (G5_IS_MOBILE) {
+    include_once(G5_MSHOP_PATH.'/voiceMypageList01.php');
+    return;
+}
+
+include_once('./_head.php');
+
+
+?>
+
+<!-- 성우상세 { -->
+
+<div class="commonLocation">
+	<ul>
+		<li><img src="../theme/basic/img/img_home2.png" /></li>
+		<li>MY PAGE</li>
+		<li>합의 주문 내역</li>
+		<li>합의 주문서 보기</li>
+	</ul>
+</div>
+
+
+<div class="voiceMypage">
+	<div class="voiceDetailInfo">
+		<div class="voiceDetailSection">
+			<div style="padding:30px 50px;">
+				<div class="orderDetailView">
+    				<a href="javascript:;" class="orderDetailViewCtrl">
+    					<strong>admin님의 주문서</strong>
+    					<span>의뢰일 19-03-05 11:10(화)</span>
+    				</a>
+    				
+    				<ul class="orderDetailViewCont">
+    					<li>
+    						<span>상태</span>
+    						<div>
+    							<span class="orderStatus orderStatus03">거래합의중</span>
+    						</div>
+    					</li>
+    					<li>
+    						<span>제목</span>
+    						<div>
+    							애니메이션 더빙 의뢰
+    						</div>
+    					</li>
+    					<li>
+    						<span>성명</span>
+    						<div>
+    							터닝메카드 주인공(남) 목소리 더빙을 의뢰합니다.
+    						</div>
+    					</li>
+    					<li>
+    						<span>대본</span>
+    						<div>
+    							대본내용내용내용내용내용
+    							<div>
+	    							첨부된 파일명.pdf&nbsp;&nbsp;&nbsp;<a href="javascript:;" class="downloadBtn">Download</a>
+    							</div>
+    						</div>
+    					</li>
+    					<li>
+    						<span>마감시한</span>
+    						<div>
+    							19-04-05
+    						</div>
+    					</li>
+    					<li>
+    						<span>Category</span>
+    						<div>
+    							만화
+    						</div>
+    					</li>
+    					<li>
+    						<span>Gender</span>
+    						<div>
+    							남성
+    						</div>
+    					</li>
+    					<li>
+    						<span>Age</span>
+    						<div>
+    							유아
+    						</div>
+    					</li>
+    					<li>
+    						<span>Tone</span>
+    						<div>
+    							하이톤
+    						</div>
+    					</li>
+    					<li>
+    						<span>Language</span>
+    						<div>
+    							표준어
+    						</div>
+    					</li>
+    					<li>
+    						<span>예산</span>
+    						<div>
+    							200,000원
+    						</div>
+    					</li>
+    				</ul>
+				</div>
+			</div>
+		</div>
+		
+		<div class="voiceSampleSection form">
+			<div style="padding:30px 50px;">
+    			<div class="orderDetailView">
+    				<a href="javascript:;" class="orderDetailViewCtrl">
+    					<strong>admin님의 답변</strong>
+    					<span>19-03-05 11:10(화)</span>
+    				</a>
+    				<ul class="orderDetailViewCont">
+    					<li>
+    						<span>내용</span>
+    						<div>
+    							해당 작업을 진행하도록 하겠습니다. <br />
+    							결제 확인 후 작업 소요일은 3~5일 이내 입니다.  감사합니다. 
+    						</div>
+    					</li>
+    					<li>
+    						<span>견적 금액</span>
+    						<div>
+    							200,000 
+    						</div>
+    					</li>
+    				</ul>
+    			</div>
+			</div>
+		</div>
+		
+		<div id="od_pay_sl">
+            <?php
+            /*
+            if (!$default['de_card_point'])
+                echo '<p id="sod_frm_pt_alert"><strong>무통장입금</strong> 이외의 결제 수단으로 결제하시는 경우 포인트를 적립해드리지 않습니다.</p>';
+             */
+
+            $multi_settle = 0;
+            $checked = '';
+
+            $escrow_title = "";
+            if ($default['de_escrow_use']) {
+                $escrow_title = "에스크로<br>";
+            }
+
+            if ($is_kakaopay_use || $default['de_bank_use'] || $default['de_vbank_use'] || $default['de_iche_use'] || $default['de_card_use'] || $default['de_hp_use'] || $default['de_easy_pay_use'] || $default['de_inicis_lpay_use']) {
+                echo '<fieldset id="sod_frm_paysel">';
+                echo '<legend>결제방법 선택</legend>';
+            }
+
+            // 카카오페이
+            if($is_kakaopay_use) {
+                $multi_settle++;
+                echo '<input type="radio" id="od_settle_kakaopay" name="od_settle_case" value="KAKAOPAY" '.$checked.'> <label for="od_settle_kakaopay" class="kakaopay_icon lb_icon">KAKAOPAY</label>'.PHP_EOL;
+                $checked = '';
+            }
+
+            // 무통장입금 사용
+            if ($default['de_bank_use']) {
+                $multi_settle++;
+                echo '<input type="radio" id="od_settle_bank" name="od_settle_case" value="무통장" '.$checked.'> <label for="od_settle_bank" class="lb_icon bank_icon">무통장입금</label>'.PHP_EOL;
+                $checked = '';
+            }
+
+            // 가상계좌 사용
+            if ($default['de_vbank_use']) {
+                $multi_settle++;
+                echo '<input type="radio" id="od_settle_vbank" name="od_settle_case" value="가상계좌" '.$checked.'> <label for="od_settle_vbank" class="lb_icon vbank_icon">'.$escrow_title.'가상계좌</label>'.PHP_EOL;
+                $checked = '';
+            }
+
+            // 계좌이체 사용
+            if ($default['de_iche_use']) {
+                $multi_settle++;
+                echo '<input type="radio" id="od_settle_iche" name="od_settle_case" value="계좌이체" '.$checked.'> <label for="od_settle_iche" class="lb_icon iche_icon">'.$escrow_title.'계좌이체</label>'.PHP_EOL;
+                $checked = '';
+            }
+
+            // 휴대폰 사용
+            if ($default['de_hp_use']) {
+                $multi_settle++;
+                echo '<input type="radio" id="od_settle_hp" name="od_settle_case" value="휴대폰" '.$checked.'> <label for="od_settle_hp" class="lb_icon hp_icon">휴대폰</label>'.PHP_EOL;
+                $checked = '';
+            }
+
+            // 신용카드 사용
+            if ($default['de_card_use']) {
+                $multi_settle++;
+                echo '<input type="radio" id="od_settle_card" name="od_settle_case" value="신용카드" '.$checked.'> <label for="od_settle_card" class="lb_icon card_icon">신용카드</label>'.PHP_EOL;
+                $checked = '';
+            }
+
+            // PG 간편결제
+            if($default['de_easy_pay_use']) {
+                switch($default['de_pg_service']) {
+                    case 'lg':
+                        $pg_easy_pay_name = 'PAYNOW';
+                        break;
+                    case 'inicis':
+                        $pg_easy_pay_name = 'KPAY';
+                        break;
+                    default:
+                        $pg_easy_pay_name = 'PAYCO';
+                        break;
+                }
+
+                $multi_settle++;
+                echo '<input type="radio" id="od_settle_easy_pay" name="od_settle_case" value="간편결제" '.$checked.'> <label for="od_settle_easy_pay" class="'.$pg_easy_pay_name.' lb_icon">'.$pg_easy_pay_name.'</label>'.PHP_EOL;
+                $checked = '';
+            }
+
+            //이니시스 Lpay
+            if($default['de_inicis_lpay_use']) {
+                echo '<input type="radio" id="od_settle_inicislpay" data-case="lpay" name="od_settle_case" value="lpay" '.$checked.'> <label for="od_settle_inicislpay" class="inicis_lpay lb_icon">L.pay</label>'.PHP_EOL;
+                $checked = '';
+            }
+
+            $temp_point = 0;
+            // 회원이면서 포인트사용이면
+            if ($is_member && $config['cf_use_point'])
+            {
+                // 포인트 결제 사용 포인트보다 회원의 포인트가 크다면
+                if ($member['mb_point'] >= $default['de_settle_min_point'])
+                {
+                    $temp_point = (int)$default['de_settle_max_point'];
+
+                    if($temp_point > (int)$tot_sell_price)
+                        $temp_point = (int)$tot_sell_price;
+
+                    if($temp_point > (int)$member['mb_point'])
+                        $temp_point = (int)$member['mb_point'];
+
+                    $point_unit = (int)$default['de_settle_point_unit'];
+                    $temp_point = (int)((int)($temp_point / $point_unit) * $point_unit);
+            ?>
+            <div class="sod_frm_point">
+                <div>
+                    <label for="od_temp_point">사용 포인트(<?php echo $point_unit; ?>점 단위)</label>
+                    <input type="hidden" name="max_temp_point" value="<?php echo $temp_point; ?>">
+                    <input type="text" name="od_temp_point" value="0" id="od_temp_point"  size="7"> 점
+                </div>
+                <div id="sod_frm_pt">
+                    <span><strong>보유포인트</strong><?php echo display_point($member['mb_point']); ?></span>
+                    <span class="max_point_box"><strong>최대 사용 가능 포인트</strong><em id="use_max_point"><?php echo display_point($temp_point); ?></em></span>
+                </div>
+            </div>
+            <?php
+                $multi_settle++;
+                }
+            }
+
+            if ($default['de_bank_use']) {
+                // 은행계좌를 배열로 만든후
+                $str = explode("\n", trim($default['de_bank_account']));
+                if (count($str) <= 1)
+                {
+                    $bank_account = '<input type="hidden" name="od_bank_account" value="'.$str[0].'">'.$str[0].PHP_EOL;
+                }
+                else
+                {
+                    $bank_account = '<select name="od_bank_account" id="od_bank_account">'.PHP_EOL;
+                    $bank_account .= '<option value="">선택하십시오.</option>';
+                    for ($i=0; $i<count($str); $i++)
+                    {
+                        //$str[$i] = str_replace("\r", "", $str[$i]);
+                        $str[$i] = trim($str[$i]);
+                        $bank_account .= '<option value="'.$str[$i].'">'.$str[$i].'</option>'.PHP_EOL;
+                    }
+                    $bank_account .= '</select>'.PHP_EOL;
+                }
+                echo '<div id="settle_bank" style="display:none">';
+                echo '<label for="od_bank_account" class="sound_only">입금할 계좌</label>';
+                echo $bank_account;
+                echo '<br><label for="od_deposit_name">입금자명</label> ';
+                echo '<input type="text" name="od_deposit_name" id="od_deposit_name" size="10" maxlength="20">';
+                echo '</div>';
+            }
+
+            if ($is_kakaopay_use || $default['de_bank_use'] || $default['de_vbank_use'] || $default['de_iche_use'] || $default['de_card_use'] || $default['de_hp_use'] || $default['de_easy_pay_use'] || $default['de_inicis_lpay_use'] ) {
+                echo '</fieldset>';
+            }
+
+            if ($multi_settle == 0)
+                echo '<p>결제할 방법이 없습니다.<br>운영자에게 알려주시면 감사하겠습니다.</p>';
+            ?>
+        </div>
+		
+		<div class="ctrler">
+			<a class="vSave" style="cursor:pointer;">결제하기</a>
+			<a href="javascript:;" class="vCancel">의뢰 취소 하기</a>
+		</div>
+	</div>
+	
+<script type="text/javascript">
+$(function(){
+	$(".orderDetailViewCtrl").each(function(ctrlIdx){
+		$(this).click(function(){
+			if($(this).hasClass("on")){
+				$(".orderDetailViewCont").eq(ctrlIdx).slideDown(500);
+			} else {
+				$(".orderDetailViewCont").eq(ctrlIdx).slideUp(500);
+			};
+			$(this).toggleClass("on");
+		});
+	});
+
+	$("input[name=od_settle_case]").click(function() {
+		if ( $(this).val() == "무통장" ) {
+			$("#settle_bank").show();
+		}
+		else {
+			$("#settle_bank").hide();
+		}
+	});
+
+});
+</script>
+	
+	<div class="voiceProfile">
+		<div>
+			<img src="../theme/basic/img/voiceList/01.png" />
+			<strong>회원이름(아이디)</strong>
+			<ul>
+				<li>연락처</li>
+				<li>010-1234-5678</li>
+				<li>이메일</li>
+				<li>test@test.com</li>
+				<li>최종 접속 일시</li>
+				<li>2019.02.20 00:00:06</li>
+			</ul>
+			<a href="<?php echo G5_BBS_URL ?>/member_confirm.php?url=<?php echo G5_BBS_URL ?>/register_form.php">내 정보 수정</a>
+		</div>
+		<section>
+			<ul>
+				<li><a href="/shop/customerProfile.php">프로필 사진 관리</a></li>
+				<li><a href="/shop/customerMypageList01.php">거래내역</a></li>
+				<li><a href="/shop/customerMypageList02.php">합의 주문 의뢰 내역</a></li>
+				<li><a href="/shop/customerMypageList03.php">작업 의뢰 프로젝트 내역</a></li>
+				<li><a href="/bbs/memo.php" class="memoPop">메시지함</a></li>
+				<li><a href="javascript:;">회원탈퇴</a></li>
+			</ul>
+		</section>
+	</div>
+	
+</div>
+
+<script type="text/javascript">
+$(function(){
+	$(".voiceDetailTab").each(function(){
+    	$(this).find("a").each(function(aIdx){
+    		$(this).click(function(){
+    			console.log($(".voiceDetailSection").eq(aIdx).offset().top);
+    			
+    			$("html, body").animate({
+    				scrollTop : $(".voiceDetailSection").eq(aIdx).offset().top - 203
+        		},0);
+    		});
+    	});
+	});
+
+	$(".memoPop").click(function(){
+        window.open(this.href, "itemuse_form", "width=810,height=550,scrollbars=1");
+        return false;
+    });
+});
+</script>
+
+<!-- } 성우상세 끝 -->
+
+<?php
+include_once("./_tail.php");
+?>

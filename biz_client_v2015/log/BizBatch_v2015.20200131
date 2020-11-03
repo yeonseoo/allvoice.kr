@@ -1,0 +1,5 @@
+01/31 02:03:03 [allvoice-Batch] [59003] INFO : Enable Create Backup Table. DayOfMonth [31] LastDayOfMonth [31]
+01/31 02:03:05 [allvoice-Batch] [59003] INFO : Connect To Database. TYPE [MYSQL] URL [jdbc:mysql://localhost:3306/allvoice] USER [allvoice]
+01/31 02:03:05 [allvoice-Batch] [59003] INFO : Create a Table. TABLE [BIZ_LOG_202002]
+01/31 02:03:06 [allvoice-Batch] [59003] INFO : Disconnect To Database. TYPE [MYSQL] URL [jdbc:mysql://localhost:3306/allvoice] USER [allvoice]
+01/31 03:03:06 [allvoice-Batch] [59003] INFO : Disable Create Backup Table.

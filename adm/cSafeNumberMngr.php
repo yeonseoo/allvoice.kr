@@ -1,0 +1,267 @@
+<?php
+
+include_once('./_common.php');
+
+//$g5['member_table'];
+
+
+// 안심번호 관리
+class cSafeNumberMngr
+{
+    private $bizId;
+    private $mmdd;
+    private $secure;
+    private $secureCode;
+
+    private function initAPI()
+    {
+        $this->bizId = "allvoice";
+        $this->mmdd = date("md");
+        $this->secure = "67aec2b09241800da27133ea01d58a4d676034feb3a0c0a4dd2f907458c26c74";
+        $this->secureCode = hash("sha256", $this->bizId . $this->mmdd . $this->secure);
+    }
+
+    // 안심번호 생성
+    // 안심번호 가능 갯수 확인 후 할
+    public function createSafeNumber($mb_id, $mb_hp)
+    {
+        //echo "<script>console.log( 'PHP_Console1: createSafeNumber' );</script>";
+        $function_result = 1;
+
+        $this->initAPI();
+
+        $s_url = "https://bizapi.callmix.co.kr/biz050/BZV100?secureCode=".$this->secureCode."&bizId=".$this->bizId."&monthDay=".$this->mmdd."&selGbn=3&reqCnt=500";
+
+        // ech"<script>console.log( 'PHP_Console1: createSafeNumber ".$s_url."' );</script>";
+        if (function_exists('curl_init')) {
+            // curl 리소스를 초기화
+            $ch = curl_init();
+
+            // url을 설정
+            curl_setopt($ch, CURLOPT_URL, $s_url);
+
+            // 헤더는 제외하고 content 만 받음
+            curl_setopt($ch, CURLOPT_HEADER, 0);
+
+            // 응답 값을 브라우저에 표시하지 말고 값을 리턴
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+
+            // 브라우저처럼 보이기 위해 user agent 사용
+            curl_setopt($ch, CURLOPT_USERAGENT, 'Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.7.5) Gecko/20041107 Firefox/1.0');
+
+            $vno_str = curl_exec($ch);
+
+            // 리소스 해제를 위해 세션 연결 닫음
+            curl_close($ch);
+
+            $vno_arr = json_decode($vno_str);
+
+            //echo "<script>console.log( 'PHP_Console2: createSafeNumber2' );</script>";
+
+            //echo $vno_str;
+
+            $new_safe_no = '';
+
+            //echo "<script>console.log( '5: " .$vno_arr->resCd. "' );</script>";
+
+            // 조회가 성공하면
+            if ("SUCCESS" == $vno_arr->resCd) {
+                // 미사용 번호 갯수가 남어서 신규 맵핑이 가능하면
+                if (0 < $vno_arr->selCnt) {
+                    //echo "<script>console.log( '6: " .$vno_arr->selCnt. "' );</script>";
+                    foreach ($vno_arr->vnList as $vno) {
+                        $new_safe_no = $vno->vn;
+                        break;
+                    }
+                }
+
+                //echo "<script>console.log( '7: " .$new_safe_no. "' );</script>";
+
+                //echo "<script>console.log( 'PHP_Console2: createSafeNumber' );</script>";
+
+                //
+                $registSafeNumber_result = $this->registSafeNumber($mb_id, $mb_hp, $new_safe_no);
+
+                //echo "<script>console.log( 'PHP_Console3: createSafeNumber' );</script>";
+                //echo "<script>console.log( 'PHP_Console4: " . $registSafeNumber_result. "' );</script>";
+                // echo "<script>console.log( '5: " . $new_safe_no. "' );</script>";
+
+                // 성공하면 DB 등록
+                if (0 < $registSafeNumber_result) {
+                    // sql_query($sql);
+
+                    global $g5;
+                    //echo "<script>console.log( '6: " .$g5['member_table']. "' );</script>";
+
+                    $sql = " update {$g5['member_table']} set mb_safe_no = '".$new_safe_no."' where mb_id = '".$mb_id."' ";
+
+                    // echo "<script>console.log( '7: " . $sql. "' );</script>";
+                    sql_query($sql);
+
+                    $function_result = $new_safe_no;
+                }
+            }
+            else {
+                $function_result = -1;
+            }
+        } else {
+            // curl 라이브러리가 설치 되지 않음. 다른 방법 알아볼 것
+            $function_result = -1;
+        }
+
+        // return $new_safe_no + $mb_id;
+        // print_r2($function_result);
+        return $function_result;
+    }
+
+    // func: 안심번호 조회 후 DB 저장
+    public function querySafenumberUpdateDB($p_mb_id, $p_mb_safe_no) {
+
+        $function_result = 1;
+
+        $this->initAPI();
+
+        // 안심번호 조회 후 데이터가 있으면 db 저장
+        // 키값은 휴대폰 번호
+        $s_url = "https://bizapi.callmix.co.kr/biz050/BZV110?secureCode=".$this->secureCode."&bizId=".$this->bizId."&monthDay=".$this->mmdd."&selGbn=2&rn".$p_mb_safe_no;
+
+        // ech"<script>console.log( 'PHP_Console1: createSafeNumber ".$s_url."' );</script>";
+        if (function_exists('curl_init')) {
+
+            // curl 리소스를 초기화
+            $ch = curl_init();
+
+            // url을 설정
+            curl_setopt($ch, CURLOPT_URL, $s_url);
+
+            // 헤더는 제외하고 content 만 받음
+            curl_setopt($ch, CURLOPT_HEADER, 0);
+
+            // 응답 값을 브라우저에 표시하지 말고 값을 리턴
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+
+            // 브라우저처럼 보이기 위해 user agent 사용
+            curl_setopt($ch, CURLOPT_USERAGENT, 'Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.7.5) Gecko/20041107 Firefox/1.0');
+
+            $vno_str = curl_exec($ch);
+
+            // 리소스 해제를 위해 세션 연결 닫음
+            curl_close($ch);
+
+            $vno_arr = json_decode($vno_str);
+
+            // echo "<script>console.log( '5: " .$vno_arr->resCd. "' );</script>";
+
+            // 조회가 성공하면
+            if ("SUCCESS" == $vno_arr->resCd) {
+
+                if (empty($vno_arr->vn)) {
+                    global $g5;
+
+                    $sql = " update {$g5['member_table']} set mb_safe_no = '".$new_safe_no."' where mb_id = '".$mb_id."' ";
+
+                    //echo "<script>console.log( '7: " . $sql. "' );</script>";
+                    sql_query($sql);
+                }
+
+                //echo "<script>console.log( '7: " .$new_safe_no. "' );</script>";
+
+                //echo "<script>console.log( 'PHP_Console2: createSafeNumber' );</script>";
+
+
+                // 성공하면 DB 등록
+                if (0 < $registSafeNumber_result) {
+
+                    // sql_query($sql);
+
+                    global $g5;
+                    //echo "<script>console.log( '6: " .$g5['member_table']. "' );</script>";
+
+
+                    $sql = " update {$g5['member_table']} set mb_safe_no = '".$new_safe_no."' where mb_id = '".$mb_id."' ";
+
+                    //echo "<script>console.log( '7: " . $sql. "' );</script>";
+                    sql_query($sql);
+
+
+                    $function_result = $new_safe_no;
+                }
+            }
+            else {
+                $function_result = -1;
+            }
+        } else {
+            // curl 라이브러리가 설치 되지 않음. 다른 방법 알아볼 것
+            $function_result = -1;
+        }
+
+
+        return $function_result;
+    }
+
+    // func: 안심번호 사용 가능한 회선 수
+    public function queryUnusedSafeNumberCount() {
+
+        $function_result = 1;
+
+        $this->initAPI();
+
+        return $function_result;
+    }
+
+    public function registSafeNumber($mb_id, $mb_hp, $safe_no) {
+
+        //echo "<script>console.log( 'PHP_Console1: registSafeNumber' );</script>";
+
+        $mb_hp = str_replace('-','',$mb_hp);
+
+
+        $function_result = 1;
+
+        $this->initAPI();
+
+        https://bizapi.callmix.co.kr/biz050/BZV110?secureCode=ad7d83c35f122f661a95866392891df992fe61fab1686c08fd05e2324d2b3541&bizId=allvoice&monthDay=1220&selGbn=2&rn=01045217750
+
+        $s_url = "https://bizapi.callmix.co.kr/biz050/BZV210?secureCode=".$this->secureCode."&bizId=".$this->bizId."&monthDay=".$this->mmdd."&tkGbn=1"."&rn=".$mb_hp."&vn=".$safe_no."&brNm=".$mb_id;
+
+        // $s_url = "https://bizapi.callmix.co.kr/biz050/BZV110?secureCode=".$this->secureCode."&bizId=".$this->bizId."&monthDay=".$this->mmdd."&selGbn=2"."&rn=".$mb_hp;
+
+        // echo "<script>console.log( 'PHP_Console1: ".$s_url."' );</script>";
+
+        if (function_exists('curl_init')) {
+            // curl 리소스를 초기화
+            $ch = curl_init();
+
+            // url을 설정
+            curl_setopt($ch, CURLOPT_URL, $s_url);
+
+            // 헤더는 제외하고 content 만 받음
+            curl_setopt($ch, CURLOPT_HEADER, 0);
+
+            // 응답 값을 브라우저에 표시하지 말고 값을 리턴
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+
+            // 브라우저처럼 보이기 위해 user agent 사용
+            curl_setopt($ch, CURLOPT_USERAGENT, 'Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.7.5) Gecko/20041107 Firefox/1.0');
+
+            $vno_str = curl_exec($ch);
+
+            // 리소스 해제를 위해 세션 연결 닫음
+            curl_close($ch);
+
+            $vno_arr = json_decode($vno_str);
+            $vno_arr = json_decode($vno_str);
+
+            $function_result = 1;
+
+        } else {
+            // curl 라이브러리가 설치 되지 않음. 다른 방법 알아볼 것
+        }
+
+        //echo "<script>console.log( 'PHP_Console1: ".$function_result."' );</script>";
+
+        return $function_result;
+    }
+
+
+}

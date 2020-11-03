@@ -1,0 +1,277 @@
+10/14 14:11:14 [allvoice-Send-0] [63011] INFO : Connect To Socket. IP [biz.ppurio.com] PORT [26000] 
+10/14 14:11:14 [allvoice-Send-0] [63011] INFO : User Authentication. USER [allvoice]
+10/14 14:11:14 [allvoice-Send-0] [63011] INFO : Start Sending And Receiving Data With The Server.
+10/14 14:11:14 [allvoice-Send-0] [63011] ERROR : com.daou.alioclient.common.AuthException: Failed To Connect Database. Invalid authorization specification message from server: "Access denied for user 'allvoice'@'127.0.0.1' (using password: NO)"
+10/14 14:11:43 [allvoice-Send-0] [63011] ERROR : Thread is Interrupted. 
+java.lang.InterruptedException: sleep interrupted
+	at java.lang.Thread.sleep(Native Method)
+	at com.daou.alioclient.worker.AlioWorker.doSleep(AlioWorker.java:23)
+	at com.daou.alioclient.worker.AlioSend.run(AlioSend.java:99)
+10/14 14:11:43 [allvoice-Send-0] [63011] INFO : End Sending And Receiving Data With The Server.
+10/14 14:11:43 [allvoice-Send-0] [63011] INFO : Disconnect To Socket. IP [biz.ppurio.com] PORT [26000]
+10/14 14:11:43 [allvoice-Send-0] [63011] INFO : Worker [allvoice-Send-0] End.
+10/14 14:11:43 [Thread-1] [63011] ERROR : Failed To [allvoice-Send-0] End. 
+java.io.IOException: Failed to Send a Packet.
+ PACKET : 00000002EN
+ MESSAGE : Socket is closed
+
+	at com.daou.alioclient.protocol.BizProtocol.socketSendPacket(BizProtocol.java:984)
+	at com.daou.alioclient.protocol.BizProtocol.sendEnd(BizProtocol.java:141)
+	at com.daou.alioclient.protocol.BizProtocol.close(BizProtocol.java:127)
+	at com.daou.alioclient.worker.AlioWorker.doEnd(AlioWorker.java:33)
+	at com.daou.alioclient.worker.AlioWorker.doShutDown(AlioWorker.java:48)
+	at com.daou.alioclient.worker.AlioMain.commandShutdown(AlioMain.java:256)
+	at com.daou.alioclient.worker.AlioMain.workerShutdown(AlioMain.java:209)
+	at com.daou.alioclient.worker.AlioMain.doShutDown(AlioMain.java:83)
+	at com.daou.alioclient.common.AlioShutdownHook.run(AlioShutdownHook.java:21)
+10/14 14:11:43 [Thread-1] [63011] INFO : Worker [allvoice-Send-0] ShutDown.
+10/14 14:49:32 [allvoice-Send-0] [59003] INFO : Connect To Socket. IP [biz.ppurio.com] PORT [26000] 
+10/14 14:49:32 [allvoice-Send-0] [59003] INFO : User Authentication. USER [allvoice]
+10/14 14:49:32 [allvoice-Send-0] [59003] INFO : Start Sending And Receiving Data With The Server.
+10/14 14:49:32 [allvoice-Send-0] [59003] INFO : Connect To Database. TYPE [MYSQL] URL [jdbc:mysql://localhost:3306/allvoice] USER [allvoice]
+10/14 14:49:33 [allvoice-Send-0] [59003] ERROR : com.daou.alioclient.common.BizException: Failed To Send a Message-Body. RESULT [R020]
+10/14 14:49:38 [allvoice-Send-0] [59003] ERROR : Failed To [allvoice-Send-0] End. 
+java.io.IOException: Failed to Read a Packet.
+ PACKET : null
+ MESSAGE : Connection reset
+
+	at com.daou.alioclient.protocol.BizProtocol.socketReadPacket(BizProtocol.java:1002)
+	at com.daou.alioclient.protocol.BizProtocol.sendEnd(BizProtocol.java:142)
+	at com.daou.alioclient.protocol.BizProtocol.close(BizProtocol.java:127)
+	at com.daou.alioclient.worker.AlioWorker.doEnd(AlioWorker.java:33)
+	at com.daou.alioclient.worker.AlioSend.run(AlioSend.java:107)
+10/14 14:49:42 [allvoice-Send-0] [59003] INFO : Connect To Socket. IP [biz.ppurio.com] PORT [26000] 
+10/14 14:49:42 [allvoice-Send-0] [59003] INFO : User Authentication. USER [allvoice]
+10/14 14:49:42 [allvoice-Send-0] [59003] INFO : Start Sending And Receiving Data With The Server.
+10/14 14:49:42 [allvoice-Send-0] [59003] INFO : Connect To Database. TYPE [MYSQL] URL [jdbc:mysql://localhost:3306/allvoice] USER [allvoice]
+10/14 14:49:42 [allvoice-Send-0] [59003] ERROR : com.daou.alioclient.common.BizException: Failed To Send a Message-Body. RESULT [R020]
+10/14 14:49:47 [allvoice-Send-0] [59003] ERROR : Failed To [allvoice-Send-0] End. 
+java.io.IOException: Failed to Read a Packet.
+ PACKET : null
+ MESSAGE : Connection reset
+
+	at com.daou.alioclient.protocol.BizProtocol.socketReadPacket(BizProtocol.java:1002)
+	at com.daou.alioclient.protocol.BizProtocol.sendEnd(BizProtocol.java:142)
+	at com.daou.alioclient.protocol.BizProtocol.close(BizProtocol.java:127)
+	at com.daou.alioclient.worker.AlioWorker.doEnd(AlioWorker.java:33)
+	at com.daou.alioclient.worker.AlioSend.run(AlioSend.java:107)
+10/14 14:49:52 [allvoice-Send-0] [59003] INFO : Connect To Socket. IP [biz.ppurio.com] PORT [26000] 
+10/14 14:49:52 [allvoice-Send-0] [59003] INFO : User Authentication. USER [allvoice]
+10/14 14:49:52 [allvoice-Send-0] [59003] INFO : Start Sending And Receiving Data With The Server.
+10/14 14:49:52 [allvoice-Send-0] [59003] INFO : Connect To Database. TYPE [MYSQL] URL [jdbc:mysql://localhost:3306/allvoice] USER [allvoice]
+10/14 14:49:52 [allvoice-Send-0] [59003] ERROR : com.daou.alioclient.common.BizException: Failed To Send a Message-Body. RESULT [R020]
+10/14 14:49:57 [allvoice-Send-0] [59003] ERROR : Failed To [allvoice-Send-0] End. 
+java.io.IOException: Failed to Read a Packet.
+ PACKET : null
+ MESSAGE : Connection reset
+
+	at com.daou.alioclient.protocol.BizProtocol.socketReadPacket(BizProtocol.java:1002)
+	at com.daou.alioclient.protocol.BizProtocol.sendEnd(BizProtocol.java:142)
+	at com.daou.alioclient.protocol.BizProtocol.close(BizProtocol.java:127)
+	at com.daou.alioclient.worker.AlioWorker.doEnd(AlioWorker.java:33)
+	at com.daou.alioclient.worker.AlioSend.run(AlioSend.java:107)
+10/14 14:50:02 [allvoice-Send-0] [59003] INFO : Connect To Socket. IP [biz.ppurio.com] PORT [26000] 
+10/14 14:50:02 [allvoice-Send-0] [59003] INFO : User Authentication. USER [allvoice]
+10/14 14:50:02 [allvoice-Send-0] [59003] INFO : Start Sending And Receiving Data With The Server.
+10/14 14:50:02 [allvoice-Send-0] [59003] INFO : Connect To Database. TYPE [MYSQL] URL [jdbc:mysql://localhost:3306/allvoice] USER [allvoice]
+10/14 14:50:02 [allvoice-Send-0] [59003] ERROR : com.daou.alioclient.common.BizException: Failed To Send a Message-Body. RESULT [R020]
+10/14 14:50:07 [allvoice-Send-0] [59003] ERROR : Failed To [allvoice-Send-0] End. 
+java.io.IOException: Failed to Read a Packet.
+ PACKET : null
+ MESSAGE : Connection reset
+
+	at com.daou.alioclient.protocol.BizProtocol.socketReadPacket(BizProtocol.java:1002)
+	at com.daou.alioclient.protocol.BizProtocol.sendEnd(BizProtocol.java:142)
+	at com.daou.alioclient.protocol.BizProtocol.close(BizProtocol.java:127)
+	at com.daou.alioclient.worker.AlioWorker.doEnd(AlioWorker.java:33)
+	at com.daou.alioclient.worker.AlioSend.run(AlioSend.java:107)
+10/14 14:50:12 [allvoice-Send-0] [59003] INFO : Connect To Socket. IP [biz.ppurio.com] PORT [26000] 
+10/14 14:50:12 [allvoice-Send-0] [59003] INFO : User Authentication. USER [allvoice]
+10/14 14:50:12 [allvoice-Send-0] [59003] INFO : Start Sending And Receiving Data With The Server.
+10/14 14:50:12 [allvoice-Send-0] [59003] INFO : Connect To Database. TYPE [MYSQL] URL [jdbc:mysql://localhost:3306/allvoice] USER [allvoice]
+10/14 14:50:12 [allvoice-Send-0] [59003] ERROR : com.daou.alioclient.common.BizException: Failed To Send a Message-Body. RESULT [R020]
+10/14 14:50:17 [allvoice-Send-0] [59003] ERROR : Failed To [allvoice-Send-0] End. 
+java.io.IOException: Failed to Read a Packet.
+ PACKET : null
+ MESSAGE : Connection reset
+
+	at com.daou.alioclient.protocol.BizProtocol.socketReadPacket(BizProtocol.java:1002)
+	at com.daou.alioclient.protocol.BizProtocol.sendEnd(BizProtocol.java:142)
+	at com.daou.alioclient.protocol.BizProtocol.close(BizProtocol.java:127)
+	at com.daou.alioclient.worker.AlioWorker.doEnd(AlioWorker.java:33)
+	at com.daou.alioclient.worker.AlioSend.run(AlioSend.java:107)
+10/14 14:50:22 [allvoice-Send-0] [59003] INFO : Connect To Socket. IP [biz.ppurio.com] PORT [26000] 
+10/14 14:50:22 [allvoice-Send-0] [59003] INFO : User Authentication. USER [allvoice]
+10/14 14:50:22 [allvoice-Send-0] [59003] INFO : Start Sending And Receiving Data With The Server.
+10/14 14:50:22 [allvoice-Send-0] [59003] INFO : Connect To Database. TYPE [MYSQL] URL [jdbc:mysql://localhost:3306/allvoice] USER [allvoice]
+10/14 14:50:22 [allvoice-Send-0] [59003] ERROR : com.daou.alioclient.common.BizException: Failed To Send a Message-Body. RESULT [R020]
+10/14 14:50:27 [allvoice-Send-0] [59003] ERROR : Failed To [allvoice-Send-0] End. 
+java.io.IOException: Failed to Read a Packet.
+ PACKET : null
+ MESSAGE : Connection reset
+
+	at com.daou.alioclient.protocol.BizProtocol.socketReadPacket(BizProtocol.java:1002)
+	at com.daou.alioclient.protocol.BizProtocol.sendEnd(BizProtocol.java:142)
+	at com.daou.alioclient.protocol.BizProtocol.close(BizProtocol.java:127)
+	at com.daou.alioclient.worker.AlioWorker.doEnd(AlioWorker.java:33)
+	at com.daou.alioclient.worker.AlioSend.run(AlioSend.java:107)
+10/14 14:50:32 [allvoice-Send-0] [59003] INFO : Connect To Socket. IP [biz.ppurio.com] PORT [26000] 
+10/14 14:50:32 [allvoice-Send-0] [59003] INFO : User Authentication. USER [allvoice]
+10/14 14:50:32 [allvoice-Send-0] [59003] INFO : Start Sending And Receiving Data With The Server.
+10/14 14:50:32 [allvoice-Send-0] [59003] INFO : Connect To Database. TYPE [MYSQL] URL [jdbc:mysql://localhost:3306/allvoice] USER [allvoice]
+10/14 14:50:32 [allvoice-Send-0] [59003] ERROR : com.daou.alioclient.common.BizException: Failed To Send a Message-Body. RESULT [R020]
+10/14 14:50:37 [allvoice-Send-0] [59003] ERROR : Failed To [allvoice-Send-0] End. 
+java.io.IOException: Failed to Read a Packet.
+ PACKET : null
+ MESSAGE : Connection reset
+
+	at com.daou.alioclient.protocol.BizProtocol.socketReadPacket(BizProtocol.java:1002)
+	at com.daou.alioclient.protocol.BizProtocol.sendEnd(BizProtocol.java:142)
+	at com.daou.alioclient.protocol.BizProtocol.close(BizProtocol.java:127)
+	at com.daou.alioclient.worker.AlioWorker.doEnd(AlioWorker.java:33)
+	at com.daou.alioclient.worker.AlioSend.run(AlioSend.java:107)
+10/14 14:50:42 [allvoice-Send-0] [59003] INFO : Connect To Socket. IP [biz.ppurio.com] PORT [26000] 
+10/14 14:50:42 [allvoice-Send-0] [59003] INFO : User Authentication. USER [allvoice]
+10/14 14:50:42 [allvoice-Send-0] [59003] INFO : Start Sending And Receiving Data With The Server.
+10/14 14:50:42 [allvoice-Send-0] [59003] INFO : Connect To Database. TYPE [MYSQL] URL [jdbc:mysql://localhost:3306/allvoice] USER [allvoice]
+10/14 14:50:42 [allvoice-Send-0] [59003] ERROR : com.daou.alioclient.common.BizException: Failed To Send a Message-Body. RESULT [R020]
+10/14 14:50:47 [allvoice-Send-0] [59003] ERROR : Failed To [allvoice-Send-0] End. 
+java.io.IOException: Failed to Read a Packet.
+ PACKET : null
+ MESSAGE : Connection reset
+
+	at com.daou.alioclient.protocol.BizProtocol.socketReadPacket(BizProtocol.java:1002)
+	at com.daou.alioclient.protocol.BizProtocol.sendEnd(BizProtocol.java:142)
+	at com.daou.alioclient.protocol.BizProtocol.close(BizProtocol.java:127)
+	at com.daou.alioclient.worker.AlioWorker.doEnd(AlioWorker.java:33)
+	at com.daou.alioclient.worker.AlioSend.run(AlioSend.java:107)
+10/14 14:50:52 [allvoice-Send-0] [59003] INFO : Connect To Socket. IP [biz.ppurio.com] PORT [26000] 
+10/14 14:50:52 [allvoice-Send-0] [59003] INFO : User Authentication. USER [allvoice]
+10/14 14:50:52 [allvoice-Send-0] [59003] INFO : Start Sending And Receiving Data With The Server.
+10/14 14:50:52 [allvoice-Send-0] [59003] INFO : Connect To Database. TYPE [MYSQL] URL [jdbc:mysql://localhost:3306/allvoice] USER [allvoice]
+10/14 14:50:52 [allvoice-Send-0] [59003] ERROR : com.daou.alioclient.common.BizException: Failed To Send a Message-Body. RESULT [R020]
+10/14 14:50:57 [allvoice-Send-0] [59003] ERROR : Failed To [allvoice-Send-0] End. 
+java.io.IOException: Failed to Read a Packet.
+ PACKET : null
+ MESSAGE : Connection reset
+
+	at com.daou.alioclient.protocol.BizProtocol.socketReadPacket(BizProtocol.java:1002)
+	at com.daou.alioclient.protocol.BizProtocol.sendEnd(BizProtocol.java:142)
+	at com.daou.alioclient.protocol.BizProtocol.close(BizProtocol.java:127)
+	at com.daou.alioclient.worker.AlioWorker.doEnd(AlioWorker.java:33)
+	at com.daou.alioclient.worker.AlioSend.run(AlioSend.java:107)
+10/14 14:51:02 [allvoice-Send-0] [59003] INFO : Connect To Socket. IP [biz.ppurio.com] PORT [26000] 
+10/14 14:51:02 [allvoice-Send-0] [59003] INFO : User Authentication. USER [allvoice]
+10/14 14:51:02 [allvoice-Send-0] [59003] INFO : Start Sending And Receiving Data With The Server.
+10/14 14:51:02 [allvoice-Send-0] [59003] INFO : Connect To Database. TYPE [MYSQL] URL [jdbc:mysql://localhost:3306/allvoice] USER [allvoice]
+10/14 14:51:02 [allvoice-Send-0] [59003] ERROR : com.daou.alioclient.common.BizException: Failed To Send a Message-Body. RESULT [R020]
+10/14 14:51:07 [allvoice-Send-0] [59003] ERROR : Failed To [allvoice-Send-0] End. 
+java.io.IOException: Failed to Read a Packet.
+ PACKET : null
+ MESSAGE : Connection reset
+
+	at com.daou.alioclient.protocol.BizProtocol.socketReadPacket(BizProtocol.java:1002)
+	at com.daou.alioclient.protocol.BizProtocol.sendEnd(BizProtocol.java:142)
+	at com.daou.alioclient.protocol.BizProtocol.close(BizProtocol.java:127)
+	at com.daou.alioclient.worker.AlioWorker.doEnd(AlioWorker.java:33)
+	at com.daou.alioclient.worker.AlioSend.run(AlioSend.java:107)
+10/14 14:51:12 [allvoice-Send-0] [59003] INFO : Connect To Socket. IP [biz.ppurio.com] PORT [26000] 
+10/14 14:51:12 [allvoice-Send-0] [59003] INFO : User Authentication. USER [allvoice]
+10/14 14:51:12 [allvoice-Send-0] [59003] INFO : Start Sending And Receiving Data With The Server.
+10/14 14:51:12 [allvoice-Send-0] [59003] INFO : Connect To Database. TYPE [MYSQL] URL [jdbc:mysql://localhost:3306/allvoice] USER [allvoice]
+10/14 14:51:12 [allvoice-Send-0] [59003] INFO : Failed to Send a Message Due to Wrong Phone Number. RESULT [R214] DEVICE [AT] CMSGID [20191013164506]
+10/14 14:51:12 [allvoice-Send-0] [59003] INFO : Failed to Send a Message Due to Wrong Phone Number. RESULT [R214] DEVICE [AT] CMSGID [20191013164516]
+10/14 14:51:12 [allvoice-Send-0] [59003] INFO : Send a Message. DEVICE [AT] CMSGID [20191013193749] MSGID [1014al_G99493143227128450316] REPART [S] SVCCODE [7900]
+10/14 14:51:12 [allvoice-Send-0] [59003] INFO : Send a Message. DEVICE [AT] CMSGID [20191013212400] MSGID [1014al_G99852673227128450317] REPART [S] SVCCODE [7900]
+10/14 14:51:12 [allvoice-Send-0] [59003] INFO : Send a Message. DEVICE [AT] CMSGID [20191013212401] MSGID [1014al_G90013233227228450318] REPART [S] SVCCODE [7900]
+10/14 14:51:12 [allvoice-Send-0] [59003] INFO : Send a Message. DEVICE [AT] CMSGID [20191013212705] MSGID [1014al_G90814943227228450319] REPART [S] SVCCODE [7900]
+10/14 14:51:12 [allvoice-Send-0] [59003] INFO : Send a Message. DEVICE [AT] CMSGID [20191013212706] MSGID [1014al_G90974293227228450320] REPART [S] SVCCODE [7900]
+10/14 14:51:12 [allvoice-Send-0] [59003] INFO : Send a Message. DEVICE [AT] CMSGID [20191013212722] MSGID [1014al_G91834973227228450321] REPART [S] SVCCODE [7900]
+10/14 14:51:12 [allvoice-Send-0] [59003] INFO : Send a Message. DEVICE [AT] CMSGID [20191013220717] MSGID [1014al_G92093593227228450322] REPART [S] SVCCODE [7900]
+10/14 14:51:12 [allvoice-Send-0] [59003] INFO : Failed to Send a Message Due to Wrong Phone Number. RESULT [R214] DEVICE [AT] CMSGID [20191013230633]
+10/14 14:51:12 [allvoice-Send-0] [59003] INFO : Failed to Send a Message Due to Wrong Phone Number. RESULT [R214] DEVICE [AT] CMSGID [20191013230733]
+10/14 14:51:12 [allvoice-Send-0] [59003] INFO : Failed to Send a Message Due to Wrong Phone Number. RESULT [R214] DEVICE [AT] CMSGID [20191014001950]
+10/14 14:51:12 [allvoice-Send-0] [59003] INFO : Failed to Send a Message Due to Wrong Phone Number. RESULT [R214] DEVICE [AT] CMSGID [20191014065507]
+10/14 14:51:12 [allvoice-Send-0] [59003] INFO : Send a Message. DEVICE [AT] CMSGID [20191014065508] MSGID [1014al_G93810373227228450327] REPART [S] SVCCODE [7900]
+10/14 14:51:12 [allvoice-Send-0] [59003] INFO : Failed to Send a Message Due to Wrong Phone Number. RESULT [R214] DEVICE [AT] CMSGID [20191014094047]
+10/14 14:51:12 [allvoice-Send-0] [59003] INFO : Send a Message. DEVICE [AT] CMSGID [20191014095145] MSGID [1014al_G94127043227228450330] REPART [S] SVCCODE [7900]
+10/14 14:51:12 [allvoice-Send-0] [59003] INFO : Failed to Send a Message Due to Wrong Phone Number. RESULT [R214] DEVICE [AT] CMSGID [20191014102827]
+10/14 14:51:12 [allvoice-Send-0] [59003] INFO : Send a Message. DEVICE [AT] CMSGID [20191014102828] MSGID [1014al_G95112913227228450335] REPART [S] SVCCODE [7900]
+10/14 14:51:12 [allvoice-Send-0] [59003] INFO : Send a Message. DEVICE [AT] CMSGID [20191014104702] MSGID [1014al_G95988273227228450339] REPART [S] SVCCODE [7900]
+10/14 14:51:13 [allvoice-Send-0] [59003] INFO : Failed to Send a Message Due to Wrong Phone Number. RESULT [R214] DEVICE [AT] CMSGID [20191014114002]
+10/14 14:51:13 [allvoice-Send-0] [59003] INFO : Send a Message. DEVICE [AT] CMSGID [20191014114003] MSGID [1014al_G97255613227228450343] REPART [S] SVCCODE [7900]
+10/14 14:51:13 [allvoice-Send-0] [59003] INFO : Send a Message. DEVICE [AT] CMSGID [20191014114915] MSGID [1014al_G98025093227228450348] REPART [S] SVCCODE [7900]
+10/14 14:51:13 [allvoice-Send-0] [59003] INFO : Send a Message. DEVICE [AT] CMSGID [20191014115306] MSGID [1014al_G99062513227228450352] REPART [S] SVCCODE [7900]
+10/14 14:51:13 [allvoice-Send-0] [59003] INFO : Send a Message. DEVICE [AT] CMSGID [20191014115337] MSGID [1014al_G90072273227328450357] REPART [S] SVCCODE [7900]
+10/14 14:51:13 [allvoice-Send-0] [59003] INFO : Send a Message. DEVICE [AT] CMSGID [20191014115425] MSGID [1014al_G91078023227328450359] REPART [S] SVCCODE [7900]
+10/14 14:51:13 [allvoice-Send-0] [59003] INFO : Send a Message. DEVICE [AT] CMSGID [20191014115507] MSGID [1014al_G92097693227328450361] REPART [S] SVCCODE [7900]
+10/14 14:51:13 [allvoice-Send-0] [59003] INFO : Send a Message. DEVICE [AT] CMSGID [20191014115637] MSGID [1014al_G93070563227328450364] REPART [S] SVCCODE [7900]
+10/14 14:51:13 [allvoice-Send-0] [59003] INFO : Send a Message. DEVICE [AT] CMSGID [20191014115708] MSGID [1014al_G94090883227328450365] REPART [S] SVCCODE [7900]
+10/14 14:51:13 [allvoice-Send-0] [59003] INFO : Send a Message. DEVICE [AT] CMSGID [20191014115736] MSGID [1014al_G95083703227328450369] REPART [S] SVCCODE [7900]
+10/14 14:51:14 [allvoice-Send-0] [59003] INFO : Send a Message. DEVICE [AT] CMSGID [20191014115801] MSGID [1014al_G96180523227328450371] REPART [S] SVCCODE [7900]
+10/14 14:51:14 [allvoice-Send-0] [59003] INFO : Send a Message. DEVICE [AT] CMSGID [20191014115824] MSGID [1014al_G97090623227328450376] REPART [S] SVCCODE [7900]
+10/14 14:51:14 [allvoice-Send-0] [59003] INFO : Failed to Send a Message Due to Wrong Phone Number. RESULT [R214] DEVICE [AT] CMSGID [20191014120235]
+10/14 14:51:14 [allvoice-Send-0] [59003] INFO : Failed to Send a Message Due to Wrong Phone Number. RESULT [R214] DEVICE [AT] CMSGID [20191014120236]
+10/14 14:51:14 [allvoice-Send-0] [59003] INFO : Failed to Send a Message Due to Wrong Phone Number. RESULT [R214] DEVICE [AT] CMSGID [20191014121534]
+10/14 14:51:14 [allvoice-Send-0] [59003] INFO : Failed to Send a Message Due to Wrong Phone Number. RESULT [R214] DEVICE [AT] CMSGID [20191014121552]
+10/14 14:51:14 [allvoice-Send-0] [59003] INFO : Send a Message. DEVICE [AT] CMSGID [20191014121553] MSGID [1014al_G98757653227328450377] REPART [S] SVCCODE [7900]
+10/14 14:51:14 [allvoice-Send-0] [59003] INFO : Send a Message. DEVICE [AT] CMSGID [20191014133552] MSGID [1014al_G99116883227328450378] REPART [S] SVCCODE [7900]
+10/14 14:51:14 [allvoice-Send-0] [59003] INFO : Failed to Send a Message Due to Wrong Phone Number. RESULT [R214] DEVICE [AT] CMSGID [20191014134814]
+10/14 14:51:14 [allvoice-Send-0] [59003] INFO : Failed to Send a Message Due to Wrong Phone Number. RESULT [R214] DEVICE [AT] CMSGID [20191014134815]
+10/14 14:51:14 [allvoice-Send-0] [59003] INFO : Send a Message. DEVICE [AT] CMSGID [20191014140806] MSGID [1014al_G90439243227428450380] REPART [S] SVCCODE [7900]
+10/14 14:51:14 [allvoice-Send-0] [59003] INFO : Failed to Send a Message Due to Wrong Phone Number. RESULT [R214] DEVICE [AT] CMSGID [20191014140807]
+10/14 14:51:14 [allvoice-Send-0] [59003] INFO : Send a Message. DEVICE [AT] CMSGID [20191014140900] MSGID [1014al_G91232543227428450385] REPART [S] SVCCODE [7900]
+10/14 14:51:14 [allvoice-Send-0] [59003] INFO : Failed to Send a Message Due to Wrong Phone Number. RESULT [R214] DEVICE [AT] CMSGID [20191014140901]
+10/14 14:51:14 [allvoice-Send-0] [59003] INFO : Send a Message. DEVICE [AT] CMSGID [20191014141114] MSGID [1014al_G92247343227428450388] REPART [S] SVCCODE [7900]
+10/14 14:51:14 [allvoice-Send-0] [59003] INFO : Failed to Send a Message Due to Wrong Phone Number. RESULT [R214] DEVICE [AT] CMSGID [20191014141115]
+10/14 14:51:14 [allvoice-Send-0] [59003] INFO : Send a Message. DEVICE [AT] CMSGID [20191014141647] MSGID [1014al_G93248383227428450391] REPART [S] SVCCODE [7900]
+10/14 14:51:14 [allvoice-Send-0] [59003] INFO : Send a Message. DEVICE [AT] CMSGID [20191014142241] MSGID [1014al_G94175133227428450395] REPART [S] SVCCODE [7900]
+10/14 14:51:14 [allvoice-Send-0] [59003] INFO : Send a Message. DEVICE [AT] CMSGID [20191014142537] MSGID [1014al_G95194533227428450400] REPART [S] SVCCODE [7900]
+10/14 14:51:14 [allvoice-Send-0] [59003] INFO : Failed to Send a Message Due to Wrong Phone Number. RESULT [R214] DEVICE [AT] CMSGID [20191014143413]
+10/14 14:51:14 [allvoice-Send-0] [59003] INFO : Failed to Send a Message Due to Wrong Phone Number. RESULT [R214] DEVICE [AT] CMSGID [20191014143414]
+10/14 14:57:21 [allvoice-Send-0] [59003] INFO : Send a Message. DEVICE [AT] CMSGID [20191014145720] MSGID [1014al_G97586843264028461949] REPART [S] SVCCODE [7900]
+10/14 14:57:21 [allvoice-Send-0] [59003] INFO : Failed to Send a Message Due to Wrong Phone Number. RESULT [R214] DEVICE [AT] CMSGID [20191014145719]
+10/14 14:59:30 [allvoice-Send-0] [59003] INFO : Send a Message. DEVICE [AT] CMSGID [20191014145929] MSGID [1014al_G98335503276928467687] REPART [S] SVCCODE [7900]
+10/14 15:00:16 [allvoice-Send-0] [59003] INFO : Send a Message. DEVICE [AT] CMSGID [20191014150015] MSGID [1014al_G99026983281528470747] REPART [S] SVCCODE [7900]
+10/14 15:00:47 [allvoice-Send-0] [59003] INFO : Send a Message. DEVICE [AT] CMSGID [20191014150046] MSGID [1014al_G99767393284628473243] REPART [S] SVCCODE [7900]
+10/14 15:01:47 [allvoice-Send-0] [59003] INFO : Send a Message. DEVICE [AT] CMSGID [20191014150146] MSGID [1014al_G90762523290728477429] REPART [S] SVCCODE [7900]
+10/14 15:02:22 [allvoice-Send-0] [59003] INFO : Send a Message. DEVICE [AT] CMSGID [20191014150221] MSGID [1014al_G91146303294228478583] REPART [S] SVCCODE [7900]
+10/14 15:02:59 [allvoice-Send-0] [59003] INFO : Send a Message. DEVICE [AT] CMSGID [20191014150258] MSGID [1014al_G91750353297928480062] REPART [S] SVCCODE [7900]
+10/14 15:03:31 [allvoice-Send-0] [59003] INFO : Send a Message. DEVICE [AT] CMSGID [20191014150330] MSGID [1014al_G92133963301128480938] REPART [S] SVCCODE [7900]
+10/14 15:03:51 [allvoice-Send-0] [59003] INFO : Failed to Send a Message Due to Wrong Phone Number. RESULT [R214] DEVICE [AT] CMSGID [20191014150350]
+10/14 15:04:04 [allvoice-Send-0] [59003] INFO : Failed to Send a Message Due to Wrong Phone Number. RESULT [R214] DEVICE [AT] CMSGID [20191014150403]
+10/14 15:04:05 [allvoice-Send-0] [59003] INFO : Send a Message. DEVICE [AT] CMSGID [20191014150404] MSGID [1014al_G92767703304528481865] REPART [S] SVCCODE [7900]
+10/14 15:04:53 [allvoice-Send-0] [59003] INFO : Send a Message. DEVICE [AT] CMSGID [20191014150452] MSGID [1014al_G93742683309328483190] REPART [S] SVCCODE [7900]
+10/14 15:05:20 [allvoice-Send-0] [59003] INFO : Send a Message. DEVICE [AT] CMSGID [20191014150519] MSGID [1014al_G94083893312028483972] REPART [S] SVCCODE [7900]
+10/14 15:06:14 [allvoice-Send-0] [59003] INFO : Failed to Send a Message Due to Wrong Phone Number. RESULT [R214] DEVICE [AT] CMSGID [20191014150613]
+10/14 15:06:43 [allvoice-Send-0] [59003] INFO : Failed to Send a Message Due to Wrong Phone Number. RESULT [R214] DEVICE [AT] CMSGID [20191014150642]
+10/14 15:09:13 [allvoice-Send-0] [59003] INFO : Failed to Send a Message Due to Wrong Phone Number. RESULT [R214] DEVICE [AT] CMSGID [20191014150912]
+10/14 15:09:38 [allvoice-Send-0] [59003] INFO : Failed to Send a Message Due to Wrong Phone Number. RESULT [R214] DEVICE [AT] CMSGID [20191014150937]
+10/14 15:09:38 [allvoice-Send-0] [59003] INFO : Send a Message. DEVICE [AT] CMSGID [20191014150938] MSGID [1014al_G95727453337828492752] REPART [S] SVCCODE [7900]
+10/14 15:09:58 [allvoice-Send-0] [59003] INFO : Failed to Send a Message Due to Wrong Phone Number. RESULT [R214] DEVICE [AT] CMSGID [20191014150957]
+10/14 15:12:13 [allvoice-Send-0] [59003] INFO : Failed to Send a Message Due to Wrong Phone Number. RESULT [R214] DEVICE [AT] CMSGID [20191014151212]
+10/14 15:12:51 [allvoice-Send-0] [59003] INFO : Failed to Send a Message Due to Wrong Phone Number. RESULT [R214] DEVICE [AT] CMSGID [20191014151250]
+10/14 15:15:16 [allvoice-Send-0] [59003] INFO : Failed to Send a Message Due to Wrong Phone Number. RESULT [R214] DEVICE [AT] CMSGID [20191014151514]
+10/14 15:45:38 [allvoice-Send-0] [59003] INFO : Failed to Send a Message Due to Wrong Phone Number. RESULT [R214] DEVICE [AT] CMSGID [20191014154537]
+10/14 15:45:38 [allvoice-Send-0] [59003] INFO : Send a Message. DEVICE [AT] CMSGID [20191014154538] MSGID [1014al_G97817493553828591716] REPART [S] SVCCODE [7900]
+10/14 15:54:34 [allvoice-Send-0] [59003] INFO : Failed to Send a Message Due to Wrong Phone Number. RESULT [R214] DEVICE [AT] CMSGID [20191014155432]
+10/14 16:03:44 [allvoice-Send-0] [59003] INFO : Failed to Send a Message Due to Wrong Phone Number. RESULT [R214] DEVICE [AT] CMSGID [20191014160343]
+10/14 16:23:33 [allvoice-Send-0] [59003] INFO : Failed to Send a Message Due to Wrong Phone Number. RESULT [R214] DEVICE [AT] CMSGID [20191014162331]
+10/14 16:23:47 [allvoice-Send-0] [59003] INFO : Failed to Send a Message Due to Wrong Phone Number. RESULT [R214] DEVICE [AT] CMSGID [20191014162345]
+10/14 16:26:06 [allvoice-Send-0] [59003] INFO : Failed to Send a Message Due to Wrong Phone Number. RESULT [R214] DEVICE [AT] CMSGID [20191014162605]
+10/14 18:26:44 [allvoice-Send-0] [59003] INFO : Send a Message. DEVICE [AT] CMSGID [20191014182643] MSGID [1014al_G95729204520428926215] REPART [S] SVCCODE [7900]
+10/14 19:01:27 [allvoice-Send-0] [59003] INFO : Failed to Send a Message Due to Wrong Phone Number. RESULT [R214] DEVICE [AT] CMSGID [20191014190125]
+10/14 19:02:30 [allvoice-Send-0] [59003] INFO : Failed to Send a Message Due to Wrong Phone Number. RESULT [R214] DEVICE [AT] CMSGID [20191014190228]
+10/14 19:09:53 [allvoice-Send-0] [59003] INFO : Failed to Send a Message Due to Wrong Phone Number. RESULT [R214] DEVICE [AT] CMSGID [20191014190952]
+10/14 19:42:09 [allvoice-Send-0] [59003] INFO : Send a Message. DEVICE [AT] CMSGID [20191014194208] MSGID [1014al_G97703014972929022378] REPART [S] SVCCODE [7900]
+10/14 19:55:09 [allvoice-Send-0] [59003] INFO : Send a Message. DEVICE [AT] CMSGID [20191014195509] MSGID [1014al_G90423945050929028813] REPART [S] SVCCODE [7900]
+10/14 19:55:09 [allvoice-Send-0] [59003] INFO : Failed to Send a Message Due to Wrong Phone Number. RESULT [R214] DEVICE [AT] CMSGID [20191014195508]
+10/14 20:13:16 [allvoice-Send-0] [59003] INFO : Failed to Send a Message Due to Wrong Phone Number. RESULT [R214] DEVICE [AT] CMSGID [20191014201315]
+10/14 20:13:25 [allvoice-Send-0] [59003] INFO : Failed to Send a Message Due to Wrong Phone Number. RESULT [R214] DEVICE [AT] CMSGID [20191014201324]
+10/14 20:26:48 [allvoice-Send-0] [59003] INFO : Failed to Send a Message Due to Wrong Phone Number. RESULT [R214] DEVICE [AT] CMSGID [20191014202647]
+10/14 20:26:48 [allvoice-Send-0] [59003] INFO : Failed to Send a Message Due to Wrong Phone Number. RESULT [R214] DEVICE [AT] CMSGID [20191014202648]
+10/14 20:32:22 [allvoice-Send-0] [59003] INFO : Failed to Send a Message Due to Wrong Phone Number. RESULT [R214] DEVICE [AT] CMSGID [20191014203220]
+10/14 20:32:22 [allvoice-Send-0] [59003] INFO : Send a Message. DEVICE [AT] CMSGID [20191014203221] MSGID [1014al_G99130395274129061414] REPART [S] SVCCODE [7900]
+10/14 22:30:48 [allvoice-Send-0] [59003] INFO : Failed to Send a Message Due to Wrong Phone Number. RESULT [R214] DEVICE [AT] CMSGID [20191014223046]
+10/14 23:43:56 [allvoice-Send-0] [59003] INFO : Send a Message. DEVICE [AT] CMSGID [20191014234355] MSGID [1014al_G94039736423629125539] REPART [S] SVCCODE [7900]
+10/14 23:43:56 [allvoice-Send-0] [59003] INFO : Failed to Send a Message Due to Wrong Phone Number. RESULT [R214] DEVICE [AT] CMSGID [20191014234354]

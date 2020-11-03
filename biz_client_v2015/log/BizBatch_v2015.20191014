@@ -1,0 +1,24 @@
+10/14 14:11:54 [allvoice-Batch] [63011] ERROR : Thread is Interrupted. 
+java.lang.InterruptedException: sleep interrupted
+	at java.lang.Thread.sleep(Native Method)
+	at com.daou.alioclient.worker.AlioWorker.doSleep(AlioWorker.java:23)
+	at com.daou.alioclient.worker.AlioBatch.run(AlioBatch.java:115)
+10/14 14:11:54 [allvoice-Batch] [63011] ERROR : Failed To [allvoice-Batch] End. 
+java.lang.NullPointerException
+	at com.daou.alioclient.protocol.BizProtocol.socketSendPacket(BizProtocol.java:981)
+	at com.daou.alioclient.protocol.BizProtocol.sendEnd(BizProtocol.java:141)
+	at com.daou.alioclient.protocol.BizProtocol.close(BizProtocol.java:127)
+	at com.daou.alioclient.worker.AlioWorker.doEnd(AlioWorker.java:33)
+	at com.daou.alioclient.worker.AlioBatch.run(AlioBatch.java:121)
+10/14 14:11:54 [Thread-1] [63011] ERROR : Failed To [allvoice-Batch] End. 
+java.lang.NullPointerException
+	at com.daou.alioclient.protocol.BizProtocol.socketSendPacket(BizProtocol.java:981)
+	at com.daou.alioclient.protocol.BizProtocol.sendEnd(BizProtocol.java:141)
+	at com.daou.alioclient.protocol.BizProtocol.close(BizProtocol.java:127)
+	at com.daou.alioclient.worker.AlioWorker.doEnd(AlioWorker.java:33)
+	at com.daou.alioclient.worker.AlioWorker.doShutDown(AlioWorker.java:48)
+	at com.daou.alioclient.worker.AlioMain.commandShutdown(AlioMain.java:256)
+	at com.daou.alioclient.worker.AlioMain.workerShutdown(AlioMain.java:243)
+	at com.daou.alioclient.worker.AlioMain.doShutDown(AlioMain.java:83)
+	at com.daou.alioclient.common.AlioShutdownHook.run(AlioShutdownHook.java:21)
+10/14 14:11:54 [Thread-1] [63011] INFO : Worker [allvoice-Batch] ShutDown.

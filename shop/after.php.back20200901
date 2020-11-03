@@ -1,0 +1,131 @@
+﻿<?php
+include_once('./_common.php');
+
+
+if (G5_IS_MOBILE) {
+    include_once(G5_MSHOP_PATH . '/after.php');
+    return;
+}
+
+include_once('./_head.php');
+
+// 분류리스트
+$category_select = '';
+$script = '';
+$sql = " select * from {$g5['g5_shop_category_table']} ";
+//if ($is_admin != 'super')
+//    $sql .= " where ca_mb_id = '{$member['mb_id']}' ";
+$sql .= " order by ca_order, ca_id ";
+$result = sql_query($sql);
+for ($i = 0; $row = sql_fetch_array($result); $i++) {
+    $len = strlen($row['ca_id']) / 2 - 1;
+
+    $nbsp = "";
+    for ($i = 0; $i < $len; $i++)
+        $nbsp .= "&nbsp;&nbsp;&nbsp;";
+
+    $category_select .= "<option value=\"{$row['ca_id']}\">$nbsp{$row['ca_name']}</option>\n";
+
+}
+
+?>
+
+    <!-- 성우상세 { -->
+    <div class="contTop" style="opacity:0;">
+        <strong>후반작업 신청</strong>
+        <hr/>
+        <span>성우의 목소리가 녹음된 파일에 음악을 더하는 등의 작업을 말하며<br/>올보이스에서는 현재프로로 활동중인 엔지니어들이 후반작업을 전담하여 최고의 결과물을 제공합니다.</span>
+    </div>
+
+    <script type="text/javascript">
+        $(function () {
+            $("#contentsWrap > div").before("<div class='contTop2'>" + $(".contTop").html() + "</div>");
+            $(".contTop").remove();
+        });
+    </script>
+
+    <div class="voiceDetail">
+        <div class="voiceDetailInfo">
+            <form id="fitemform" name="fitemform" action="mailSend.php" method="post" enctype="MULTIPART/FORM-DATA" autocomplete="off">
+                <div class="voiceSampleSection form">
+                    <strong>후반작업 신청하기</strong>
+                    <ul>
+                        <li>
+                            <!-- 					<strong>샘플음성 01</strong> -->
+                            <ul>
+                                <li><span>*이름</span><input type="text" id="it_name" name="it_name" value=""/></li>
+                                <li><span>*연락처</span><input type="text" id="it_phone" name="it_phone" value=""/></li>
+                                <li><span style="padding:5px 0;">*녹음파일사용용도 <br/>및 작업요청사항</span><input type="text" id="it_purpose" name="it_purpose" value=""/></li>
+                                <li>
+                                    <span>의뢰할 파일</span>
+                                    <div class="fakeFile" style="margin-top:0;">
+                                        <input type="text" id="it_file_name" value=""/>
+                                        <div><input type="file" id="it_file" name="it_file"/></div>
+                                    </div>
+                                </li>
+
+                            </ul>
+                        </li>
+
+                    </ul>
+                    <script type="text/javascript">
+                        $(function () {
+                            $("#it_file").change(function () {
+                                $("#it_file_name").val($(this).val());
+                            });
+
+                            $("#submit_btn").click(function () {
+                                if ($("#it_name").val() == "") {
+                                    alert("제목을 입력해 주세요.");
+                                    $("#it_name").focus();
+                                    return;
+                                }
+                                if ($("#it_phone").val() == "") {
+                                    alert("연락처를 입력해 주세요.");
+                                    $("#it_explan").focus();
+                                    return;
+                                }
+                                if ($("#it_purpose").val() == "") {
+                                    alert("녹음파일사용용도를 입력해 주세요.");
+                                    $("#it_explan2").focus();
+                                    return;
+                                }
+
+                                $("#fitemform").submit();
+                            });
+
+                        });
+                    </script>
+                </div>
+                <div class="ctrler">
+                    <a id="submit_btn" class="vSave" style="cursor:pointer;">확인</a>
+                    <!-- 			<a href="javascript:;" class="vCancel">취소</a> -->
+                </div>
+            </form>
+        </div>
+
+        <div class="voiceProfile">
+            <article>
+                <span>어떻게 진행하는지 궁금한가요?</span>
+                <strong>후반작업 프로세스</strong>
+                <ol>
+                    <li>01. 후반작업의뢰</li>
+                    <li style="padding-left:23px;">아래의 양식에 맞추어 후반작업을 의뢰합니다.</li>
+                    <li>02. 작업조율 및 결정</li>
+                    <li style="padding-left:23px;">후반작업에 필요한 내용을 조율하고 최종 가격을 결정하여, 작업비용을 지불합니다.</li>
+                    <li>03. 작업진행</li>
+                    <li style="padding-left:23px;">올보이스등록 프로엔지니어들이 완벽한 결과물을 빠르게 작업합니다.</li>
+                    <li>04. 작업완료</li>
+                    <li style="padding-left:23px;">최고의 결과물을 빠르고 쉽게 받아보실 수 있습니다.</li>
+                </ol>
+                <br/><br/>
+            </article>
+        </div>
+    </div>
+
+
+    <!-- } 성우상세 끝 -->
+
+<?php
+include_once("./_tail.php");
+?>

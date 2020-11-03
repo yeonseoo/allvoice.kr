@@ -1,0 +1,40 @@
+09/10 02:01:27 [allvoice-Batch] [27891] INFO : Enable Create Backup Table. DayOfMonth [10] LastDayOfMonth [30]
+09/10 02:06:27 [allvoice-Batch] [27891] INFO : Enable Create Backup Table. DayOfMonth [10] LastDayOfMonth [30]
+09/10 02:11:27 [allvoice-Batch] [27891] INFO : Enable Create Backup Table. DayOfMonth [10] LastDayOfMonth [30]
+09/10 02:16:27 [allvoice-Batch] [27891] INFO : Enable Create Backup Table. DayOfMonth [10] LastDayOfMonth [30]
+09/10 02:21:27 [allvoice-Batch] [27891] INFO : Enable Create Backup Table. DayOfMonth [10] LastDayOfMonth [30]
+09/10 02:26:27 [allvoice-Batch] [27891] INFO : Enable Create Backup Table. DayOfMonth [10] LastDayOfMonth [30]
+09/10 02:31:27 [allvoice-Batch] [27891] INFO : Enable Create Backup Table. DayOfMonth [10] LastDayOfMonth [30]
+09/10 02:36:27 [allvoice-Batch] [27891] INFO : Enable Create Backup Table. DayOfMonth [10] LastDayOfMonth [30]
+09/10 02:41:27 [allvoice-Batch] [27891] INFO : Enable Create Backup Table. DayOfMonth [10] LastDayOfMonth [30]
+09/10 02:46:27 [allvoice-Batch] [27891] INFO : Enable Create Backup Table. DayOfMonth [10] LastDayOfMonth [30]
+09/10 02:51:27 [allvoice-Batch] [27891] INFO : Enable Create Backup Table. DayOfMonth [10] LastDayOfMonth [30]
+09/10 02:56:27 [allvoice-Batch] [27891] INFO : Enable Create Backup Table. DayOfMonth [10] LastDayOfMonth [30]
+09/10 03:01:27 [allvoice-Batch] [27891] INFO : Enable Delete Attachments.
+09/10 03:01:27 [allvoice-Batch] [27891] INFO : Delete a Attachement. FILE [kakao_button.json]
+09/10 03:01:27 [allvoice-Batch] [27891] INFO : Delete a Using-File. FILE [kakao_button.json.20190909]
+09/10 04:01:27 [allvoice-Batch] [27891] INFO : Disable Delete Attachments.
+09/10 13:38:03 [allvoice-Batch] [27891] ERROR : Thread is Interrupted. 
+java.lang.InterruptedException: sleep interrupted
+	at java.lang.Thread.sleep(Native Method)
+	at com.daou.alioclient.worker.AlioWorker.doSleep(AlioWorker.java:23)
+	at com.daou.alioclient.worker.AlioBatch.run(AlioBatch.java:115)
+09/10 13:38:03 [allvoice-Batch] [27891] ERROR : Failed To [allvoice-Batch] End. 
+java.lang.NullPointerException
+	at com.daou.alioclient.protocol.BizProtocol.socketSendPacket(BizProtocol.java:981)
+	at com.daou.alioclient.protocol.BizProtocol.sendEnd(BizProtocol.java:141)
+	at com.daou.alioclient.protocol.BizProtocol.close(BizProtocol.java:127)
+	at com.daou.alioclient.worker.AlioWorker.doEnd(AlioWorker.java:33)
+	at com.daou.alioclient.worker.AlioBatch.run(AlioBatch.java:121)
+09/10 13:38:03 [Thread-1] [27891] ERROR : Failed To [allvoice-Batch] End. 
+java.lang.NullPointerException
+	at com.daou.alioclient.protocol.BizProtocol.socketSendPacket(BizProtocol.java:981)
+	at com.daou.alioclient.protocol.BizProtocol.sendEnd(BizProtocol.java:141)
+	at com.daou.alioclient.protocol.BizProtocol.close(BizProtocol.java:127)
+	at com.daou.alioclient.worker.AlioWorker.doEnd(AlioWorker.java:33)
+	at com.daou.alioclient.worker.AlioWorker.doShutDown(AlioWorker.java:48)
+	at com.daou.alioclient.worker.AlioMain.commandShutdown(AlioMain.java:256)
+	at com.daou.alioclient.worker.AlioMain.workerShutdown(AlioMain.java:243)
+	at com.daou.alioclient.worker.AlioMain.doShutDown(AlioMain.java:83)
+	at com.daou.alioclient.common.AlioShutdownHook.run(AlioShutdownHook.java:21)
+09/10 13:38:03 [Thread-1] [27891] INFO : Worker [allvoice-Batch] ShutDown.

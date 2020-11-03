@@ -1,0 +1,155 @@
+#wrap {
+    width: 100%;
+    min-width: 100%;
+}
+
+.header_wrap {
+    height: 90px;
+    background-color: #ffffff;
+    min-width: 1000px;
+}
+
+#header {
+    margin: 0 auto;
+    height: 78px;
+    width: 1000px;
+}
+
+.logo {
+    float: left;
+    margin-top: 22px;
+}
+
+.project_manager {
+    float: right;
+    width: 200px;
+    margin-top: 14px;
+}
+
+#container_wrap {
+    width: 100%;
+    height: 100%;
+}
+
+.container_porfolio {
+    height: 900px;
+    margin: 0 auto;
+    width: 1000px;
+}
+
+.container_porfolio h1 {
+    font-size: 30px
+}
+
+.porfolio_w {
+    margin-top: 60px;
+}
+
+.porfolio_w1 {
+    height: 385px;
+    width: 480px;
+    float: left;
+    margin-right: 30px;
+    margin-bottom: 40px;
+}
+
+.porfolio_w3 {
+    height: 385px;
+    width: 480px;
+    float: left;
+    margin-right: 30px;
+    margin-bottom: 40px;
+}
+
+.porfolio_w2 {
+    height: 385px;
+    width: 480px;
+    float: left;
+    margin-bottom: 40px;
+}
+
+.pf_img {
+    width: 480px;
+    height: 315px;
+    top: 0;
+    overflow: hidden;
+}
+
+.pf_txt {
+    height: 75px;
+    background-color: #f4f4f4;
+    margin-top: 5px;
+    font-weight: bold;
+    padding: 20px 0 0 20px;
+}
+
+
+.sian_container {
+    max-width: 1920px;
+    margin: 0 auto;
+    text-align: center;
+}
+.sian_container a {
+    width: 100%;
+    text-align: center;
+    margin:auto;
+}
+.sian_container4 {
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.sian_container1 {
+    background: url(../sian/design1_bg.jpg);
+    width: 100%;
+    margin: 0 auto;
+    text-align: center
+}
+
+.sian_container3 {
+    background: url(../sian/design3_bg.jpg);
+    width: 100%;
+    margin: 0 auto;
+    text-align: center
+}
+.title {
+    position: fixed;
+    height: 50px;
+    width: 900px;
+    margin: 20px 0 0;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 10px;
+    background-color: rgba(255,187,0,1);
+}
+.title span {
+    position: absolute;
+    display: block;
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 20px;
+    font-family: Nanum Gothic, "나눔고딕", "돋움", tahoma;
+}
+.title .back_btn {
+    position: absolute;
+    top: 50%;
+    left: 30px;
+    transform: translateY(-50%);
+    font-size: 13px;
+    width: 130px;
+    height: 30px;
+    line-height: 30px;
+    border-radius: 6px;
+    text-decoration: none;
+    text-align: center;
+    color: #ffe6a3;
+    border: 1px solid #ffe6a3;
+    transition: all 0.3s;
+}
+.title .back_btn:hover {
+    border-color: #fff;
+    color: #fff;
+}

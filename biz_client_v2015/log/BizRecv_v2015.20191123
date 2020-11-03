@@ -1,0 +1,97 @@
+11/23 00:00:05 [allvoice-Recv] [59003] INFO : Receive And Add a Report To Queue. CMSGID [20191122235958]
+11/23 00:00:05 [allvoice-Recv] [59003] INFO : Receive And Add a Report To Queue. CMSGID [20191122235959]
+11/23 03:22:53 [allvoice-Recv] [59003] ERROR : com.daou.alioclient.common.BizException: Recv Report But No Defined Packet. COMMAND [null]
+11/23 03:22:58 [allvoice-Recv] [59003] ERROR : Failed To [allvoice-Recv] End. 
+java.io.IOException: Failed to Send a Packet.
+ PACKET : 00000002EN
+ MESSAGE : Connection closed by remote host
+
+	at com.daou.alioclient.protocol.BizProtocol.socketSendPacket(BizProtocol.java:984)
+	at com.daou.alioclient.protocol.BizProtocol.sendEnd(BizProtocol.java:141)
+	at com.daou.alioclient.protocol.BizProtocol.close(BizProtocol.java:127)
+	at com.daou.alioclient.worker.AlioWorker.doEnd(AlioWorker.java:33)
+	at com.daou.alioclient.worker.AlioRecv.run(AlioRecv.java:51)
+11/23 03:23:00 [allvoice-Recv] [59003] INFO : Connect To Socket. IP [biz.ppurio.com] PORT [26100] 
+11/23 03:23:00 [allvoice-Recv] [59003] ERROR : com.daou.alioclient.common.AuthException: Failed To User Authentication. [Failed to Send a Packet.
+ PACKET : 00000116AUVERSION:=4.0
+USERID:=allvoice
+PASSWD:=43e6e5145e8784f672408a3616fd045765a97755bd5c49f9063957bce193f220
+CV:=JD2015
+
+ MESSAGE : Connection reset
+]
+11/23 03:24:00 [allvoice-Recv] [59003] ERROR : Failed To [allvoice-Recv] End. 
+java.io.IOException: Failed to Send a Packet.
+ PACKET : 00000002EN
+ MESSAGE : Connection has been shutdown: javax.net.ssl.SSLException: java.net.SocketException: Connection reset
+
+	at com.daou.alioclient.protocol.BizProtocol.socketSendPacket(BizProtocol.java:984)
+	at com.daou.alioclient.protocol.BizProtocol.sendEnd(BizProtocol.java:141)
+	at com.daou.alioclient.protocol.BizProtocol.close(BizProtocol.java:127)
+	at com.daou.alioclient.worker.AlioWorker.doEnd(AlioWorker.java:33)
+	at com.daou.alioclient.worker.AlioRecv.run(AlioRecv.java:51)
+Caused by: javax.net.ssl.SSLException: java.net.SocketException: Connection reset
+	at sun.security.ssl.Alerts.getSSLException(Alerts.java:208)
+	at sun.security.ssl.SSLSocketImpl.fatal(SSLSocketImpl.java:1964)
+	at sun.security.ssl.SSLSocketImpl.fatal(SSLSocketImpl.java:1921)
+	at sun.security.ssl.SSLSocketImpl.handleException(SSLSocketImpl.java:1885)
+	at sun.security.ssl.SSLSocketImpl.handleException(SSLSocketImpl.java:1830)
+	at sun.security.ssl.AppOutputStream.write(AppOutputStream.java:128)
+	at java.io.DataOutputStream.write(DataOutputStream.java:107)
+	at java.io.FilterOutputStream.write(FilterOutputStream.java:97)
+	at com.daou.alioclient.socket.AlioSocket.write(AlioSocket.java:96)
+	at com.daou.alioclient.protocol.BizProtocol.socketSendPacket(BizProtocol.java:981)
+	at com.daou.alioclient.protocol.BizProtocol.connectAndAuthToServer(BizProtocol.java:92)
+	at com.daou.alioclient.worker.AlioRecv.run(AlioRecv.java:24)
+Caused by: java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:210)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at sun.security.ssl.InputRecord.readFully(InputRecord.java:465)
+	at sun.security.ssl.InputRecord.read(InputRecord.java:503)
+	at sun.security.ssl.SSLSocketImpl.readRecord(SSLSocketImpl.java:983)
+	at sun.security.ssl.SSLSocketImpl.waitForClose(SSLSocketImpl.java:1779)
+	at sun.security.ssl.HandshakeOutStream.flush(HandshakeOutStream.java:124)
+	at sun.security.ssl.Handshaker.kickstart(Handshaker.java:1093)
+	at sun.security.ssl.SSLSocketImpl.kickstartHandshake(SSLSocketImpl.java:1497)
+	at sun.security.ssl.SSLSocketImpl.performInitialHandshake(SSLSocketImpl.java:1361)
+	at sun.security.ssl.SSLSocketImpl.writeRecord(SSLSocketImpl.java:757)
+	at sun.security.ssl.AppOutputStream.write(AppOutputStream.java:123)
+	... 6 more
+11/23 03:24:10 [allvoice-Recv] [59003] INFO : Connect To Socket. IP [biz.ppurio.com] PORT [26100] 
+11/23 03:24:10 [allvoice-Recv] [59003] INFO : User Authentication. USER [allvoice]
+11/23 03:24:10 [allvoice-Recv] [59003] INFO : Start Sending And Receiving Data With The Server.
+11/23 04:04:28 [allvoice-Recv] [59003] ERROR : com.daou.alioclient.common.BizException: Recv Report But No Defined Packet. COMMAND [null]
+11/23 04:04:33 [allvoice-Recv] [59003] ERROR : Failed To [allvoice-Recv] End. 
+java.io.IOException: Failed to Send a Packet.
+ PACKET : 00000002EN
+ MESSAGE : Connection closed by remote host
+
+	at com.daou.alioclient.protocol.BizProtocol.socketSendPacket(BizProtocol.java:984)
+	at com.daou.alioclient.protocol.BizProtocol.sendEnd(BizProtocol.java:141)
+	at com.daou.alioclient.protocol.BizProtocol.close(BizProtocol.java:127)
+	at com.daou.alioclient.worker.AlioWorker.doEnd(AlioWorker.java:33)
+	at com.daou.alioclient.worker.AlioRecv.run(AlioRecv.java:51)
+11/23 04:04:40 [allvoice-Recv] [59003] INFO : Connect To Socket. IP [biz.ppurio.com] PORT [26100] 
+11/23 04:04:40 [allvoice-Recv] [59003] ERROR : com.daou.alioclient.common.AuthException: Failed To User Authentication. COMMAND [null]
+11/23 04:05:40 [allvoice-Recv] [59003] ERROR : Failed To [allvoice-Recv] End. 
+java.io.IOException: Failed to Send a Packet.
+ PACKET : 00000002EN
+ MESSAGE : Connection closed by remote host
+
+	at com.daou.alioclient.protocol.BizProtocol.socketSendPacket(BizProtocol.java:984)
+	at com.daou.alioclient.protocol.BizProtocol.sendEnd(BizProtocol.java:141)
+	at com.daou.alioclient.protocol.BizProtocol.close(BizProtocol.java:127)
+	at com.daou.alioclient.worker.AlioWorker.doEnd(AlioWorker.java:33)
+	at com.daou.alioclient.worker.AlioRecv.run(AlioRecv.java:51)
+11/23 04:05:50 [allvoice-Recv] [59003] INFO : Connect To Socket. IP [biz.ppurio.com] PORT [26100] 
+11/23 04:05:50 [allvoice-Recv] [59003] INFO : User Authentication. USER [allvoice]
+11/23 04:05:50 [allvoice-Recv] [59003] INFO : Start Sending And Receiving Data With The Server.
+11/23 09:33:10 [allvoice-Recv] [59003] INFO : Receive And Add a Report To Queue. CMSGID [20191122093301]
+11/23 09:33:25 [allvoice-Recv] [59003] INFO : Receive And Add a Report To Queue. CMSGID [20191122093315]
+11/23 10:39:17 [allvoice-Recv] [59003] INFO : Receive And Add a Report To Queue. CMSGID [20191123103908]
+11/23 10:43:22 [allvoice-Recv] [59003] INFO : Receive And Add a Report To Queue. CMSGID [20191123104316]
+11/23 11:31:07 [allvoice-Recv] [59003] INFO : Receive And Add a Report To Queue. CMSGID [20191123113107]
+11/23 11:31:07 [allvoice-Recv] [59003] INFO : Receive And Add a Report To Queue. CMSGID [20191123113105]
+11/23 11:31:12 [allvoice-Recv] [59003] INFO : Receive And Add a Report To Queue. CMSGID [20191123113106]
+11/23 12:12:06 [allvoice-Recv] [59003] INFO : Receive And Add a Report To Queue. CMSGID [20191123121203]
+11/23 17:17:57 [allvoice-Recv] [59003] INFO : Receive And Add a Report To Queue. CMSGID [20191123171753]

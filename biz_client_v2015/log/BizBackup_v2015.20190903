@@ -1,0 +1,21 @@
+09/03 10:21:26 [allvoice-Backup] [27891] INFO : Connect To Database. TYPE [MYSQL] URL [jdbc:mysql://localhost:3306/newbird_allvoice2] USER [newbird_allvoice2]
+09/03 10:21:26 [allvoice-Backup] [27891] ERROR : java.sql.SQLException: Failed to Execute a Query. 
+ MESSAGE : Base table or view not found message from server: "Table 'newbird_allvoice2.BIZ_MSG' doesn't exist" SQLSTATE : 42S02
+ ERRORCODE : 1146
+ QUERY :  SELECT CMID, MSG_TYPE, SEND_TIME FROM BIZ_MSG WHERE STATUS = ?  LIMIT 1000 
+09/03 10:21:26 [allvoice-Backup] [27891] INFO : Disconnect To Database. TYPE [MYSQL] URL [jdbc:mysql://localhost:3306/newbird_allvoice2] USER [newbird_allvoice2]
+09/03 10:21:26 [allvoice-Backup] [27891] INFO : Worker [allvoice-Backup] End.
+09/03 10:21:35 [allvoice-Backup] [27891] INFO : Connect To Database. TYPE [MYSQL] URL [jdbc:mysql://localhost:3306/newbird_allvoice2] USER [newbird_allvoice2]
+09/03 13:43:35 [allvoice-Backup] [27891] INFO : Not Exist The Backup Table. TABLENAME [BIZ_LOG_201909]
+09/03 13:43:35 [allvoice-Backup] [27891] INFO : Create a Table. TABLE [BIZ_LOG_201909]
+09/03 13:43:35 [allvoice-Backup] [27891] ERROR : java.sql.SQLException: Failed to Execute a Query. 
+ MESSAGE : Base table or view not found message from server: "Table 'newbird_allvoice2.BIZ_LOG_201909' doesn't exist" SQLSTATE : 42S02
+ ERRORCODE : 1146
+ QUERY :  INSERT INTO BIZ_LOG_201909  (CMID, UMID, MSG_TYPE, STATUS, CALL_STATUS, REQUEST_TIME, SEND_TIME, REPORT_TIME, DEST_PHONE, SEND_PHONE, DEST_NAME, SEND_NAME, SUBJECT, MSG_BODY, NATION_CODE, SENDER_KEY, TEMPLATE_CODE, RESPONSE_METHOD, TIMEOUT, RE_TYPE, RE_BODY, RE_PART, WAP_URL, COVER_FLAG, SMS_FLAG, REPLY_FLAG, RETRY_CNT, ATTACHED_FILE, VXML_FILE, USE_PAGE, USE_TIME, SN_RESULT, TEL_INFO, CINFO, USER_KEY, AD_FLAG)  SELECT CMID, UMID, MSG_TYPE, STATUS, CALL_STATUS, REQUEST_TIME, SEND_TIME, REPORT_TIME, DEST_PHONE, SEND_PHONE, DEST_NAME, SEND_NAME, SUBJECT, MSG_BODY, NATION_CODE, SENDER_KEY, TEMPLATE_CODE, RESPONSE_METHOD, TIMEOUT, RE_TYPE, RE_BODY, RE_PART, WAP_URL, COVER_FLAG, SMS_FLAG, REPLY_FLAG, RETRY_CNT, ATTACHED_FILE, VXML_FILE, USE_PAGE, USE_TIME, SN_RESULT, TEL_INFO, CINFO, USER_KEY, AD_FLAG FROM BIZ_MSG WHERE CMID = ? 
+09/03 13:43:35 [allvoice-Backup] [27891] INFO : Disconnect To Database. TYPE [MYSQL] URL [jdbc:mysql://localhost:3306/newbird_allvoice2] USER [newbird_allvoice2]
+09/03 13:43:35 [allvoice-Backup] [27891] INFO : Worker [allvoice-Backup] End.
+09/03 13:43:36 [allvoice-Backup] [27891] INFO : Connect To Database. TYPE [MYSQL] URL [jdbc:mysql://localhost:3306/newbird_allvoice2] USER [newbird_allvoice2]
+09/03 13:43:36 [allvoice-Backup] [27891] INFO : Backup a Message. CMSGID [201909030001]
+09/03 13:43:36 [allvoice-Backup] [27891] INFO : Backup a Message. CMSGID [0903al_H92533258573800952177]
+09/03 14:09:36 [allvoice-Backup] [27891] INFO : Backup a Message. CMSGID [201909030002]
+09/03 18:21:36 [allvoice-Backup] [27891] INFO : Backup a Message. CMSGID [201909030003]

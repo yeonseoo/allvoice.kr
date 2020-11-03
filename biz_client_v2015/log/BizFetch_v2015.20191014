@@ -1,0 +1,61 @@
+10/14 14:11:14 [allvoice-Fetch] [63011] ERROR : Fetch AuthException.
+com.daou.alioclient.common.AuthException: Failed To Connect Database. Invalid authorization specification message from server: "Access denied for user 'allvoice'@'127.0.0.1' (using password: NO)"
+	at com.daou.alioclient.db.AlioDBAccess.connect(AlioDBAccess.java:992)
+	at com.daou.alioclient.worker.AlioFetch.run(AlioFetch.java:55)
+10/14 14:11:43 [allvoice-Fetch] [63011] ERROR : Thread is Interrupted. 
+java.lang.InterruptedException: sleep interrupted
+	at java.lang.Thread.sleep(Native Method)
+	at com.daou.alioclient.worker.AlioWorker.doSleep(AlioWorker.java:23)
+	at com.daou.alioclient.worker.AlioFetch.run(AlioFetch.java:76)
+10/14 14:11:43 [allvoice-Fetch] [63011] INFO : Worker [allvoice-Fetch] End.
+10/14 14:11:43 [Thread-1] [63011] ERROR : Failed To Database Connect For Restore. 
+com.daou.alioclient.common.AuthException: Failed To Connect Database. Invalid authorization specification message from server: "Access denied for user 'allvoice'@'127.0.0.1' (using password: NO)"
+	at com.daou.alioclient.db.AlioDBAccess.connect(AlioDBAccess.java:992)
+	at com.daou.alioclient.worker.AlioFetch.doShutDown(AlioFetch.java:99)
+	at com.daou.alioclient.worker.AlioMain.commandShutdown(AlioMain.java:256)
+	at com.daou.alioclient.worker.AlioMain.workerShutdown(AlioMain.java:220)
+	at com.daou.alioclient.worker.AlioMain.doShutDown(AlioMain.java:83)
+	at com.daou.alioclient.common.AlioShutdownHook.run(AlioShutdownHook.java:21)
+10/14 14:11:43 [Thread-1] [63011] INFO : Worker [allvoice-Fetch] End.
+10/14 14:11:43 [Thread-1] [63011] INFO : Worker [allvoice-Fetch] ShutDown.
+10/14 14:49:32 [allvoice-Fetch] [59003] INFO : Connect To Database. TYPE [MYSQL] URL [jdbc:mysql://localhost:3306/allvoice] USER [allvoice]
+10/14 14:49:32 [allvoice-Fetch] [59003] INFO : Assign Messages To SendLine. SENDLINE [0] SIZE [60]
+10/14 14:57:20 [allvoice-Fetch] [59003] INFO : Assign Messages To SendLine. SENDLINE [0] SIZE [2]
+10/14 14:59:30 [allvoice-Fetch] [59003] INFO : Assign Messages To SendLine. SENDLINE [0] SIZE [1]
+10/14 15:00:16 [allvoice-Fetch] [59003] INFO : Assign Messages To SendLine. SENDLINE [0] SIZE [1]
+10/14 15:00:47 [allvoice-Fetch] [59003] INFO : Assign Messages To SendLine. SENDLINE [0] SIZE [1]
+10/14 15:01:47 [allvoice-Fetch] [59003] INFO : Assign Messages To SendLine. SENDLINE [0] SIZE [1]
+10/14 15:02:22 [allvoice-Fetch] [59003] INFO : Assign Messages To SendLine. SENDLINE [0] SIZE [1]
+10/14 15:02:59 [allvoice-Fetch] [59003] INFO : Assign Messages To SendLine. SENDLINE [0] SIZE [1]
+10/14 15:03:31 [allvoice-Fetch] [59003] INFO : Assign Messages To SendLine. SENDLINE [0] SIZE [1]
+10/14 15:03:51 [allvoice-Fetch] [59003] INFO : Assign Messages To SendLine. SENDLINE [0] SIZE [1]
+10/14 15:04:04 [allvoice-Fetch] [59003] INFO : Assign Messages To SendLine. SENDLINE [0] SIZE [1]
+10/14 15:04:05 [allvoice-Fetch] [59003] INFO : Assign Messages To SendLine. SENDLINE [0] SIZE [1]
+10/14 15:04:53 [allvoice-Fetch] [59003] INFO : Assign Messages To SendLine. SENDLINE [0] SIZE [1]
+10/14 15:05:20 [allvoice-Fetch] [59003] INFO : Assign Messages To SendLine. SENDLINE [0] SIZE [1]
+10/14 15:06:14 [allvoice-Fetch] [59003] INFO : Assign Messages To SendLine. SENDLINE [0] SIZE [1]
+10/14 15:06:43 [allvoice-Fetch] [59003] INFO : Assign Messages To SendLine. SENDLINE [0] SIZE [1]
+10/14 15:09:13 [allvoice-Fetch] [59003] INFO : Assign Messages To SendLine. SENDLINE [0] SIZE [1]
+10/14 15:09:38 [allvoice-Fetch] [59003] INFO : Assign Messages To SendLine. SENDLINE [0] SIZE [2]
+10/14 15:09:58 [allvoice-Fetch] [59003] INFO : Assign Messages To SendLine. SENDLINE [0] SIZE [1]
+10/14 15:12:13 [allvoice-Fetch] [59003] INFO : Assign Messages To SendLine. SENDLINE [0] SIZE [1]
+10/14 15:12:51 [allvoice-Fetch] [59003] INFO : Assign Messages To SendLine. SENDLINE [0] SIZE [1]
+10/14 15:15:15 [allvoice-Fetch] [59003] INFO : Assign Messages To SendLine. SENDLINE [0] SIZE [1]
+10/14 15:45:38 [allvoice-Fetch] [59003] INFO : Assign Messages To SendLine. SENDLINE [0] SIZE [2]
+10/14 15:54:33 [allvoice-Fetch] [59003] INFO : Assign Messages To SendLine. SENDLINE [0] SIZE [1]
+10/14 16:03:44 [allvoice-Fetch] [59003] INFO : Assign Messages To SendLine. SENDLINE [0] SIZE [1]
+10/14 16:23:32 [allvoice-Fetch] [59003] INFO : Assign Messages To SendLine. SENDLINE [0] SIZE [1]
+10/14 16:23:46 [allvoice-Fetch] [59003] INFO : Assign Messages To SendLine. SENDLINE [0] SIZE [1]
+10/14 16:26:06 [allvoice-Fetch] [59003] INFO : Assign Messages To SendLine. SENDLINE [0] SIZE [1]
+10/14 18:26:44 [allvoice-Fetch] [59003] INFO : Assign Messages To SendLine. SENDLINE [0] SIZE [1]
+10/14 19:01:26 [allvoice-Fetch] [59003] INFO : Assign Messages To SendLine. SENDLINE [0] SIZE [1]
+10/14 19:02:29 [allvoice-Fetch] [59003] INFO : Assign Messages To SendLine. SENDLINE [0] SIZE [1]
+10/14 19:09:53 [allvoice-Fetch] [59003] INFO : Assign Messages To SendLine. SENDLINE [0] SIZE [1]
+10/14 19:42:09 [allvoice-Fetch] [59003] INFO : Assign Messages To SendLine. SENDLINE [0] SIZE [1]
+10/14 19:55:09 [allvoice-Fetch] [59003] INFO : Assign Messages To SendLine. SENDLINE [0] SIZE [2]
+10/14 20:13:16 [allvoice-Fetch] [59003] INFO : Assign Messages To SendLine. SENDLINE [0] SIZE [1]
+10/14 20:13:25 [allvoice-Fetch] [59003] INFO : Assign Messages To SendLine. SENDLINE [0] SIZE [1]
+10/14 20:26:48 [allvoice-Fetch] [59003] INFO : Assign Messages To SendLine. SENDLINE [0] SIZE [2]
+10/14 20:32:21 [allvoice-Fetch] [59003] INFO : Assign Messages To SendLine. SENDLINE [0] SIZE [2]
+10/14 22:30:47 [allvoice-Fetch] [59003] INFO : Assign Messages To SendLine. SENDLINE [0] SIZE [1]
+10/14 23:43:55 [allvoice-Fetch] [59003] INFO : Assign Messages To SendLine. SENDLINE [0] SIZE [2]

@@ -1,0 +1,432 @@
+﻿<?php
+include_once('./_common.php');
+
+if (G5_IS_MOBILE) {
+    include_once(G5_THEME_MSHOP_PATH.'/index.php');
+    return;
+}
+
+define("_INDEX_", TRUE);
+
+include_once(G5_THEME_PATH.'/head.sub.php');
+include_once(G5_LIB_PATH.'/outlogin.lib.php');
+include_once(G5_LIB_PATH.'/poll.lib.php');
+include_once(G5_LIB_PATH.'/visit.lib.php');
+include_once(G5_LIB_PATH.'/connect.lib.php');
+include_once(G5_LIB_PATH.'/popular.lib.php');
+include_once(G5_LIB_PATH.'/latest.lib.php');
+
+//include_once(G5_THEME_SHOP_PATH.'/shop.head.php');
+
+include G5_BBS_PATH.'/newwin.inc.php'; // 팝업레이어
+?>
+
+
+<style type="text/css">
+.hd_pops_footer .hd_pops_reject,
+.hd_pops_footer{background-color:#393939;}
+#subCate,
+.ttrxHeader.sub{display:none;}
+</style>
+
+<div class="ttrxHeader">
+	<div>
+		<a href="/shop/"><img src="../theme/basic/img/img_logo.png" /></a>
+		
+		<div>
+    		<div class="ttrxSearchEngine">
+                <form name="frmsearch1" action="<?php echo G5_SHOP_URL; ?>/search.php" onsubmit="return search_submit(this);">
+    
+                <input type="text" name="q" value="<?php echo stripslashes(get_text(get_search_string($q))); ?>" id="sch_str" required placeholder="search">
+                <input type="image" src="../theme/basic/img/btn_search.png" />
+    
+                </form>
+                <script>
+                function search_submit(f) {
+                    if (f.q.value.length < 2) {
+                        alert("검색어는 두글자 이상 입력하십시오.");
+                        f.q.select();
+                        f.q.focus();
+                        return false;
+                    }
+                    return true;
+                }
+                </script>
+            </div>
+        
+        	<span>
+        		<a href="<?php echo G5_SHOP_URL; ?>/how.php">이용방법</a>
+        		<a href="<?php echo G5_SHOP_URL; ?>/after.php">후반작업</a>
+        	</span>
+        	
+        	<ul>
+				<?php if ($is_member) { ?>
+				<li><a href="<?php echo G5_BBS_URL; ?>/logout.php?url=shop">LOGOUT</a></li>
+        		<!--li><a href="<?php echo G5_BBS_URL; ?>/member_confirm.php?url=register_form.php">정보수정</a></li-->
+				<li><a href="/shop/voiceMypage.php">MY PAGE</a></li>
+					<?php if ($is_admin) {  ?>
+				<li><a href="<?php echo G5_ADMIN_URL; ?>/shop_admin/">관리자</a></li>
+					<?php }  ?>
+				<?php } else { ?>
+        		<li><a href="<?php echo G5_URL; ?>/bbs/login.php">LOGIN</a></li>
+        		<li><a href="<?php echo G5_SHOP_URL; ?>/voiceSignup.php">SIGN UP</a></li>
+				<?php } ?>
+        	</ul>
+        	
+		</div>
+		
+	</div>
+</div>
+
+
+<div class="ttrxHeader sub">
+	<div>
+		<a href="/shop/"><img src="../theme/basic/img/img_logo2.png" /></a>
+		
+		<div>
+    		<div class="ttrxSearchEngine">
+                <form name="frmsearch1" action="<?php echo G5_SHOP_URL; ?>/search.php" onsubmit="return search_submit(this);">
+    
+                <input type="text" name="q" value="<?php echo stripslashes(get_text(get_search_string($q))); ?>" id="sch_str" required placeholder="search">
+                <input type="image" src="../theme/basic/img/btn_search2.png" />
+    
+                </form>
+                <script>
+                function search_submit(f) {
+                    if (f.q.value.length < 2) {
+                        alert("검색어는 두글자 이상 입력하십시오.");
+                        f.q.select();
+                        f.q.focus();
+                        return false;
+                    }
+                    return true;
+                }
+                </script>
+            </div>
+        
+        	<span>
+        		<a href="javascript:;">이용방법</a>
+        		<a href="javascript:;">후반작업</a>
+        	</span>
+        	
+        	<ul>
+				<?php if ($is_member) { ?>
+				<li><a href="<?php echo G5_BBS_URL; ?>/logout.php?url=shop">LOGOUT</a></li>
+        		<!--li><a href="<?php echo G5_BBS_URL; ?>/member_confirm.php?url=register_form.php">정보수정</a></li-->
+				<li><a href="/shop/voiceMypage.php">MY PAGE</a></li>
+					<?php if ($is_admin) {  ?>
+				<li><a href="<?php echo G5_ADMIN_URL; ?>/shop_admin/">관리자</a></li>
+					<?php }  ?>
+				<?php } else { ?>
+        		<li><a href="<?php echo G5_URL; ?>/bbs/login.php">LOGIN</a></li>
+        		<li><a href="<?php echo G5_SHOP_URL; ?>/voiceSignup.php">SIGN UP</a></li>
+				<?php } ?>
+        	</ul>
+        	
+		</div>
+		
+	</div>
+</div>
+
+
+
+<div id="subCate">
+	<div id="subCateDep01">
+		<div>
+    		<ul>
+<?php
+$sql = " select * from {$g5['g5_shop_category_table']} ";
+//if ($is_admin != 'super')
+//    $sql .= " where ca_mb_id = '{$member['mb_id']}' ";
+$sql .= " order by ca_order, ca_id ";
+$result = sql_query($sql);
+for ($i=0; $row=sql_fetch_array($result); $i++)
+{
+    $len = strlen($row['ca_id']) / 2 - 1;
+
+    $nbsp = "";
+    for ($i=0; $i<$len; $i++)
+        $nbsp .= "&nbsp;&nbsp;&nbsp;";
+
+    $category_select .= "<option value=\"{$row['ca_id']}\">$nbsp{$row['ca_name']}</option>\n";
+
+    $script .= "ca_use['{$row['ca_id']}'] = {$row['ca_use']};\n";
+    $script .= "ca_stock_qty['{$row['ca_id']}'] = {$row['ca_stock_qty']};\n";
+    //$script .= "ca_explan_html['$row[ca_id]'] = $row[ca_explan_html];\n";
+    $script .= "ca_sell_email['{$row['ca_id']}'] = '{$row['ca_sell_email']}';\n";
+?>
+    			<li><a href="<?php echo G5_SHOP_URL; ?>/voiceList.php?cat=<?php echo $row['ca_id']; ?>" <?php echo ( $row['ca_id'] == $_REQUEST['cat'] ) ? "class='on'" : ""; ?>><?php echo $row['ca_name']; ?></a></li>
+<?php
+}
+?>
+    		</ul>
+    		<span><a href="<?php echo G5_SHOP_URL; ?>/voiceProject.php">작업의뢰프로젝트</a></span>
+    		<a href="<?php echo G5_URL; ?>/bbs/faq.php">고객센터</a>
+		</div>
+	</div>
+    <!-- 
+	<div class="subCateDep02">
+		<div>
+    		<ul>
+    			<li><a href="/shop/voiceList.php">카테고리명01</a></li>
+    			<li><a href="/shop/voiceList.php">카테고리명02</a></li>
+    			<li><a href="/shop/voiceList.php" class="on">카테고리명03</a></li>
+    			<li><a href="/shop/voiceList.php">카테고리명04</a></li>
+    			<li><a href="/shop/voiceList.php">카테고리명05</a></li>
+    			<li><a href="/shop/voiceList.php">카테고리명06</a></li>
+    			<li><a href="/shop/voiceList.php">카테고리명07</a></li>
+    			<li><a href="/shop/voiceList.php">카테고리명08</a></li>
+    			<li><a href="/shop/voiceList.php">카테고리명09</a></li>
+    		</ul>
+		</div>
+	</div>
+     -->
+</div>
+
+<script type="text/javascript">
+$(function(){
+	$(".ttrxHeader.sub").hide();
+	$("#subCate").hide();
+	$(window).scroll(function(){
+		if($(window).scrollTop() >= 106){
+			$(".ttrxHeader.sub").show();
+			$("#subCate").show();
+		} else {
+			$(".ttrxHeader.sub").hide();
+			$("#subCate").hide();
+		}
+	});
+});
+</script>
+
+<!-- 메인이미지 시작 { -->
+<?php 
+//echo display_banner('메인', 'mainbanner.10.skin.php'); 
+?>
+<!-- } 메인이미지 끝 -->
+
+
+
+<div id="contentsWrap2">
+
+<div id="mainBx">
+	<div>
+		<ul>
+<?php
+$sql = " select * from {$g5['g5_shop_banner_table']} WHERE bn_device='pc' AND bn_position='메인' order by bn_order, bn_id desc";
+$result = sql_query($sql);
+for ($i=0; $row=sql_fetch_array($result); $i++) {
+	$bimg = G5_DATA_URL.'/banner/'.$row['bn_id'];
+
+	$bn_new_win = ($row['bn_new_win']) ? 'target="_blank"' : '';
+?>
+			<li>
+				<a href="<?php echo $row['bn_url']; ?>"><img src="<?php echo $bimg; ?>" alt="<?php echo get_text($row['bn_alt']); ?>" /></a>
+				<div>
+					<a href="/shop/voiceList.php">샘플듣고 성우선택</a>
+					<a href="/shop/voiceProjectApply.php">작업의뢰</a>
+				</div>
+			</li>
+<?php
+}
+?>
+			<!--li>
+				<a href="http://allvoice.kr/shop/how.php"><img src="../theme/basic/img/img_mainBx02.png" /></a>
+				<div>
+					<a href="/shop/voiceList.php">성우찾기</a>
+					<a href="/shop/voiceProjectApply.php">작업의뢰</a>
+				</div>
+			</li>
+			<li>
+				<a href="javascript:;"><img src="../theme/basic/img/img_mainBx04.png" /></a>
+				<div>
+					<a href="/shop/voiceList.php">성우찾기</a>
+					<a href="/shop/voiceProjectApply.php">작업의뢰</a>
+				</div>
+			</li>
+			<li>
+				<a href="javascript:;"><img src="../theme/basic/img/img_mainBx05.png" /></a>
+				<div>
+					<a href="/shop/voiceList.php">성우찾기</a>
+					<a href="/shop/voiceProjectApply.php">작업의뢰</a>
+				</div>
+			</li>
+			<li>
+				<a href="http://allvoice.kr/shop/voiceDetail.php?cat=&mb_id=yonayona2018"><img src="../theme/basic/img/img_mainBx06.png" /></a>
+				<div>
+					<a href="/shop/voiceList.php">성우찾기</a>
+					<a href="/shop/voiceProjectApply.php">작업의뢰</a>
+				</div>
+			</li-->
+		</ul>
+	</div>
+</div>
+			<!-- 
+			<li>
+				<a href="/shop/index.php"><img src="../theme/basic/img/img_mainBx03.png" /></a>
+				<div>
+					<a href="/shop/voiceList.php">성우찾기</a>
+					<a href="/shop/voiceProjectApply.php">작업의뢰</a>
+				</div>
+			</li>
+			 -->
+
+<script type="text/javascript">
+$(function(){
+	$("#mainBx > div > ul").bxSlider({
+        infiniteLoop: true,
+        touchEnabled: false,
+        pager : true,
+        controls : true,
+        autoControls : false,
+        auto : false,
+        speed : 500,
+        pause : 5000,
+        onSliderLoad : function(){
+        }
+    });
+});
+</script>
+
+<div id="mainCate">
+	<ul>
+		<li><a href="/shop/voiceList.php?cat=10"><img src="../theme/basic/img/img_mainCate01.png" /><img src="../theme/basic/img/img_mainCate01_on.png" /><span>광고</span></a></li>
+		<li><a href="/shop/voiceList.php?cat=11"><img src="../theme/basic/img/img_mainCate02.png" /><img src="../theme/basic/img/img_mainCate02_on.png" /><span>홍보</span></a></li>
+		<li><a href="/shop/voiceList.php?cat=12"><img src="../theme/basic/img/img_mainCate03.png" /><img src="../theme/basic/img/img_mainCate03_on.png" /><span>방송</span></a></li>
+		<li><a href="/shop/voiceList.php?cat=13"><img src="../theme/basic/img/img_mainCate04.png" /><img src="../theme/basic/img/img_mainCate04_on.png" /><span>만화</span></a></li>
+		<li><a href="/shop/voiceList.php?cat=14"><img src="../theme/basic/img/img_mainCate05.png" /><img src="../theme/basic/img/img_mainCate05_on.png" /><span>게임</span></a></li>
+		<li><a href="/shop/voiceList.php?cat=15"><img src="../theme/basic/img/img_mainCate06.png" /><img src="../theme/basic/img/img_mainCate06_on.png" /><span>영화예고</span></a></li>
+		<li><a href="/shop/voiceList.php?cat=16"><img src="../theme/basic/img/img_mainCate07.png" /><img src="../theme/basic/img/img_mainCate07_on.png" /><span>이벤트</span></a></li>
+		<li><a href="/shop/voiceList.php?cat=17"><img src="../theme/basic/img/img_mainCate08.png" /><img src="../theme/basic/img/img_mainCate08_on.png" /><span>오디오북, 교재</span></a></li>
+		<li><a href="/shop/voiceList.php?cat=18"><img src="../theme/basic/img/img_mainCate09.png" /><img src="../theme/basic/img/img_mainCate09_on.png" /><span>기기음성</span></a></li>
+		<li><a href="/shop/voiceList.php?cat=19"><img src="../theme/basic/img/img_mainCate10.png" /><img src="../theme/basic/img/img_mainCate10_on.png" /><span>ARS, 안내멘트</span></a></li>
+		<li><a href="/shop/voiceList.php?cat=20"><img src="../theme/basic/img/img_mainCate11.png" /><img src="../theme/basic/img/img_mainCate11_on.png" /><span>홈쇼핑</span></a></li>
+		<li><a href="/shop/voiceList.php?cat=21"><img src="../theme/basic/img/img_mainCate12.png" /><img src="../theme/basic/img/img_mainCate12_on.png" /><span>성대모사</span></a></li>
+	</ul>
+</div>
+
+<script src="<?php echo G5_THEME_CSS_URL ?>/QTransform.js"></script>
+<script type="text/javascript">
+$(function(){
+	$('.mediPlayer audio').each(function(idx){
+		//console.log($(this).find("audio").attr("src"));
+		//var song = new Audio($(this).find("audio").attr("src"),$(this).find("audio").attr("src"));
+		console.log($(this));
+		$(this).on("play",function(){
+			$(this).parent().css("opacity",1);
+    		//console.log(this.duration);
+    		console.log(this.currentTime*1000);
+    		$(this).prev().animate({
+        		rotate : '360deg'
+        	},this.duration*1000 + 1000 - this.currentTime*1000,"linear",function(){
+        		$(this).parent().removeAttr("style");
+        		$(this).animate({
+            		rotate : '0deg'
+            	},0);
+            });
+		});
+		$(this).on("pause",function(){
+			$(this).parent().removeAttr("style");
+			$(this).prev().stop();
+		});
+
+		$(this).on("ended",function(){
+			console.log("end");
+			$(this).parent().removeAttr("style");
+    		$(this).prev().stop().animate({
+        		rotate : '0deg'
+        	},0);
+		});
+	});
+	$('.mediPlayer').mediaPlayer();
+});
+</script>
+
+<div id="topTen">
+	<strong>BEST REVIEW VOICE</strong>
+	<ul>
+<?php
+$qry = "SELECT a.*, c.mb_name FROM ".$g5['member_voice']." AS a JOIN ".$g5['member_table']." AS c ON a.mb_id=c.mb_id WHERE c.mb_type1='1' AND a.mv_dae='y' ORDER BY mv_no DESC LIMIT 10";
+//echo $qry;
+$res = sql_query($qry);
+$row_cnt = sql_num_rows($res);
+for ($i=0; $row=sql_fetch_array($res); $i++) {
+	$mb_dir = substr($row['mb_id'],0,2);
+	$icon_url = G5_DATA_URL.'/member_image/'.$mb_dir.'/'.$row['mb_id'].'.gif';
+	$icon_url = is_file(G5_DATA_PATH.'/member_image/'.$mb_dir.'/'.$row['mb_id'].'.gif') ? $icon_url : "../theme/basic/img/profileSample.jpg";
+	$audio_url = G5_DATA_URL.'/member_voice/'.$mb_dir.'/'.$row['mv_voice'];
+?>
+		<li>
+			<div class="circularPlayerWrap">
+				<img src="<?php echo $icon_url ?>" />
+				<div class="mediPlayer">
+        			<img src="../theme/basic/img/img_playerPoint.png" />
+        			<img src="../theme/basic/img/img_circlePlayer.png" />
+					<audio class="listen" preload="metadata" src="<?php echo $audio_url ?>"></audio>
+				</div>
+			</div>
+			<a href="/shop/voiceDetail.php?mb_id=<?php echo $row['mb_id']; ?>"><?php echo $row['mb_name']; ?>(<?php echo $row['mb_id']; ?>)</a>
+		</li>
+<?php
+}
+?>
+	</ul>
+	<div><a href="/shop/voiceList.php?cat=10" class="more02">MORE<img src="../theme/basic/img/img_more.png" /></a></div>
+</div>
+
+
+
+<div id="workList">
+	<strong>작업 의뢰</strong>
+	<span>성우님의 목소리를 기다리고 있는 프로젝트입니다.</span>
+	<ul class="projectList">
+<?php
+$qry = "SELECT a.*, IFNULL(d.cnt,0) cnt, b.ca_name FROM ".$g5['g5_shop_item_table']." AS a JOIN ".$g5['g5_shop_category_table']." AS b ON a.ca_id=b.ca_id JOIN ".$g5['member_table']." AS c ON a.it_maker=c.mb_id LEFT JOIN (SELECT it_id, COUNT(*) AS cnt FROM ".$g5['g5_shop_cart_table']." WHERE ct_select='1' AND ct_status<>'취소' GROUP BY it_id) d ON a.it_id=d.it_id WHERE a.it_use='1' AND a.it_gubun='1' AND a.it_view_time >= '".date("Y-m-d H:i:s")."' ORDER BY it_id DESC LIMIT 0, 8 ";
+//echo $qry;
+$res = sql_query($qry);
+$row_cnt = sql_num_rows($res);
+
+for ($i=0; $row=sql_fetch_array($res); $i++) {
+	$icon_url = G5_DATA_URL.'/item/'.$row['it_id'].'/'.$row['it_img1'];
+	$icon_url = is_file(G5_DATA_PATH.'/item/'.$row['it_id'].'/'.$row['it_img1']) ? $icon_url : "/theme/basic/img/profileSample.jpg";
+?>
+		<li>
+			<a href="/shop/voiceProjectDetail.php?it_id=<?php echo $row['it_id']; ?>&ca_id=<?php echo $_REQUEST['ca_id']; ?>">
+    			<img src="<?php echo $icon_url; ?>" />
+    			<strong><?php echo $row['ca_name']; ?></strong>
+    			<i><?php echo $row['it_name']; ?></i>
+    			<em><?php echo number_format($row['it_price']); ?><span>won</span></em>
+    			<span><?php echo mb_substr($row['it_explan'], 0, 22, 'utf-8'); ?></span>
+    			<b>마감일 : <?php echo $row['it_view_time']; ?></b>
+    			<b>지원자수 : <?php echo $row['cnt']; ?>명</b>
+			</a>
+		</li>
+<?php
+}
+?>
+
+	</ul>
+	<a href="/shop/voiceProject.php" class="more02">MORE<img src="../theme/basic/img/img_more.png" /></a>
+</div>
+
+<div id="mainAbout">
+	<img src="../theme/basic/img/img_about.png" />
+	<p>
+		올보이스는 최고의 프로성우와 그 목소리를 원하는 고객을 다이렉트로 연결하는 국내 최초의 목소리 직거래 플랫폼 입니다.<br />
+		광고, 오디오, 게임, 애니메이션, 출판, 교육 등 모든 분야에 목소리 콘텐츠 제작이 가능하며,<br />
+		기존의 오프라인 작업보다 시간과 비용이 획기적으로 절약되는 신개념 플랫폼입니다. <br />
+		또한, 셀수없이 많은 프로성우의 목소리 샘플을 무료로 들어볼수 있으며, 검색을 통해 원하는 목소리를 빠르고 쉽게 찾을 수 있습니다.<br />
+		이제 올보이스에서 여러분이 원하는 바로 그 목소리와 원하는 콘텐츠 작업을 보세요.
+        
+        <!-- 
+            올보이스는 전문적인 음성 재능과 사업을 연결하는 업계 최고의 웹사이트 입니다.<br /> 
+            라디오와 텔레비전 방송국, 광고 대행사, 포춘지 500대 기업에서 일하는 전 세계 사람들은<br />
+            우리의 웹사이트와 모바일 사이트의 도움으로 우리의 시장에 의지하여 음성 인재를 찾고, 오디션하고, 고용합니다.
+         -->        		
+	</p>
+	<a href="<?php echo G5_SHOP_URL; ?>/introduce.php" class="more01">MORE<img src="../theme/basic/img/img_more.png" /></a>
+</div>
+
+<?php
+include_once(G5_THEME_SHOP_PATH.'/shop.tail.php');
+?>
