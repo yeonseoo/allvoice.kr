@@ -24,6 +24,7 @@
     <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../dev_allvoice/head.sub.php" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="two.files.diff.last.used.file" value="$PROJECT_DIR$/../dev_allvoice/head.sub.php" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -39,7 +40,7 @@
       <workItem from="1603703907943" duration="9126000" />
       <workItem from="1603869600726" duration="2692000" />
       <workItem from="1604022415609" duration="149000" />
-      <workItem from="1604291823946" duration="10465000" />
+      <workItem from="1604291823946" duration="11114000" />
     </task>
     <servers />
   </component>
@@ -74,6 +75,10 @@
     <state x="471" y="280" key="FileChooserDialogImpl/0.0.1920.1160/-1920.0.1920.1160@0.0.1920.1160" timestamp="1604303285873" />
     <state x="-1449" y="285" key="FileChooserDialogImpl/0.0.1920.1160/-1920.5.1920.1160@-1920.5.1920.1160" timestamp="1603877886935" />
     <state x="471" y="280" key="FileChooserDialogImpl/0.0.1920.1160/-1920.5.1920.1160@0.0.1920.1160" timestamp="1603764606207" />
+    <state x="-1422" y="189" key="SettingsEditor" timestamp="1604366082623">
+      <screen x="-1920" y="0" width="1920" height="1160" />
+    </state>
+    <state x="-1422" y="189" key="SettingsEditor/0.0.1920.1160/-1920.0.1920.1160@-1920.0.1920.1160" timestamp="1604366082623" />
     <state width="498" height="398" key="SwitcherDM" timestamp="1603702890658">
       <screen x="0" y="0" width="1920" height="1160" />
     </state>
@@ -92,9 +97,10 @@
       <screen x="0" y="0" width="1920" height="1160" />
     </state>
     <state x="631" y="303" key="run.anything.popup/0.0.1920.1160/-1920.5.1920.1160@0.0.1920.1160" timestamp="1603775350420" />
-    <state x="623" y="255" width="672" height="678" key="search.everywhere.popup" timestamp="1604302316874">
-      <screen x="0" y="0" width="1920" height="1160" />
+    <state x="-1297" y="255" width="672" height="678" key="search.everywhere.popup" timestamp="1604366069023">
+      <screen x="-1920" y="0" width="1920" height="1160" />
     </state>
+    <state x="-1297" y="255" width="672" height="678" key="search.everywhere.popup/0.0.1920.1160/-1920.0.1920.1160@-1920.0.1920.1160" timestamp="1604366069023" />
     <state x="623" y="255" width="672" height="678" key="search.everywhere.popup/0.0.1920.1160/-1920.0.1920.1160@0.0.1920.1160" timestamp="1604302316874" />
     <state x="-1297" y="260" width="672" height="678" key="search.everywhere.popup/0.0.1920.1160/-1920.5.1920.1160@-1920.5.1920.1160" timestamp="1603877058442" />
     <state x="623" y="255" width="672" height="678" key="search.everywhere.popup/0.0.1920.1160/-1920.5.1920.1160@0.0.1920.1160" timestamp="1603763332805" />
