@@ -7,6 +7,7 @@ if (G5_IS_MOBILE) {
     return;
 }
 
+
 include_once('./_head.php');
 ?>
     <style type="text/css" xmlns="http://www.w3.org/1999/html">
